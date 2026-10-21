@@ -1,0 +1,67 @@
+name: Kanalga avtomatik post
+
+on:
+  schedule:
+    # Toshkent vaqti = UTC + 5. Ish 30 daqiqa oldin boshlanadi (tayyorlash + 10 daqiqalik ogohlantirish).
+    - cron: "30 3 * * *"    # 08:30 → 09:00 matn + audio
+    - cron: "30 8 * * *"    # 13:30 → 14:00 rasmli post
+    - cron: "30 12 * * *"   # 17:30 → 18:00 video
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "Qaysi post: morning (matn+audio), noon (rasm), evening (video)"
+        required: true
+        default: "morning"
+        type: choice
+        options: [morning, noon, evening]
+      test:
+        description: "Sinov: faqat menga (adminga) yuborilsin, kanalga emas"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kanal-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Kerakli dasturlarni o'rnatish
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install -r requirements.txt
+
+      - name: 6 agentni ishga tushirish
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          CHANNEL_ID: ${{ vars.CHANNEL_ID }}
+          CHANNEL_TAG: ${{ vars.CHANNEL_TAG }}
+          VOICE_SHOHISTA: ${{ vars.VOICE_SHOHISTA }}
+          VOICE_CLAIRE: ${{ vars.VOICE_CLAIRE }}
+          SLOT: ${{ github.event.inputs.slot }}
+          TEST: ${{ github.event.inputs.test }}
+        run: python main.py
+
+      - name: Mavzular tarixini saqlash
+        if: success()
+        run: |
+          git config user.name "kanal-bot"
+          git config user.email "kanal-bot@users.noreply.github.com"
+          git add data/history.json
+          git diff --cached --quiet || (git commit -m "Mavzular tarixi yangilandi" && git push)
