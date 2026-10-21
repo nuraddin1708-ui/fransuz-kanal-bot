@@ -13,15 +13,16 @@ import traceback
 from pathlib import Path
 
 import config
-from agents import artist, publisher, quality, researcher, video, voice
+import artist, publisher, quality, researcher, video, voice
 
 HISTORY = Path(__file__).parent / "data" / "history.json"
 
 
 def load_history():
-    if HISTORY.exists():
-        return json.loads(HISTORY.read_text(encoding="utf-8"))
-    return []
+    if not HISTORY.exists():  # data/ papkasi yuklanmagan bo'lsa ham ishlaydi
+        HISTORY.parent.mkdir(exist_ok=True)
+        HISTORY.write_text("[]", encoding="utf-8")
+    return json.loads(HISTORY.read_text(encoding="utf-8"))
 
 
 def save_history(entry):
