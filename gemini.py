@@ -23,6 +23,9 @@ class ModelUnavailable(RuntimeError):
     pass
 
 
+LOG = []  # qaysi model nima qilgani — data/last_run.txt ga yoziladi
+
+
 def _key():
     if not config.GEMINI_API_KEY:
         raise RuntimeError("GEMINI_API_KEY topilmadi (GitHub Secrets'ga qo'shing)")
@@ -94,8 +97,16 @@ def _post(models, body):
 def _post_one(model, body, retries=3):
     last = None
     for attempt in range(retries):
-        r = requests.post(URL.format(model=model), headers={"x-goog-api-key": _key()},
-                          json=body, timeout=180)
+        t0 = time.time()
+        try:
+            r = requests.post(URL.format(model=model), headers={"x-goog-api-key": _key()},
+                              json=body, timeout=(20, 150))
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            LOG.append(f"{model}: javob kelmadi ({type(exc).__name__})")
+            if attempt == 0:
+                continue
+            raise ModelUnavailable(f"{model}: javob kelmadi")
+        LOG.append(f"{model}: {r.status_code} ({time.time() - t0:.0f}s)")
         if r.status_code == 200:
             return r.json()
         last = f"{r.status_code}: {r.text[:300]}"

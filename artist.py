@@ -27,7 +27,7 @@ def _references():
 
 def _prompt(lesson, variant):
     return (
-        "Warm, bright, high-quality digital illustration for an educational Telegram post. "
+        f"{config.STYLE_EN} Illustration for an educational Telegram post. "
         f"Characters: {config.CHARACTERS_EN} "
         f"Scene: {lesson['image_scene']} {variant} "
         "The two young women are talking and smiling, friendly atmosphere. "
@@ -36,6 +36,33 @@ def _prompt(lesson, variant):
 
 
 def draw(lesson, out_path, aspect="4:5", variant=""):
+    import style
+    if style.sticker(config.UZBEK_GIRL) is not None and style.sticker(config.FRENCH_GIRL) is not None:
+        return compose(lesson, out_path, aspect)
+    return scene(lesson, out_path, aspect, variant)
+
+
+def compose(lesson, out_path, aspect="4:5"):
+    """Rasmli post: odamsiz fon + qahramon-stikerlar + yorliqlar (video bilan bir xil uslub)."""
+    import style
+    w, h = SIZES.get(aspect, (1080, 1350))
+    bg_path = Path(out_path).with_name("photo_bg.png")
+    background(lesson, bg_path, aspect=aspect)
+    img = style.cover(style.Image.open(bg_path), w, h)
+    for i, name in enumerate([config.FRENCH_GIRL, config.UZBEK_GIRL]):
+        st = style.fit(style.sticker(name, pose=1), 500, int(h * 0.62))
+        img.alpha_composite(st, (10 if i == 0 else w - st.width - 10, h - st.height - 20))
+    style.brand(img, "UZBEKCHA FRANSUZCHA", f"{config.UZBEK_GIRL} & {config.FRENCH_GIRL}")
+    tapes = [style.tape(lesson["title_uz"], style.ORANGE, size=58, max_w=940)]
+    for p in lesson["key_phrases"][:2]:
+        tapes.append(style.tape(f"«{p['fr']}»", style.WHITE, size=50, max_w=960, upper=False))
+        tapes.append(style.tape(f"{p.get('pron', '')} — {p.get('uz', '')}", style.YELLOW, size=40, max_w=900))
+    style.stack(img, tapes, top=240)
+    img.convert("RGB").save(out_path)
+    return out_path
+
+
+def scene(lesson, out_path, aspect="4:5", variant=""):
     prompt = _prompt(lesson, variant)
     refs = _references()
     try:
@@ -48,6 +75,26 @@ def draw(lesson, out_path, aspect="4:5", variant=""):
     except Exception as exc:
         print(f"Pollinations ishlamadi, karta chizamiz: {exc}")
     return card(lesson, out_path, aspect)
+
+
+def background(lesson, out_path, aspect="9:16"):
+    """Video foni — odamlarsiz sahna (qahramonlar alohida stiker bo'lib qo'yiladi)."""
+    prompt = (
+        f"{config.STYLE_EN} Vertical background scene for a cartoon video, NO people, no characters, "
+        f"empty room or place. Setting based on: {lesson['image_scene']} "
+        "The lower third of the picture is an open floor area. No text, no letters, no watermarks."
+    )
+    try:
+        return gemini.image(prompt, out_path, aspect=aspect)
+    except Exception as exc:
+        print(f"Gemini fon chiza olmadi: {exc}")
+    try:
+        return _pollinations(prompt, out_path, aspect)
+    except Exception as exc:
+        print(f"Pollinations ishlamadi, gradient fon: {exc}")
+    import style
+    style.warm_fallback().convert("RGB").save(out_path)
+    return out_path
 
 
 def _pollinations(prompt, out_path, aspect):

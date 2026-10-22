@@ -22,7 +22,11 @@ def check(lesson, rounds=2):
     """Tuzatilgan darsni va topilgan muammolar ro'yxatini qaytaradi."""
     all_issues = []
     for _ in range(rounds):
-        result = gemini.ask(PROMPT + json.dumps(lesson, ensure_ascii=False), want_json=True)
+        try:
+            result = gemini.ask(PROMPT + json.dumps(lesson, ensure_ascii=False), want_json=True)
+        except Exception as exc:  # nazorat ishlamasa ham post chiqaveradi
+            print(f"Sifat nazorati ishlamadi: {exc}")
+            break
         issues = result.get("issues") or []
         all_issues += issues
         fixed = result.get("fixed")

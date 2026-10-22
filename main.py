@@ -56,9 +56,19 @@ def build(kind, lesson, issues, workdir):
     return {"kind": kind, "lesson": lesson, "issues": issues, "files": {k: str(v) for k, v in files.items()}}
 
 
+def make_characters():
+    import characters
+    files = characters.generate()
+    publisher._notify("🎨 Qahramon-stikerlar tayyor. Yoqmasa, <b>characters</b> ni qayta ishga tushiring.")
+    for f in files:
+        publisher._api("sendDocument", files={"document": str(f)}, chat_id=publisher._admin())
+
+
 def main():
     now = datetime.datetime.now(config.TZ)
     slot = pick_slot(now)
+    if slot == "characters":
+        return make_characters()
     hour, kind = config.SLOTS[slot]
     test = os.environ.get("TEST", "").strip() in ("1", "true", "yes")
 
@@ -93,13 +103,23 @@ def main():
     print("Tayyor ✅")
 
 
+def write_log(status):
+    import gemini
+    HISTORY.parent.mkdir(exist_ok=True)
+    (HISTORY.parent / "last_run.txt").write_text(
+        f"{datetime.datetime.now(config.TZ):%Y-%m-%d %H:%M} — {status}\n" + "\n".join(gemini.LOG),
+        encoding="utf-8")
+
+
 if __name__ == "__main__":
     try:
         main()
+        write_log("OK")
     except Exception as exc:
         traceback.print_exc()
         HISTORY.parent.mkdir(exist_ok=True)
         (HISTORY.parent / "last_error.txt").write_text(
             f"{datetime.datetime.now(config.TZ):%Y-%m-%d %H:%M}\n{traceback.format_exc()}", encoding="utf-8")
+        write_log(f"XATO: {type(exc).__name__}: {exc}")
         publisher.report_error(f"{type(exc).__name__}: {exc}")
         sys.exit(1)

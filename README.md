@@ -70,6 +70,11 @@ Uchala turini (morning, noon, evening) shunday sinab ko'ring. Hammasi yaxshi bo'
 
 ---
 
+## Qahramon-stikerlar (bir marta)
+**Actions → Kanalga avtomatik post → Run workflow** da `slot` = **characters** ni tanlang.
+Bot Claire va Shohistaning oq hoshiyali stikerlarini chizib, sizga yuboradi va `assets/characters/` ga saqlaydi.
+Shundan keyin video va rasmli postlarda qahramonlar har doim bir xil ko'rinadi. Yoqmasa, qayta ishga tushiring.
+
 ## Foydali bilish
 
 - **Qahramonlar bir xil ko'rinishi uchun:** yoqqan rasmlardan 1–3 tasini `assets/` papkasiga yuklang (png yoki jpg). Rassom ularni namuna sifatida oladi.

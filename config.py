@@ -38,6 +38,13 @@ CHARACTERS_EN = (
     "Parisian style (striped top, light jacket)."
 )
 
+# Namuna videodagi uslub: qo'lda chizilgan, qalin siyoh chiziqli, issiq ranglar
+STYLE_EN = (
+    "Hand-drawn cartoon illustration with bold ink outlines and warm watercolor shading, "
+    "slightly caricatured friendly characters, warm golden-orange lamp light, cozy atmosphere, "
+    "rich Uzbek details (suzani and ikat patterns, blue-and-white ceramics, carpets)."
+)
+
 # --- Jadval: slot -> (soat, post turi) ---
 SLOTS = {
     "morning": (9, "text_audio"),   # 09:00 — matn + audio
