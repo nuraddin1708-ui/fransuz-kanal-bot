@@ -154,18 +154,23 @@ def outline(img, width=14):
 _STICKERS = {}
 
 
-def sticker(name, pose=0):
+def sticker_path(name, pose=0):
     """assets/characters/<ism>_<poza>.png. pose — nomi («laugh») yoki raqam. Yo'q bo'lsa — boshqa poza."""
-    files = sorted(CHARS.glob(f"{name.lower()}_*.png")) if CHARS.exists() else []
+    files = sorted(f for f in CHARS.glob(f"{name.lower()}_*.png") if not f.stem.endswith("_b")) if CHARS.exists() else []
     if not files:
         return None
     if isinstance(pose, str):
         exact = [f for f in files if f.stem == f"{name.lower()}_{pose}"]
         fallback = [f for f in files if f.stem.endswith("_talk")] or files
-        path = (exact or fallback)[0]
-    else:
-        path = files[pose % len(files)]
-    if path not in _STICKERS:  # bir xil obyekt — video poza almashganini shundan biladi
+        return (exact or fallback)[0]
+    return files[pose % len(files)]
+
+
+def sticker(name, pose=0):
+    path = sticker_path(name, pose)
+    if path is None:
+        return None
+    if path not in _STICKERS:
         _STICKERS[path] = Image.open(path).convert("RGBA")
     return _STICKERS[path]
 

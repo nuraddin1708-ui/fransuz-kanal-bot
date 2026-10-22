@@ -39,12 +39,16 @@ def generate():
         if not (style.CHARS / f"{name.lower()}_talk.png").exists():
             print(f"{name}: asosiy stiker (…_talk.png) yo'q — o'tkazib yuborildi")
             continue
-        for tag, action in config.POSES.items():
+        jobs = [(tag, action) for tag, action in config.POSES.items()]
+        jobs += [(f"{tag}_b", f"{action}; {config.POSE_B}") for tag, action in config.POSES.items()]
+        for tag, action in jobs:
             out = style.CHARS / f"{name.lower()}_{tag}.png"
             if out.exists():
                 continue
             try:
-                artist.pose_sticker(name, action, tmp / f"{name}_{tag}.png")
+                base = style.CHARS / f"{name.lower()}_{tag[:-2]}.png" if tag.endswith("_b") else None
+                artist.pose_sticker(name, action, tmp / f"{name}_{tag}.png",
+                                    ref=base if base is not None and base.exists() else None)
                 (tmp / f"{name}_{tag}.png").replace(out)
                 made.append(out)
                 print(f"Tayyor: {out.name}")

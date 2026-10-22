@@ -74,32 +74,39 @@ def _backgrounds(lesson, workdir):
 # ---------- Qahramonlar ----------
 
 def _poses(lesson, workdir):
-    """Har bir gap uchun [(Claire, Shohista)] stikerlari — gapga mos poza."""
+    """Har bir gap uchun [Claire, Shohista] stikerlari (gapga mos poza) va «_b» variantlari.
+
+    <ism>_<poza>_b.png — o'sha pozaning qo'li/og'zi boshqacha holati; gapirayotganda almashib turadi.
+    """
     names = (config.FRENCH_GIRL, config.UZBEK_GIRL)
-    out, cache = [], {}
+    out, cache, alts = [], {}, {}
+
+    def load(path):
+        if path not in cache:
+            cache[path] = style.fit(Image.open(path).convert("RGBA"), 560, 1020)
+            b = Path(path).with_name(Path(path).stem + "_b.png")
+            if b.exists():
+                alts[id(cache[path])] = style.fit(Image.open(b).convert("RGBA"), 560, 1020)
+        return cache[path]
+
     for i, line in enumerate(lesson["dialogue"]):
         pair = []
         for name in names:
             speaking = line["speaker"] == name
             tag = line.get(f"pose_{name.lower()}") or ("talk" if speaking else "listen")
-            img = None
+            path = None
             if config.UNIQUE_POSES and line.get("shot"):  # har kadr uchun yangi poza chizish (pullik)
                 try:
-                    img = artist.pose_sticker(name, f"{line['shot']} ({'speaking' if speaking else 'listening'})",
-                                              workdir / f"pose_{i}_{name}.png")
+                    path = artist.pose_sticker(name, f"{line['shot']} ({'speaking' if speaking else 'listening'})",
+                                               workdir / f"pose_{i}_{name}.png")
                 except Exception as exc:
                     print(f"Poza chizilmadi ({name}): {exc}")
-            if img is None:
-                img = style.sticker(name, tag)
-            if img is None:
-                return []
-            key = (name, id(img) if not isinstance(img, Path) else str(img))
-            if key not in cache:
-                im = Image.open(img).convert("RGBA") if isinstance(img, (str, Path)) else img
-                cache[key] = style.fit(im, 560, 1020)
-            pair.append(cache[key])
+            path = path or style.sticker_path(name, tag)
+            if path is None:
+                return [], {}
+            pair.append(load(path))
         out.append(pair)
-    return out
+    return out, alts
 
 
 # ---------- Yorliqlar ----------
@@ -238,7 +245,7 @@ def make(lesson, workdir, clips=None, images=None):
     lines = lesson["dialogue"]
     if clips is None:
         clips, _ = voice.speak_dialogue(lesson, workdir)
-    poses = _poses(lesson, workdir)
+    poses, alts = _poses(lesson, workdir)
     bgs = images or _backgrounds(lesson, workdir)
 
     # Vaqt jadvali
@@ -322,10 +329,15 @@ def make(lesson, workdir, clips=None, images=None):
                 scale = min(scale, 0.85 + 0.15 * ease_out_back((local - 0.05) / 0.3, 2.5))
             if scale <= 0.01:
                 continue
+            talking = k == speaker and starts[i] <= tt <= ends[i]
+            if talking:  # gapirayotganda qo'l/og'iz: «_b» varianti bo'lsa almashib turadi
+                alt = alts.get(id(st))
+                if alt is not None and int(tt * 3) % 2:
+                    st = alt
             img = st if scale > 0.999 else st.resize((max(1, int(st.width * scale)), max(1, int(st.height * scale))))
             x = (10 if k == 0 else W - st.width - 10) + (st.width - img.width) // 2
             y = H - img.height - 30
-            if k == speaker and starts[i] <= tt <= ends[i]:
+            if talking:
                 y -= int(abs(math.sin(2 * math.pi * 2.1 * tt)) * 16)
             else:
                 y -= int(math.sin(2 * math.pi * 0.5 * tt + k) * 4)

@@ -66,6 +66,9 @@ POSES = {
     "book": "holding an open notebook, studying",
     "bag": "holding a shopping bag",
 }
+# Har bir poza uchun «_b» varianti ham chiziladi — gapirganda qo'l va og'iz qimirlaydi
+POSE_B = "the same pose, but the gesturing hand is moved to a different position and the mouth is open as if speaking"
+
 # Har bir kadr uchun pozani noldan chizish (qimmatroq): Variables'da UNIQUE_POSES=1
 UNIQUE_POSES = os.environ.get("UNIQUE_POSES", "").strip() in ("1", "true", "yes")
 

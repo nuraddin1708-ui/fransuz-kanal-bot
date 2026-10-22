@@ -134,11 +134,11 @@ def shot(lesson, line, out_path, aspect="9:16", with_characters=True):
     return gemini.image(prompt, out_path, aspect=aspect, references=refs)
 
 
-def pose_sticker(name, action, out_path):
+def pose_sticker(name, action, out_path, ref=None):
     """Qahramonning yangi pozadagi stikeri: tasdiqlangan stiker namuna, yashil fonda chiziladi."""
     import style
     from PIL import Image
-    ref = style.CHARS / f"{name.lower()}_talk.png"
+    ref = Path(ref) if ref else style.CHARS / f"{name.lower()}_talk.png"
     prompt = (
         f"Draw exactly this same character ({name}) from the reference image — same face, hair, body shape, "
         f"clothes and art style ({config.STYLE_EN}) — in a new pose: {action}. "
