@@ -1,27 +1,14 @@
-2026-10-22 16:31
+2026-10-22 18:20
 Traceback (most recent call last):
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/characters.py", line 55, in generate
-    gemini.image(prompt, raw, aspect="9:16", references=refs)
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/gemini.py", line 169, in image
-    data = _post(image_models(), body)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/gemini.py", line 94, in _post
-    raise RuntimeError("Hech bir Gemini modeli ishlamadi — " + " | ".join(errors))
-RuntimeError: Hech bir Gemini modeli ishlamadi — gemini-3.1-flash-image: limit / bepul emas (429) | gemini-3.1-flash-lite-image: limit / bepul emas (429) | gemini-3.1-flash-image-preview: limit / bepul emas (429) | gemini-3-pro-image: limit / bepul emas (429) | gemini-3-pro-image-preview: limit / bepul emas (429) | gemini-2.5-flash-image: limit / bepul emas (429)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/main.py", line 116, in <module>
+  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/main.py", line 130, in <module>
     main()
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/main.py", line 71, in main
-    return make_characters()
-           ^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/main.py", line 61, in make_characters
-    files = characters.generate()
-            ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/characters.py", line 58, in generate
-    artist._pollinations(_prompt(name, pose), raw, "9:16")
-  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/artist.py", line 110, in _pollinations
-    raise RuntimeError(f"Pollinations {r.status_code}: {r.text[:200]}")
-RuntimeError: Pollinations 402: {"status":402,"success":false,"error":{"code":"FREE_LIMIT","message":"Free limit reached: 1 image every 45 seconds per IP. Retry after 5s, or get unlimited images with a pollen key at https://enter.po
+  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/main.py", line 113, in main
+    final = publisher.run(pkg, publish_at, rebuild, dry_run=test)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/publisher.py", line 198, in run
+    send_package(config.CHANNEL_ID, pkg)
+  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/publisher.py", line 105, in send_package
+    _api("sendVideo", files={"video": files["video"]}, chat_id=chat_id,
+  File "/home/runner/work/fransuz-kanal-bot/fransuz-kanal-bot/publisher.py", line 32, in _api
+    raise RuntimeError(f"Telegram xatosi ({method}): {res}")
+RuntimeError: Telegram xatosi (sendVideo): {'ok': False, 'error_code': 400, 'description': 'Bad Request: chat not found'}
