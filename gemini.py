@@ -11,7 +11,22 @@ import config
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 
-def _post(model, body, retries=3):
+def _post(models, body):
+    """Ro'yxatdagi modellarni navbat bilan sinaydi: 404/400 bo'lsa keyingisiga o'tadi."""
+    errors = []
+    for model in models:
+        try:
+            return _post_one(model, body)
+        except ModelUnavailable as exc:
+            errors.append(str(exc))
+    raise RuntimeError("Hech bir Gemini modeli ishlamadi — " + " | ".join(errors))
+
+
+class ModelUnavailable(RuntimeError):
+    pass
+
+
+def _post_one(model, body, retries=3):
     if not config.GEMINI_API_KEY:
         raise RuntimeError("GEMINI_API_KEY topilmadi (GitHub Secrets'ga qo'shing)")
     last = None
@@ -28,6 +43,8 @@ def _post(model, body, retries=3):
         if r.status_code in (429, 500, 502, 503, 504):
             time.sleep(10 * (attempt + 1))
             continue
+        if r.status_code == 404 or (r.status_code == 400 and "model" in r.text.lower()):
+            raise ModelUnavailable(f"{model}: {r.status_code}")
         break
     raise RuntimeError(f"Gemini xatosi ({model}) — {last}")
 
@@ -46,7 +63,7 @@ def ask(prompt, want_json=False, search=False):
         body["tools"] = [{"google_search": {}}]
     elif want_json:
         body["generationConfig"] = {"responseMimeType": "application/json"}
-    data = _post(config.GEMINI_TEXT_MODEL, body)
+    data = _post(config.GEMINI_TEXT_MODELS, body)
     parts = data["candidates"][0]["content"].get("parts", [])
     text = "".join(p.get("text", "") for p in parts)
     return _extract_json(text) if want_json else text
@@ -67,7 +84,7 @@ def image(prompt, out_path, aspect="4:5", references=()):
             "imageConfig": {"aspectRatio": aspect},
         },
     }
-    data = _post(config.GEMINI_IMAGE_MODEL, body)
+    data = _post(config.GEMINI_IMAGE_MODELS, body)
     for p in data["candidates"][0]["content"].get("parts", []):
         blob = p.get("inlineData") or p.get("inline_data")
         if blob:

@@ -16,8 +16,12 @@ CHANNEL_TAG = os.environ.get("CHANNEL_TAG") or "@Uzbekcha_Fransuzcha"
 VOICE_SHOHISTA = os.environ.get("VOICE_SHOHISTA", "")
 VOICE_CLAIRE = os.environ.get("VOICE_CLAIRE", "")
 
-GEMINI_TEXT_MODEL = os.environ.get("GEMINI_TEXT_MODEL") or "gemini-2.5-flash"
-GEMINI_IMAGE_MODEL = os.environ.get("GEMINI_IMAGE_MODEL") or "gemini-2.5-flash-image"
+# Birinchisi ishlamasa (yopilgan bo'lsa), bot keyingisiga o'zi o'tadi
+GEMINI_TEXT_MODELS = [m for m in [os.environ.get("GEMINI_TEXT_MODEL"),
+                      "gemini-3.8-flash", "gemini-3.5-flash", "gemini-3-flash"] if m]
+GEMINI_IMAGE_MODELS = [m for m in [os.environ.get("GEMINI_IMAGE_MODEL"),
+                       "gemini-3.1-flash-image", "gemini-nano-banana-2.1",
+                       "gemini-3.1-flash-lite-image", "gemini-3-pro-image"] if m]
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_v3"
 
 # --- Rubrika ---
