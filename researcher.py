@@ -8,8 +8,8 @@ SCHEMA = f"""{{
   "topic": "short topic name in Uzbek (e.g. 'Kafeda buyurtma berish')",
   "title_uz": "catchy post title in Uzbek",
   "dialogue": [
-    {{"speaker": "{config.FRENCH_GIRL}", "lang": "fr", "text": "what she says in French", "uz": "Uzbek translation", "shot": "frame description in English"}},
-    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek, repeats the French phrase, gives its reading in Uzbek letters in «...» and explains the meaning", "shot": "frame description in English"}}
+    {{"speaker": "{config.FRENCH_GIRL}", "lang": "fr", "text": "what she says in French", "uz": "Uzbek translation", "shot": "frame description in English", "bg": "short place id, e.g. cafe", "pose_{config.FRENCH_GIRL.lower()}": "talk", "pose_{config.UZBEK_GIRL.lower()}": "listen"}},
+    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek, repeats the French phrase, gives its reading in Uzbek letters in «...» and explains the meaning", "shot": "frame description in English", "bg": "cafe", "pose_{config.FRENCH_GIRL.lower()}": "cup", "pose_{config.UZBEK_GIRL.lower()}": "point_up"}}
   ],
   "key_phrases": [{{"fr": "French phrase", "pron": "reading in Uzbek Latin letters", "uz": "meaning"}}],
   "tip_uz": "one short practical tip in Uzbek",
@@ -31,6 +31,10 @@ Requirements:
   film storyboard — the exact place, what each girl is doing, her facial emotion, and props that
   show the meaning of the phrase (e.g. ordering coffee → café counter, cup, menu; surprise → wide
   eyes). Consecutive shots continue one small story but change angle, action or props.
+- "bg": a short English id of the place; lines in the same place share the same id.
+- "pose_<name>" for BOTH girls on every line: choose the pose that best matches that moment,
+  only from this list: {", ".join(config.POSES)}. Vary poses between lines; the speaker
+  usually talks/explains, the listener reacts (laugh, surprised, think, listen...).
 - Do not repeat any topic from the "already used" list.
 - Answer with ONLY the JSON object, no other text.
 """

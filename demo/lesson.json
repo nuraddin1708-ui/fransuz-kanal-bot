@@ -1,0 +1,82 @@
+{
+ "topic": "Kafeda buyurtma berish",
+ "title_uz": "Parij kafesida buyurtma beramiz",
+ "dialogue": [
+  {
+   "speaker": "Claire",
+   "lang": "fr",
+   "text": "Bonjour ! Un café, s'il vous plaît.",
+   "uz": "Salom! Bitta qahva, iltimos.",
+   "bg": "cafe",
+   "shot": "Inside a cozy Parisian café at the counter, Claire is ordering, Shohista stands next to her looking curious.",
+   "pose_claire": "talk",
+   "pose_shohista": "listen"
+  },
+  {
+   "speaker": "Shohista",
+   "lang": "uz",
+   "text": "«Bonjur! An kafe, sil vu ple.» «S'il vous plaît» — «iltimos» degani. Har bir iltimosdan keyin ayting!",
+   "bg": "cafe",
+   "shot": "Same café, Shohista turns to the viewer and explains with her index finger raised, Claire holds a coffee cup.",
+   "pose_claire": "cup",
+   "pose_shohista": "point_up"
+  },
+  {
+   "speaker": "Claire",
+   "lang": "fr",
+   "text": "Et avec ça, un croissant ?",
+   "uz": "Bunga qo'shib, kruassan ham olasizmi?",
+   "bg": "pastry",
+   "shot": "In front of a glass pastry display full of croissants, Claire points at the croissants.",
+   "pose_claire": "point_side",
+   "pose_shohista": "think"
+  },
+  {
+   "speaker": "Shohista",
+   "lang": "uz",
+   "text": "«E avek sa?» — sotuvchi doim so'raydi: «Yana nimadir?» Javob: «Oui, merci!» — «Ha, rahmat!»",
+   "bg": "pastry",
+   "shot": "Shohista laughs holding a croissant, Claire smiles.",
+   "pose_claire": "laugh",
+   "pose_shohista": "laugh"
+  },
+  {
+   "speaker": "Claire",
+   "lang": "fr",
+   "text": "C'est combien ?",
+   "uz": "Qancha turadi?",
+   "bg": "register",
+   "shot": "At the café cash register, Claire holds her wallet.",
+   "pose_claire": "think",
+   "pose_shohista": "talk"
+  },
+  {
+   "speaker": "Shohista",
+   "lang": "uz",
+   "text": "«Se kombyen?» — narxni so'rashning eng oson yo'li. Endi Parijda och qolmaysiz!",
+   "bg": "terrace",
+   "shot": "Both girls sit at a café terrace table with the Eiffel Tower in the background, happy.",
+   "pose_claire": "excited",
+   "pose_shohista": "thumbs_up"
+  }
+ ],
+ "key_phrases": [
+  {
+   "fr": "S'il vous plaît",
+   "pron": "sil vu ple",
+   "uz": "Iltimos"
+  },
+  {
+   "fr": "Et avec ça ?",
+   "pron": "e avek sa",
+   "uz": "Yana nimadir?"
+  },
+  {
+   "fr": "C'est combien ?",
+   "pron": "se kombyen",
+   "uz": "Qancha turadi?"
+  }
+ ],
+ "tip_uz": "Fransiyada kafega kirganda avval «Bonjour» deng — bu juda muhim odob!",
+ "image_scene": "A cozy Parisian café"
+}

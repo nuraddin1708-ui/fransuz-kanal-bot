@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
     inputs:
       slot:
-        description: "Qaysi post: morning (matn+audio), noon (rasm), evening (video), characters (stikerlarni yaratish)"
+        description: "Qaysi post: morning (matn+audio), noon (rasm), evening (video), characters (pozalar), demo (namunaviy video)"
         required: true
         default: "morning"
         type: choice
-        options: [morning, noon, evening, characters]
+        options: [morning, noon, evening, characters, demo]
       test:
         description: "Sinov: faqat menga (adminga) yuborilsin, kanalga emas"
         required: true
@@ -58,6 +58,7 @@ jobs:
           CHANNEL_TAG: ${{ vars.CHANNEL_TAG }}
           VOICE_SHOHISTA: ${{ vars.VOICE_SHOHISTA }}
           VOICE_CLAIRE: ${{ vars.VOICE_CLAIRE }}
+          UNIQUE_POSES: ${{ vars.UNIQUE_POSES }}
           SLOT: ${{ github.event.inputs.slot }}
           TEST: ${{ github.event.inputs.test }}
         run: python main.py
@@ -72,3 +73,10 @@ jobs:
           git commit -m "Mavzular tarixi yangilandi"
           git pull -q --rebase && git push
 
+
+      - name: Namunaviy videoni «demo-video» shoxobchasiga saqlash
+        if: github.event.inputs.slot == 'demo' && success()
+        run: |
+          cd demo && git init -q -b demo-video && git add video.mp4 \
+            && git -c user.name=kanal-bot -c user.email=kanal-bot@users.noreply.github.com commit -qm demo \
+            && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" demo-video

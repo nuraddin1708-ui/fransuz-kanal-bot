@@ -46,6 +46,29 @@ STYLE_EN = (
     "rich Uzbek details (suzani and ikat patterns, blue-and-white ceramics, carpets)."
 )
 
+# Qahramonlar pozalari kutubxonasi: assets/characters/<ism>_<poza>.png
+# 1-agent har bir gap uchun shu ro'yxatdan mosini tanlaydi.
+POSES = {
+    "talk": "talking happily, one hand gesturing openly",
+    "listen": "listening attentively with a warm smile, hands together",
+    "point_up": "explaining, index finger raised like a teacher",
+    "point_side": "pointing to the side at something with an open hand",
+    "laugh": "laughing joyfully, eyes squinted, hand near mouth",
+    "surprised": "surprised, eyes wide open, both hands raised",
+    "think": "thinking, hand on chin, looking up",
+    "wave": "waving hello with a big smile",
+    "thumbs_up": "giving a thumbs up, proud smile",
+    "shrug": "shrugging with a confused smile, palms up",
+    "excited": "very excited, both fists up, cheerful",
+    "shy": "shy smile, hands clasped, head slightly tilted",
+    "cup": "holding a cup of tea or coffee with both hands, smiling",
+    "phone": "looking at a smartphone in her hand",
+    "book": "holding an open notebook, studying",
+    "bag": "holding a shopping bag",
+}
+# Har bir kadr uchun pozani noldan chizish (qimmatroq): Variables'da UNIQUE_POSES=1
+UNIQUE_POSES = os.environ.get("UNIQUE_POSES", "").strip() in ("1", "true", "yes")
+
 # --- Jadval: slot -> (soat, post turi) ---
 SLOTS = {
     "morning": (9, "text_audio"),   # 09:00 — matn + audio

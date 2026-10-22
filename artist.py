@@ -102,13 +102,24 @@ def background(lesson, out_path, aspect="9:16"):
     return out_path
 
 
-def shot(lesson, line, out_path, aspect="9:16"):
-    """Video kadri: shu gapning mazmuniga qarab chizilgan alohida sahna (ikkala qahramon bilan)."""
+def shot(lesson, line, out_path, aspect="9:16", with_characters=True):
+    """Video kadri: shu gapning mazmuniga qarab chizilgan alohida sahna.
+
+    with_characters=False — odamsiz fon (qahramonlar ustidan stiker bo'lib qo'yiladi).
+    """
     import style
+    if not with_characters:
+        prompt = (
+            f"{config.STYLE_EN} Vertical background for one frame of a cartoon video, NO people, "
+            f"no characters. The place and props from this frame: {line.get('shot') or lesson['image_scene']} "
+            "Leave the lower half open floor space and the top third calm (captions go there). "
+            "No text, no letters, no logos."
+        )
+        return gemini.image(prompt, out_path, aspect=aspect)
     refs = []
     for name in (config.UZBEK_GIRL, config.FRENCH_GIRL):
-        files = sorted(style.CHARS.glob(f"{name.lower()}_*.png")) if style.CHARS.exists() else []
-        refs += files[:1]
+        st = style.CHARS / f"{name.lower()}_talk.png"
+        refs += [st] if st.exists() else []
     refs = refs or _references()
     prompt = (
         f"{config.STYLE_EN} One frame of a vertical cartoon video. "
@@ -121,6 +132,25 @@ def shot(lesson, line, out_path, aspect="9:16"):
         "(captions go there). Modest, family-friendly. No text, no letters, no logos."
     )
     return gemini.image(prompt, out_path, aspect=aspect, references=refs)
+
+
+def pose_sticker(name, action, out_path):
+    """Qahramonning yangi pozadagi stikeri: tasdiqlangan stiker namuna, yashil fonda chiziladi."""
+    import style
+    from PIL import Image
+    ref = style.CHARS / f"{name.lower()}_talk.png"
+    prompt = (
+        f"Draw exactly this same character ({name}) from the reference image — same face, hair, body shape, "
+        f"clothes and art style ({config.STYLE_EN}) — in a new pose: {action}. "
+        "Full body from head to shoes, with the same thick white sticker outline. "
+        "Plain solid pure green (#00FF00) background, nothing else, no text. Vertical 9:16."
+    )
+    raw = Path(out_path).with_suffix(".raw.png")
+    gemini.image(prompt, raw, aspect="9:16", references=[ref] if ref.exists() else [])
+    img = style.key_green(Image.open(raw))
+    img = style.outline(img.crop(img.getbbox()), width=2)
+    img.save(out_path)
+    return out_path
 
 
 def _library_background():

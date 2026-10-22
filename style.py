@@ -45,7 +45,11 @@ def font(size, bold=True):
 
 
 def _wrap(text, fnt, max_w):
-    words, lines, cur = text.split(), [], ""
+    # Fransuzcha « ? » « ! » oldidagi bo'sh joy qatorni uzmasin
+    for mark in ("?", "!", ":", ";", "»"):
+        text = text.replace(f" {mark}", f"\u00a0{mark}")
+    text = text.replace("« ", "«\u00a0")
+    words, lines, cur = [w for w in text.split(" ") if w], [], ""
     for w in words:
         test = f"{cur} {w}".strip()
         if fnt.getlength(test) <= max_w or not cur:
@@ -147,12 +151,23 @@ def outline(img, width=14):
     return out
 
 
+_STICKERS = {}
+
+
 def sticker(name, pose=0):
-    """assets/characters/<name>_*.png dan bittasini oladi (yo'q bo'lsa None)."""
+    """assets/characters/<ism>_<poza>.png. pose — nomi («laugh») yoki raqam. Yo'q bo'lsa — boshqa poza."""
     files = sorted(CHARS.glob(f"{name.lower()}_*.png")) if CHARS.exists() else []
     if not files:
         return None
-    return Image.open(files[pose % len(files)]).convert("RGBA")
+    if isinstance(pose, str):
+        exact = [f for f in files if f.stem == f"{name.lower()}_{pose}"]
+        fallback = [f for f in files if f.stem.endswith("_talk")] or files
+        path = (exact or fallback)[0]
+    else:
+        path = files[pose % len(files)]
+    if path not in _STICKERS:  # bir xil obyekt — video poza almashganini shundan biladi
+        _STICKERS[path] = Image.open(path).convert("RGBA")
+    return _STICKERS[path]
 
 
 def fit(img, max_w, max_h):

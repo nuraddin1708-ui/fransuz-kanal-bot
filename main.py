@@ -64,11 +64,22 @@ def make_characters():
         publisher._api("sendDocument", files={"document": str(f)}, chat_id=publisher._admin())
 
 
+def make_demo():
+    """demo/lesson.json dan namunaviy video — faqat adminga, kanalga emas."""
+    lesson = json.loads((Path(__file__).parent / "demo" / "lesson.json").read_text(encoding="utf-8"))
+    out = video.make(lesson, Path(tempfile.mkdtemp(prefix="demo_")))
+    Path("demo/video.mp4").write_bytes(Path(out).read_bytes())
+    publisher._notify("🎬 Namunaviy video (kanalga chiqmaydi):")
+    publisher.send_package(publisher._admin(), {"kind": "video", "lesson": lesson, "files": {"video": str(out)}})
+
+
 def main():
     now = datetime.datetime.now(config.TZ)
     slot = pick_slot(now)
     if slot == "characters":
         return make_characters()
+    if slot == "demo":
+        return make_demo()
     hour, kind = config.SLOTS[slot]
     test = os.environ.get("TEST", "").strip() in ("1", "true", "yes")
 
