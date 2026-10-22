@@ -74,7 +74,13 @@ jobs:
           git add data/ assets/characters/ 2>/dev/null || git add data/
           git diff --cached --quiet && exit 0
           git commit -m "Mavzular tarixi yangilandi"
-          git pull -q --rebase && git push
+          # Boshqa ishga tushirish shu orada yozgan bo'lsa — bizning fayllarimiz ustun, 3 marta urinadi
+          for i in 1 2 3; do
+            git pull -q --rebase -X theirs && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1
 
 
       - name: Namunaviy videoni «demo-video» shoxobchasiga saqlash
