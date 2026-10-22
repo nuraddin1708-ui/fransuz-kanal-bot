@@ -40,8 +40,28 @@ def _prompt(name, pose):
     )
 
 
+RAW = style.ROOT / "assets" / "raw"
+
+
+def from_uploads():
+    """assets/raw/ ga yuklangan rasmlardan (shohista*.png, claire*.png, yashil fonda) stiker yasaydi."""
+    made = []
+    for name in (config.UZBEK_GIRL, config.FRENCH_GIRL):
+        files = sorted(p for p in RAW.glob(f"{name.lower()}*") if p.suffix.lower() in (".png", ".jpg", ".jpeg"))
+        for old in style.CHARS.glob(f"{name.lower()}_*.png") if files else []:
+            old.unlink()
+        for i, f in enumerate(files):
+            img = style.fit(style.key_green(Image.open(f)), 900, 1600)
+            out = style.CHARS / f"{name.lower()}_{i + 1}.png"
+            style.outline(img).save(out)
+            made.append(out)
+    return made
+
+
 def generate():
     style.CHARS.mkdir(parents=True, exist_ok=True)
+    if RAW.exists() and any(RAW.iterdir()):
+        return from_uploads()
     refs = artist._references()
     made = []
     tmp = Path(tempfile.mkdtemp(prefix="chars_"))

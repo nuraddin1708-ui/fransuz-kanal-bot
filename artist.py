@@ -88,6 +88,11 @@ def background(lesson, out_path, aspect="9:16"):
         return gemini.image(prompt, out_path, aspect=aspect)
     except Exception as exc:
         print(f"Gemini fon chiza olmadi: {exc}")
+    saved = _library_background()
+    if saved:  # assets/backgrounds/ dagi o'zingiz yuklagan fonlardan biri
+        import shutil
+        shutil.copy(saved, out_path)
+        return out_path
     try:
         return _pollinations(prompt, out_path, aspect)
     except Exception as exc:
@@ -97,16 +102,26 @@ def background(lesson, out_path, aspect="9:16"):
     return out_path
 
 
+def _library_background():
+    import datetime
+    folder = ASSETS / "backgrounds"
+    files = sorted(p for p in folder.glob("*") if p.suffix.lower() in (".png", ".jpg", ".jpeg")) if folder.exists() else []
+    if not files:
+        return None
+    return files[datetime.date.today().toordinal() % len(files)]  # har kuni boshqasi
+
+
 def _pollinations(prompt, out_path, aspect):
     w, h = SIZES.get(aspect, (1080, 1350))
     url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt[:900])
            + f"?width={w}&height={h}&nologo=true&model=flux&seed={int(time.time()) % 100000}")
-    for attempt in range(3):
+    for attempt in range(4):
         r = requests.get(url, timeout=180)
         if r.status_code == 200 and r.headers.get("content-type", "").startswith("image"):
             Path(out_path).write_bytes(r.content)
             return out_path
-        time.sleep(10 * (attempt + 1))
+        # Bepul limit: 45 soniyada 1 ta rasm
+        time.sleep(50 if r.status_code in (402, 429) else 10 * (attempt + 1))
     raise RuntimeError(f"Pollinations {r.status_code}: {r.text[:200]}")
 
 
