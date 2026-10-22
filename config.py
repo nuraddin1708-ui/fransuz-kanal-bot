@@ -11,7 +11,18 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
 
 # --- Ochiq sozlamalar (GitHub Variables) ---
-CHANNEL_ID = os.environ.get("CHANNEL_ID") or "@Uzbekcha_Fransuzcha"
+def _channel(value):
+    """«https://t.me/Kanal», «t.me/Kanal», «Kanal» → «@Kanal». Raqamli ID (-100…) o'zgarmaydi."""
+    v = (value or "").strip().rstrip("/")
+    for prefix in ("https://", "http://", "t.me/", "telegram.me/"):
+        if v.lower().startswith(prefix):
+            v = v[len(prefix):]
+    if v and not v.startswith(("@", "-")) and not v.isdigit():
+        v = "@" + v
+    return v
+
+
+CHANNEL_ID = _channel(os.environ.get("CHANNEL_ID")) or "@Uzbekcha_Fransuzcha"
 CHANNEL_TAG = os.environ.get("CHANNEL_TAG") or "@Uzbekcha_Fransuzcha"
 VOICE_SHOHISTA = os.environ.get("VOICE_SHOHISTA", "")
 VOICE_CLAIRE = os.environ.get("VOICE_CLAIRE", "")

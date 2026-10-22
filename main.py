@@ -85,6 +85,8 @@ def main():
         return make_demo()
     hour, kind = config.SLOTS[slot]
     test = os.environ.get("TEST", "").strip() in ("1", "true", "yes")
+    if not test:
+        publisher.check_channel()
 
     if os.environ.get("SLOT"):  # qo'lda ishga tushirilgan — 12 daqiqadan keyin chiqadi
         publish_at = now + datetime.timedelta(minutes=config.PREVIEW_MINUTES + 2)

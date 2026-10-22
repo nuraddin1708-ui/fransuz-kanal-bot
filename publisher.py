@@ -200,6 +200,20 @@ def run(pkg, publish_at, rebuild, dry_run=False):
     return pkg
 
 
+def check_channel():
+    """Ishni boshlashdan oldin: kanal topiladimi va bot u yerda post joylay oladimi."""
+    try:
+        chat = _api("getChat", chat_id=config.CHANNEL_ID)
+    except RuntimeError:
+        raise RuntimeError(
+            f"Kanal topilmadi: {config.CHANNEL_ID}. Botni kanalga admin qilib qo'shing "
+            "va GitHub Variables'dagi CHANNEL_ID ni tekshiring (masalan: @Uzbekcha_Fransuzcha).")
+    me = _api("getMe")
+    member = _api("getChatMember", chat_id=chat["id"], user_id=me["id"])
+    if member.get("status") != "administrator" or not member.get("can_post_messages", True):
+        raise RuntimeError(f"@{me['username']} kanalda admin emas yoki «Xabar joylash» huquqi yo'q.")
+
+
 def report_error(text):
     try:
         _notify(f"❌ Xatolik: {e(text)[:3500]}")
