@@ -15,7 +15,7 @@
   {
    "speaker": "Shohista",
    "lang": "uz",
-   "text": "«Bonjur! An kafe, sil vu ple.» «S'il vous plaît» — «iltimos» degani. Har bir iltimosdan keyin ayting!",
+   "text": "«Bonjour ! Un café, s'il vous plaît.» [bonjur, an kafe, sil vu ple] «S'il vous plaît» — \"iltimos\" degani. Har bir iltimosdan keyin ayting!",
    "bg": "cafe",
    "shot": "Same café, Shohista turns to the viewer and explains with her index finger raised, Claire holds a coffee cup.",
    "pose_claire": "cup",
@@ -34,7 +34,7 @@
   {
    "speaker": "Shohista",
    "lang": "uz",
-   "text": "«E avek sa?» — sotuvchi doim so'raydi: «Yana nimadir?» Javob: «Oui, merci!» — «Ha, rahmat!»",
+   "text": "«Et avec ça ?» [e avek sa] — sotuvchi doim so'raydi: \"Yana nimadir?\" Javob: «Oui, merci !» [ui, mersi] — \"Ha, rahmat!\"",
    "bg": "pastry",
    "shot": "Shohista laughs holding a croissant, Claire smiles.",
    "pose_claire": "laugh",
@@ -53,7 +53,7 @@
   {
    "speaker": "Shohista",
    "lang": "uz",
-   "text": "«Se kombyen?» — narxni so'rashning eng oson yo'li. Endi Parijda och qolmaysiz!",
+   "text": "«C'est combien ?» [se kombyen] — narxni so'rashning eng oson yo'li. Endi Parijda och qolmaysiz!",
    "bg": "terrace",
    "shot": "Both girls sit at a café terrace table with the Eiffel Tower in the background, happy.",
    "pose_claire": "excited",

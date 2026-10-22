@@ -24,6 +24,8 @@ ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_v3"
 # Bepul ovoz (Microsoft Edge). ElevenLabs kaliti va ovozlari berilsa, o'shanisi ishlatiladi.
 EDGE_VOICE_SHOHISTA = os.environ.get("EDGE_VOICE_SHOHISTA") or "uz-UZ-MadinaNeural"
 EDGE_VOICE_CLAIRE = os.environ.get("EDGE_VOICE_CLAIRE") or "fr-FR-DeniseNeural"
+# Shohista gapidagi «fransuzcha» qismlar shu ovozda o'qiladi (o'zbekcha ovoz fransuzchani buzib o'qiydi)
+EDGE_VOICE_SHOHISTA_FR = os.environ.get("EDGE_VOICE_SHOHISTA_FR") or "fr-FR-VivienneMultilingualNeural"
 
 # --- Rubrika ---
 RUBRIC = "Fransuzchani o'zbekchada gapirgandek gapiring"

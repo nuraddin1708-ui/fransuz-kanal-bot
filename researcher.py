@@ -9,7 +9,7 @@ SCHEMA = f"""{{
   "title_uz": "catchy post title in Uzbek",
   "dialogue": [
     {{"speaker": "{config.FRENCH_GIRL}", "lang": "fr", "text": "what she says in French", "uz": "Uzbek translation", "shot": "frame description in English", "bg": "short place id, e.g. cafe", "pose_{config.FRENCH_GIRL.lower()}": "talk", "pose_{config.UZBEK_GIRL.lower()}": "listen"}},
-    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek, repeats the French phrase, gives its reading in Uzbek letters in «...» and explains the meaning", "shot": "frame description in English", "bg": "cafe", "pose_{config.FRENCH_GIRL.lower()}": "cup", "pose_{config.UZBEK_GIRL.lower()}": "point_up"}}
+    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek: the French phrase in «» with correct French spelling, then its reading in Uzbek letters in [], then the meaning, e.g. «S'il vous plaît» [sil vu ple] — iltimos degani.", "shot": "frame description in English", "bg": "cafe", "pose_{config.FRENCH_GIRL.lower()}": "cup", "pose_{config.UZBEK_GIRL.lower()}": "point_up"}}
   ],
   "key_phrases": [{{"fr": "French phrase", "pron": "reading in Uzbek Latin letters", "uz": "meaning"}}],
   "tip_uz": "one short practical tip in Uzbek",
@@ -26,6 +26,9 @@ Requirements:
 - 4 to 8 dialogue lines, alternating speakers, starting with {config.FRENCH_GIRL}.
 - Everyday, practical French (A1–A2 level). French must be 100% correct, with accents.
 - Uzbek must be in Latin script, natural and friendly, correct apostrophes (o', g').
+- In Shohista's lines put French ONLY inside «» (correct French spelling — it is read aloud by a
+  French voice), the reading in Uzbek letters ONLY inside [] (shown, not read aloud), and never
+  use «» for Uzbek words (use "..." instead).
 - 2 to 4 key_phrases taken from the dialogue.
 - Every dialogue line has its own "shot": one English sentence describing THAT video frame like a
   film storyboard — the exact place, what each girl is doing, her facial emotion, and props that
