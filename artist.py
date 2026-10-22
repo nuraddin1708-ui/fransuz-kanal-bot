@@ -102,6 +102,27 @@ def background(lesson, out_path, aspect="9:16"):
     return out_path
 
 
+def shot(lesson, line, out_path, aspect="9:16"):
+    """Video kadri: shu gapning mazmuniga qarab chizilgan alohida sahna (ikkala qahramon bilan)."""
+    import style
+    refs = []
+    for name in (config.UZBEK_GIRL, config.FRENCH_GIRL):
+        files = sorted(style.CHARS.glob(f"{name.lower()}_*.png")) if style.CHARS.exists() else []
+        refs += files[:1]
+    refs = refs or _references()
+    prompt = (
+        f"{config.STYLE_EN} One frame of a vertical cartoon video. "
+        f"Characters: {config.CHARACTERS_EN} "
+        + ("Draw both characters exactly as in the reference images (same faces, hair and clothes), "
+           "as full-body stickers with a thick white outline standing on the scene. " if refs else "")
+        + f"Frame: {line.get('shot') or lesson['image_scene']} "
+        f"{line['speaker']} is speaking now — make her expressive. "
+        "Characters stand in the lower half; keep the top third of the picture calm and simple "
+        "(captions go there). Modest, family-friendly. No text, no letters, no logos."
+    )
+    return gemini.image(prompt, out_path, aspect=aspect, references=refs)
+
+
 def _library_background():
     import datetime
     folder = ASSETS / "backgrounds"

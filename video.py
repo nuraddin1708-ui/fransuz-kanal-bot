@@ -107,9 +107,25 @@ def _place_stickers(workdir):
     return out
 
 
+def _shots(lesson, workdir):
+    """Har bir gap uchun alohida kadr. Birortasi chizilmasa — None (oddiy usulga qaytamiz)."""
+    images = []
+    for i, line in enumerate(lesson["dialogue"]):
+        try:
+            images.append(artist.shot(lesson, line, workdir / f"shot_{i:02d}.png"))
+        except Exception as exc:
+            print(f"Kadr {i} chizilmadi, oddiy usulga o'tamiz: {exc}")
+            return None
+    return images
+
+
 def make(lesson, workdir, clips=None, images=None):
     workdir = Path(workdir).resolve()
     stickers = _place_stickers(workdir)
+    if images is None:
+        images = _shots(lesson, workdir)
+        if images:  # qahramonlar har bir kadrning o'zida chizilgan
+            stickers = []
     if images is None:
         if stickers:  # qahramonlar alohida — fon odamlarsiz
             images = [artist.background(lesson, workdir / "bg.png")]

@@ -8,8 +8,8 @@ SCHEMA = f"""{{
   "topic": "short topic name in Uzbek (e.g. 'Kafeda buyurtma berish')",
   "title_uz": "catchy post title in Uzbek",
   "dialogue": [
-    {{"speaker": "{config.FRENCH_GIRL}", "lang": "fr", "text": "what she says in French", "uz": "Uzbek translation"}},
-    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek, repeats the French phrase, gives its reading in Uzbek letters in «...» and explains the meaning"}}
+    {{"speaker": "{config.FRENCH_GIRL}", "lang": "fr", "text": "what she says in French", "uz": "Uzbek translation", "shot": "frame description in English"}},
+    {{"speaker": "{config.UZBEK_GIRL}", "lang": "uz", "text": "Shohista, in Uzbek, repeats the French phrase, gives its reading in Uzbek letters in «...» and explains the meaning", "shot": "frame description in English"}}
   ],
   "key_phrases": [{{"fr": "French phrase", "pron": "reading in Uzbek Latin letters", "uz": "meaning"}}],
   "tip_uz": "one short practical tip in Uzbek",
@@ -27,6 +27,10 @@ Requirements:
 - Everyday, practical French (A1–A2 level). French must be 100% correct, with accents.
 - Uzbek must be in Latin script, natural and friendly, correct apostrophes (o', g').
 - 2 to 4 key_phrases taken from the dialogue.
+- Every dialogue line has its own "shot": one English sentence describing THAT video frame like a
+  film storyboard — the exact place, what each girl is doing, her facial emotion, and props that
+  show the meaning of the phrase (e.g. ordering coffee → café counter, cup, menu; surprise → wide
+  eyes). Consecutive shots continue one small story but change angle, action or props.
 - Do not repeat any topic from the "already used" list.
 - Answer with ONLY the JSON object, no other text.
 """

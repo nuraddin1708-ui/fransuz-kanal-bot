@@ -100,11 +100,9 @@ def _post_one(model, body, retries=3):
         t0 = time.time()
         try:
             r = requests.post(URL.format(model=model), headers={"x-goog-api-key": _key()},
-                              json=body, timeout=(20, 150))
+                              json=body, timeout=(20, 120))
         except (requests.Timeout, requests.ConnectionError) as exc:
             LOG.append(f"{model}: javob kelmadi ({type(exc).__name__})")
-            if attempt == 0:
-                continue
             raise ModelUnavailable(f"{model}: javob kelmadi")
         LOG.append(f"{model}: {r.status_code} ({time.time() - t0:.0f}s)")
         if r.status_code == 200:
@@ -117,7 +115,9 @@ def _post_one(model, body, retries=3):
             time.sleep(15 * (attempt + 1))
             continue
         if r.status_code in (500, 502, 503, 504):
-            time.sleep(10 * (attempt + 1))
+            if attempt >= 1:  # model band — keyingisiga o'tamiz
+                raise ModelUnavailable(f"{model}: band ({r.status_code})")
+            time.sleep(5)
             continue
         if r.status_code in (400, 403, 404):
             raise ModelUnavailable(f"{model}: {last}")
