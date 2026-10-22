@@ -15,12 +15,12 @@ Har bir postdan **10 daqiqa oldin** bot sizga postni ko'rsatadi.
 
 ## 6 agent
 
-1. **Maqolachi** (`agents/researcher.py`): internetdan izlab, dars-dialog yozadi.
-2. **Videochi** (`agents/video.py`): rasm, ovoz va subtitrdan vertikal video yasaydi.
-3. **Rassom** (`agents/artist.py`): Gemini (Nano Banana) orqali rasm chizadi.
-4. **Ovoz** (`agents/voice.py`): ElevenLabs orqali dialogni o'qiydi.
-5. **Muharrir** (`agents/quality.py`): fransuzcha, talaffuz va imloni tekshiradi.
-6. **Nashrchi** (`agents/publisher.py`): sizga ko'rsatadi va kanalga chiqaradi.
+1. **Maqolachi** (`researcher.py`): internetdan izlab, dars-dialog yozadi.
+2. **Videochi** (`video.py`): rasm, ovoz va subtitrdan vertikal video yasaydi.
+3. **Rassom** (`artist.py`): Gemini (Nano Banana) orqali rasm chizadi. Ishlamasa bepul Pollinations, u ham ishlamasa o'zi karta chizadi.
+4. **Ovoz** (`voice.py`): bepul Microsoft Edge ovozlari (o'zbekcha Madina, fransuzcha Denise). ElevenLabs kaliti berilsa, o'shani ishlatadi.
+5. **Muharrir** (`quality.py`): fransuzcha, talaffuz va imloni tekshiradi.
+6. **Nashrchi** (`publisher.py`): sizga ko'rsatadi va kanalga chiqaradi.
 
 ---
 
@@ -40,10 +40,10 @@ Har bir postdan **10 daqiqa oldin** bot sizga postni ko'rsatadi.
 
 | Nomi                 | Qayerdan olinadi                                                    |
 |----------------------|---------------------------------------------------------------------|
-| `BOT_TOKEN`          | @BotFather → `/newbot` (yoki `/token`)                              |
+| `BOT_TOKEN`          | @BotFather → `/newbot` (yoki `/token`). `TELEGRAM_BOT_TOKEN` nomi ham bo'ladi |
 | `ADMIN_CHAT_ID`      | @userinfobot ga yozing, u sizga **Id** raqamini beradi              |
 | `GEMINI_API_KEY`     | aistudio.google.com/apikey → **Create API key**                     |
-| `ELEVENLABS_API_KEY` | elevenlabs.io → profil → **API Keys**                               |
+| `ELEVENLABS_API_KEY` | *Ixtiyoriy.* elevenlabs.io → profil → **API Keys**. Bo'lmasa bepul ovoz ishlaydi |
 
 🔒 Kalitlarni hech qachon chatga, xabarga yoki kod ichiga yozmang.
 
@@ -53,8 +53,8 @@ O'sha sahifada **Variables** tabini oching va **New repository variable** bilan 
 | Nomi             | Qiymati                                       |
 |------------------|-----------------------------------------------|
 | `CHANNEL_ID`     | `@Uzbekcha_Fransuzcha`                        |
-| `VOICE_SHOHISTA` | ElevenLabs'dagi o'zbekcha ayol ovozi Voice ID |
-| `VOICE_CLAIRE`   | ElevenLabs'dagi fransuzcha ayol ovozi Voice ID|
+| `VOICE_SHOHISTA` | *Ixtiyoriy.* ElevenLabs'dagi o'zbekcha ovoz Voice ID |
+| `VOICE_CLAIRE`   | *Ixtiyoriy.* ElevenLabs'dagi fransuzcha ovoz Voice ID|
 
 ### 4. Telegram
 1. Botni kanalingizga **admin** qilib qo'shing va **xabar joylash** huquqini bering.
@@ -74,7 +74,8 @@ Uchala turini (morning, noon, evening) shunday sinab ko'ring. Hammasi yaxshi bo'
 
 - **Qahramonlar bir xil ko'rinishi uchun:** yoqqan rasmlardan 1–3 tasini `assets/` papkasiga yuklang (png yoki jpg). Rassom ularni namuna sifatida oladi.
 - **Mavzular takrorlanmaydi:** chiqqan mavzular `data/history.json` ga yoziladi.
-- **Xatolik bo'lsa,** bot sizga «❌ Xatolik» deb yozadi. Batafsil ma'lumot **Actions** tabida turadi.
+- **Xatolik bo'lsa,** bot sizga «❌ Xatolik» deb yozadi. To'liq matni `data/last_error.txt` faylida saqlanadi.
+- **Gemini modeli** kalitingizga ochiq modellar ichidan avtomatik tanlanadi. Bepul (billingsiz) kalit ham ishlaydi.
 - **GitHub jadvali** ba'zan bir necha daqiqa kechikadi. Shuning uchun ish 30 daqiqa oldin boshlanadi.
 - **Jadval to'xtab qolmasligi uchun:** GitHub uzoq vaqt o'zgarishsiz turgan public repository'da jadvalni o'chirib qo'yishi mumkin. Bot har kuni mavzular tarixini yozib turgani uchun bu odatda bo'lmaydi. Agar to'xtasa, **Actions** tabida **Enable workflow** ni bosing.
 - **Model nomlari** o'zgarsa, Variables'ga `GEMINI_TEXT_MODEL`, `GEMINI_IMAGE_MODEL` yoki `ELEVEN_MODEL` qo'shib, yangisini yozing.

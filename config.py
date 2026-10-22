@@ -5,7 +5,7 @@ import os
 TZ = datetime.timezone(datetime.timedelta(hours=5))  # Toshkent / Xiva vaqti
 
 # --- Kalitlar (GitHub Secrets) ---
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN", "")
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID", "")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
@@ -16,13 +16,14 @@ CHANNEL_TAG = os.environ.get("CHANNEL_TAG") or "@Uzbekcha_Fransuzcha"
 VOICE_SHOHISTA = os.environ.get("VOICE_SHOHISTA", "")
 VOICE_CLAIRE = os.environ.get("VOICE_CLAIRE", "")
 
-# Birinchisi ishlamasa (yopilgan bo'lsa), bot keyingisiga o'zi o'tadi
-GEMINI_TEXT_MODELS = [m for m in [os.environ.get("GEMINI_TEXT_MODEL"),
-                      "gemini-3.8-flash", "gemini-3.5-flash", "gemini-3-flash"] if m]
-GEMINI_IMAGE_MODELS = [m for m in [os.environ.get("GEMINI_IMAGE_MODEL"),
-                       "gemini-3.1-flash-image", "gemini-nano-banana-2.1",
-                       "gemini-3.1-flash-lite-image", "gemini-3-pro-image"] if m]
+# Bo'sh qoldirilsa, bot kalitingizga ochiq modellardan o'zi tanlaydi (gemini.py)
+GEMINI_TEXT_MODELS = [m for m in [os.environ.get("GEMINI_TEXT_MODEL")] if m]
+GEMINI_IMAGE_MODELS = [m for m in [os.environ.get("GEMINI_IMAGE_MODEL")] if m]
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_v3"
+
+# Bepul ovoz (Microsoft Edge). ElevenLabs kaliti va ovozlari berilsa, o'shanisi ishlatiladi.
+EDGE_VOICE_SHOHISTA = os.environ.get("EDGE_VOICE_SHOHISTA") or "uz-UZ-MadinaNeural"
+EDGE_VOICE_CLAIRE = os.environ.get("EDGE_VOICE_CLAIRE") or "fr-FR-DeniseNeural"
 
 # --- Rubrika ---
 RUBRIC = "Fransuzchani o'zbekchada gapirgandek gapiring"

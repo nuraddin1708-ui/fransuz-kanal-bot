@@ -98,5 +98,8 @@ if __name__ == "__main__":
         main()
     except Exception as exc:
         traceback.print_exc()
+        HISTORY.parent.mkdir(exist_ok=True)
+        (HISTORY.parent / "last_error.txt").write_text(
+            f"{datetime.datetime.now(config.TZ):%Y-%m-%d %H:%M}\n{traceback.format_exc()}", encoding="utf-8")
         publisher.report_error(f"{type(exc).__name__}: {exc}")
         sys.exit(1)

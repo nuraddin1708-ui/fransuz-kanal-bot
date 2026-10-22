@@ -1,4 +1,9 @@
-"""4-agent: ElevenLabs orqali dialogni audioga aylantiradi."""
+"""4-agent: dialogni audioga aylantiradi.
+
+Bepul: Microsoft Edge ovozlari (edge-tts) — o'zbekcha Madina va fransuzcha Denise.
+ElevenLabs kaliti va VOICE_SHOHISTA / VOICE_CLAIRE berilgan bo'lsa, ElevenLabs ishlatiladi.
+"""
+import asyncio
 import subprocess
 import time
 from pathlib import Path
@@ -18,9 +23,35 @@ def _voice_for(speaker):
     return voice
 
 
+def _use_eleven():
+    return bool(config.ELEVENLABS_API_KEY and config.VOICE_SHOHISTA and config.VOICE_CLAIRE)
+
+
 def speak(text, speaker, out_path):
-    if not config.ELEVENLABS_API_KEY:
-        raise RuntimeError("ELEVENLABS_API_KEY topilmadi (GitHub Secrets'ga qo'shing)")
+    if _use_eleven():
+        try:
+            return speak_eleven(text, speaker, out_path)
+        except RuntimeError as exc:
+            print(f"ElevenLabs ishlamadi, bepul ovozga o'tamiz: {exc}")
+    return speak_edge(text, speaker, out_path)
+
+
+def speak_edge(text, speaker, out_path):
+    import edge_tts
+
+    voice = config.EDGE_VOICE_CLAIRE if speaker == config.FRENCH_GIRL else config.EDGE_VOICE_SHOHISTA
+    last = None
+    for attempt in range(3):
+        try:
+            asyncio.run(edge_tts.Communicate(text, voice).save(str(out_path)))
+            return out_path
+        except Exception as exc:
+            last = exc
+            time.sleep(5 * (attempt + 1))
+    raise RuntimeError(f"Edge ovozi ishlamadi ({voice}) — {last}")
+
+
+def speak_eleven(text, speaker, out_path):
     models = [config.ELEVEN_MODEL] + ([FALLBACK_MODEL] if config.ELEVEN_MODEL != FALLBACK_MODEL else [])
     last = None
     for model in models:
