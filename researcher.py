@@ -31,7 +31,8 @@ Requirements:
   film storyboard — the exact place, what each girl is doing, her facial emotion, and props that
   show the meaning of the phrase (e.g. ordering coffee → café counter, cup, menu; surprise → wide
   eyes). Consecutive shots continue one small story but change angle, action or props.
-- "bg": a short English id of the place; lines in the same place share the same id.
+- "bg": the place of the frame, chosen ONLY from this list: {", ".join(config.BACKGROUNDS)}.
+  Lines in the same place share the same id; change the place when the story moves.
 - "pose_<name>" for BOTH girls on every line: choose the pose that best matches that moment,
   only from this list: {", ".join(config.POSES)}. Vary poses between lines; the speaker
   usually talks/explains, the listener reacts (laugh, surprised, think, listen...).

@@ -66,6 +66,46 @@ POSES = {
     "book": "holding an open notebook, studying",
     "bag": "holding a shopping bag",
 }
+# Fonlar kutubxonasi: assets/backgrounds/<id>.png (PROMPTLAR.md dagi ro'yxat)
+BACKGROUNDS = [
+    "uy_mehmonxona",
+    "uy_oshxona",
+    "choyxona",
+    "bozor",
+    "registon",
+    "cafe",
+    "terrace",
+    "pastry",
+    "register",
+    "restoran",
+    "metro",
+    "vokzal",
+    "aeroport",
+    "mehmonxona",
+    "supermarket",
+    "dorixona",
+    "shifokor",
+    "sinf",
+    "kutubxona",
+    "park",
+    "kocha",
+    "kiyim_dokoni",
+    "pochta",
+    "bank",
+    "taksi",
+    "dengiz",
+    "muzey",
+    "sena",
+    "monmartr",
+    "oshxona_pishirish",
+    "yotoqxona",
+    "tugilgan_kun",
+    "toy",
+    "avtobus",
+    "ish_stoli",
+    "qor",
+]
+
 # Har bir poza uchun «_b» varianti ham chiziladi — gapirganda qo'l va og'iz qimirlaydi
 POSE_B = "the same pose, but the gesturing hand is moved to a different position and the mouth is open as if speaking"
 
