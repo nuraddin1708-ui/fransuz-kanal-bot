@@ -25,8 +25,9 @@ LOOKS = {
         "embroidered doppi skullcap, long dark braids, warm kind smile"
     ),
     config.FRENCH_GIRL: (
-        "a young French woman with light-brown wavy shoulder-length hair, Breton striped top, "
-        "light beige jacket, red beret, friendly smile"
+        "a young French woman with a slightly plump, soft, chubby figure and round cheeks, light-brown "
+        "wavy shoulder-length hair, red beret, Breton striped top under a light beige trench coat, red scarf, "
+        "cheerful smile, classic Parisian style"
     ),
 }
 

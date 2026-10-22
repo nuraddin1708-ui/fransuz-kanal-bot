@@ -34,8 +34,9 @@ UZBEK_GIRL = "Shohista"
 CHARACTERS_EN = (
     f"{UZBEK_GIRL}: a young Uzbek woman in a traditional Uzbek national dress made of "
     "khan-atlas ikat silk, with an embroidered doppi (skullcap), long dark braids, warm smile. "
-    f"{FRENCH_GIRL}: a young French woman with light-brown wavy hair, casual elegant "
-    "Parisian style (striped top, light jacket)."
+    f"{FRENCH_GIRL}: a young French woman with a slightly plump, soft, chubby figure and round cheeks, "
+    "light-brown wavy shoulder-length hair, red beret, Breton striped top under a light beige trench coat, "
+    "red scarf, cheerful smile (classic Parisian style)."
 )
 
 # Namuna videodagi uslub: qo'lda chizilgan, qalin siyoh chiziqli, issiq ranglar
