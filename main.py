@@ -59,6 +59,9 @@ def build(kind, lesson, issues, workdir):
 def make_characters():
     import characters
     files = characters.generate()
+    if not files:
+        raise RuntimeError("Hech bir poza chizilmadi — Gemini rasm chizishga ruxsat bermadi (429). "
+                           "Kalit loyihasida billing yoqilganini tekshiring.")
     publisher._notify("🎨 Qahramon-stikerlar tayyor. Yoqmasa, <b>characters</b> ni qayta ishga tushiring.")
     for f in files:
         publisher._api("sendDocument", files={"document": str(f)}, chat_id=publisher._admin())
