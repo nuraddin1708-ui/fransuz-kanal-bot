@@ -1,0 +1,13 @@
+2026-10-22 16:31 — XATO: RuntimeError: Pollinations 402: {"status":402,"success":false,"error":{"code":"FREE_LIMIT","message":"Free limit reached: 1 image every 45 seconds per IP. Retry after 5s, or get unlimited images with a pollen key at https://enter.po
+gemini-3.1-flash-image: 429 (0s)
+gemini-3.1-flash-lite-image: 429 (0s)
+gemini-3.1-flash-image-preview: 429 (0s)
+gemini-3-pro-image: 429 (0s)
+gemini-3-pro-image-preview: 429 (0s)
+gemini-2.5-flash-image: 429 (0s)
+gemini-3.1-flash-image: 429 (0s)
+gemini-3.1-flash-lite-image: 429 (0s)
+gemini-3.1-flash-image-preview: 429 (0s)
+gemini-3-pro-image: 429 (0s)
+gemini-3-pro-image-preview: 429 (0s)
+gemini-2.5-flash-image: 429 (0s)
