@@ -60,7 +60,8 @@ def _phrases_html(lesson):
 
 
 def _footer():
-    return f"\n\n{config.HASHTAG}\n{e(config.CHANNEL_TAG)}"
+    tag = e(config.CHANNEL_TAG)
+    return f"\n\n{config.HASHTAG}\n📲 Manba: {tag} — obuna bo'ling!"
 
 
 def full_text(lesson):
@@ -96,7 +97,7 @@ def send_package(chat_id, pkg):
         _api("sendMessage", chat_id=chat_id, text=full_text(lesson), parse_mode="HTML")
         if files.get("audio"):
             _api("sendAudio", files={"audio": files["audio"]}, chat_id=chat_id,
-                 title=lesson["title_uz"], performer=f"{config.UZBEK_GIRL} & {config.FRENCH_GIRL}",
+                 title=f'{lesson["title_uz"]} | {config.CHANNEL_TAG}', performer=config.CHANNEL_TAG,
                  caption=f"🎧 {e(lesson['title_uz'])}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML")
     elif kind == "photo":
         _api("sendPhoto", files={"photo": files["photo"]}, chat_id=chat_id,

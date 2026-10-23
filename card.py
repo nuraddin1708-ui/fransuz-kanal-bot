@@ -93,6 +93,22 @@ def _footer(draw, w, h):
     draw.text(((w - draw.textlength(tag, font=f)) / 2, h - 100), tag, font=f, fill=SOFT)
 
 
+def _watermark(img, w, h):
+    """Kanal nomi rasm ichida: o'rtada xira yozuv va tepada belgi. Kesib tashlash qiyin."""
+    from PIL import Image as _I
+    tag = config.CHANNEL_TAG
+    layer = _I.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    f = _font(FONT_BOLD, 64 if w > 1000 and h < 1500 else 54)
+    tw = d.textlength(tag, font=f)
+    stamp = _I.new("RGBA", (int(tw) + 40, 100), (0, 0, 0, 0))
+    ImageDraw.Draw(stamp).text((20, 10), tag, font=f, fill=(22, 38, 84, 26))
+    stamp = stamp.rotate(30, expand=True)
+    for cy in (int(h * 0.38), int(h * 0.72)):  # ikki joyda, matn ortida xira
+        layer.alpha_composite(stamp, (int((w - stamp.width) / 2), cy - stamp.height // 2))
+    return _I.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+
+
 def photo_card(lesson, out_path):
     """14:00 dagi post uchun 1080x1350 kartochka: asosiy iboralar."""
     w, h = 1080, 1350
@@ -110,6 +126,7 @@ def photo_card(lesson, out_path):
         _text(draw, (90, fy + 4), p.get("uz", ""), _font(FONT, 34), (60, 70, 90), w - 180)
         y += box_h + 30
     _footer(draw, w, h)
+    img = _watermark(img, w, h)
     img.save(out_path)
     return out_path
 
@@ -143,5 +160,6 @@ def line_card(lesson, line, out_path):
         draw.line([(140, y + 35), (w - 140, y + 35)], fill=SOFT, width=4)
         _text(draw, (90, y + 75), line["uz"], sub_font, (60, 70, 90), w - 180, 1.25, center=True)
     _footer(draw, w, h)
+    img = _watermark(img, w, h)
     img.save(out_path)
     return out_path
