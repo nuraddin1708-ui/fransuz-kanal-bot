@@ -1,10 +1,4 @@
-"""4-agent: dialogni audioga aylantiradi.
-
-Bepul: Microsoft Edge ovozlari (edge-tts) — o'zbekcha Madina va fransuzcha Denise.
-ElevenLabs kaliti va VOICE_SHOHISTA / VOICE_CLAIRE berilgan bo'lsa, ElevenLabs ishlatiladi.
-"""
-import asyncio
-import re
+"""4-agent: ElevenLabs orqali dialogni audioga aylantiradi."""
 import subprocess
 import time
 from pathlib import Path
@@ -24,71 +18,9 @@ def _voice_for(speaker):
     return voice
 
 
-def _use_eleven():
-    return bool(config.ELEVENLABS_API_KEY and config.VOICE_SHOHISTA and config.VOICE_CLAIRE)
-
-
-PART = re.compile(r"«([^»]+)»|\[[^\]]*\]")
-
-
-def parts(text):
-    """Shohista gapini bo'laklarga ajratadi: «...» — fransuzcha, [...] — o'qilishi (aytilmaydi), qolgani o'zbekcha."""
-    out, pos = [], 0
-    for m in PART.finditer(text):
-        before = text[pos:m.start()].strip(" ,.;:—-")
-        if before:
-            out.append(("uz", before))
-        if m.group(1):
-            out.append(("fr", m.group(1).strip()))
-        pos = m.end()
-    rest = text[pos:].strip(" ,;:—-")
-    if rest and rest != ".":
-        out.append(("uz", rest))
-    return out
-
-
 def speak(text, speaker, out_path):
-    """Claire — butunlay fransuzcha. Shohista — o'zbekcha, ichidagi «fransuzcha» bo'laklar fransuz ovozida."""
-    if speaker == config.FRENCH_GIRL or "«" not in text:
-        return _speak_one(PART.sub(lambda m: m.group(1) or "", text), speaker, out_path)
-    pieces = []
-    for j, (lang, chunk) in enumerate(parts(text)):
-        piece = Path(out_path).with_name(f"{Path(out_path).stem}_{j:02d}.mp3")
-        _speak_one(chunk, speaker, piece, lang=lang)
-        pieces.append(piece)
-    return concat(pieces, out_path, pause=0.18)
-
-
-def _speak_one(text, speaker, out_path, lang=None):
-    if _use_eleven():
-        try:
-            return speak_eleven(text, speaker, out_path)
-        except RuntimeError as exc:
-            print(f"ElevenLabs ishlamadi, bepul ovozga o'tamiz: {exc}")
-    return speak_edge(text, speaker, out_path, lang=lang)
-
-
-def speak_edge(text, speaker, out_path, lang=None):
-    import edge_tts
-
-    if speaker == config.FRENCH_GIRL:
-        voice = config.EDGE_VOICE_CLAIRE
-    else:
-        voice = config.EDGE_VOICE_SHOHISTA_FR if lang == "fr" else config.EDGE_VOICE_SHOHISTA
-    last = None
-    voices = [voice] + (["fr-FR-EloiseNeural"] if lang == "fr" else [])  # zaxira fransuz ovozi
-    for v in voices:
-        for attempt in range(3):
-            try:
-                asyncio.run(edge_tts.Communicate(text, v).save(str(out_path)))
-                return out_path
-            except Exception as exc:
-                last = exc
-                time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"Edge ovozi ishlamadi ({voice}) — {last}")
-
-
-def speak_eleven(text, speaker, out_path):
+    if not config.ELEVENLABS_API_KEY:
+        raise RuntimeError("ELEVENLABS_API_KEY topilmadi (GitHub Secrets'ga qo'shing)")
     models = [config.ELEVEN_MODEL] + ([FALLBACK_MODEL] if config.ELEVEN_MODEL != FALLBACK_MODEL else [])
     last = None
     for model in models:

@@ -152,7 +152,7 @@ def run(pkg, publish_at, rebuild, dry_run=False):
     _notify(f"🔔 <b>{deadline:%H:%M}</b> da kanalga chiqadigan post:")
     send_package(_admin(), pkg)
     issues = pkg.get("issues") or []
-    note = ("\n\n🔎 Sifat nazorati tuzatgan joylar:\n" + "\n".join(f"• {e(i)}" for i in issues[:6])) if issues else ""
+    note = ("\n\n📝 Eslatma:\n" + "\n".join(f"• {e(i)}" for i in issues[:6])) if issues else ""
     button_msg = _notify(
         f"Hammasi to'g'rimi? Agar hech narsa bosmasangiz, post <b>{deadline:%H:%M}</b> da "
         f"avtomatik chiqadi.{note}",
@@ -198,20 +198,6 @@ def run(pkg, publish_at, rebuild, dry_run=False):
     send_package(config.CHANNEL_ID, pkg)
     _notify(f"✅ Post kanalga chiqdi: {e(config.CHANNEL_TAG)}")
     return pkg
-
-
-def check_channel():
-    """Ishni boshlashdan oldin: kanal topiladimi va bot u yerda post joylay oladimi."""
-    try:
-        chat = _api("getChat", chat_id=config.CHANNEL_ID)
-    except RuntimeError:
-        raise RuntimeError(
-            f"Kanal topilmadi: {config.CHANNEL_ID}. Botni kanalga admin qilib qo'shing "
-            "va GitHub Variables'dagi CHANNEL_ID ni tekshiring (masalan: @Uzbekcha_Fransuzcha).")
-    me = _api("getMe")
-    member = _api("getChatMember", chat_id=chat["id"], user_id=me["id"])
-    if member.get("status") != "administrator" or not member.get("can_post_messages", True):
-        raise RuntimeError(f"@{me['username']} kanalda admin emas yoki «Xabar joylash» huquqi yo'q.")
 
 
 def report_error(text):

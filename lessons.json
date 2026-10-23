@@ -1,0 +1,271 @@
+[
+{"id": 1, "topic": "Salomlashish", "title_uz": "Fransuzcha qanday salom beriladi?",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Bonjour ! Je suis Claire.", "uz": "Salom! Men Klerman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Bonjour» — «bonjur» deb o'qiladi. Kunduzi «Salom» o'rnida aytiladi."},
+  {"speaker": "Claire", "lang": "fr", "text": "Bonsoir, Shohista !", "uz": "Xayrli kech, Shohista!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Kechqurun esa «Bonsoir» — «bonsuar» deymiz. Ya'ni «Xayrli kech»."}],
+ "key_phrases": [{"fr": "Bonjour", "pron": "bonjur", "uz": "Salom / Xayrli kun"}, {"fr": "Bonsoir", "pron": "bonsuar", "uz": "Xayrli kech"}],
+ "tip_uz": "Fransiyada do'konga kirganda ham albatta «Bonjour» deyiladi — bu odob belgisi."},
+
+{"id": 2, "topic": "Hol-ahvol so'rash", "title_uz": "«Qalaysan?» fransuzcha qanday?",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Salut Shohista ! Ça va ?", "uz": "Salom, Shohista! Qalaysan?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Ça va ?» — «sa va?» deb o'qiladi. «Qalaysan? Ishlar yaxshimi?» degani."},
+  {"speaker": "Claire", "lang": "fr", "text": "Ça va bien, merci. Et toi ?", "uz": "Yaxshi, rahmat. O'zing-chi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Ça va bien» — «sa va byen», ya'ni «Yaxshi». «Et toi ?» — «e tua?» — «O'zing-chi?»"}],
+ "key_phrases": [{"fr": "Ça va ?", "pron": "sa va", "uz": "Qalaysan?"}, {"fr": "Ça va bien", "pron": "sa va byen", "uz": "Yaxshi"}, {"fr": "Et toi ?", "pron": "e tua", "uz": "O'zing-chi?"}],
+ "tip_uz": "«Salut» va «Ça va ?» — do'stlar orasida. Kattalarga «Bonjour, comment allez-vous ?» deyiladi."},
+
+{"id": 3, "topic": "Ism so'rash", "title_uz": "Ismingizni fransuzcha ayting",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Comment tu t'appelles ?", "uz": "Isming nima?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Komon tü tapel?» — «Isming nima?» Javob berish uchun «Je m'appelle…» deymiz."},
+  {"speaker": "Claire", "lang": "fr", "text": "Je m'appelle Claire.", "uz": "Mening ismim Kler."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö mapel Shohista» — «Mening ismim Shohista». Endi siz ham o'z ismingizni ayting!"}],
+ "key_phrases": [{"fr": "Comment tu t'appelles ?", "pron": "komon tü tapel", "uz": "Isming nima?"}, {"fr": "Je m'appelle…", "pron": "jö mapel", "uz": "Mening ismim…"}],
+ "tip_uz": "Hurmat bilan so'rash uchun: «Comment vous appelez-vous ?» — «Ismingiz nima?»"},
+
+{"id": 4, "topic": "Tanishuv", "title_uz": "«Tanishganimdan xursandman»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Enchantée, Shohista !", "uz": "Tanishganimdan xursandman, Shohista!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Enchantée» — «anshante» deb o'qiladi. «Tanishganimdan xursandman» degani."},
+  {"speaker": "Claire", "lang": "fr", "text": "Moi aussi, je suis très contente.", "uz": "Men ham juda xursandman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "Erkak kishi «Enchanté» deb yozadi, ayol — «Enchantée». Talaffuzi bir xil: «anshante»."}],
+ "key_phrases": [{"fr": "Enchanté(e)", "pron": "anshante", "uz": "Tanishganimdan xursandman"}, {"fr": "Moi aussi", "pron": "mua osi", "uz": "Men ham"}],
+ "tip_uz": "Fransuz do'stlar uchrashganda yuzdan o'pishib ko'rishadi — bu «la bise» [la biz] deyiladi."},
+
+{"id": 5, "topic": "Qayerdansiz?", "title_uz": "«Men O'zbekistondanman»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Tu viens d'où ?", "uz": "Qayerdansan?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Tü vyen du?» — «Qayerdansan?» Javobimiz: «Je viens d'Ouzbékistan»."},
+  {"speaker": "Claire", "lang": "fr", "text": "Ah, tu es ouzbèke ! Moi, je suis française.", "uz": "A, sen o'zbeksan! Men esa fransuzman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö vyen duzbekistan» — «Men O'zbekistondanman». «Je suis ouzbèke» — «jö süiz uzbek» — «Men o'zbekman»."}],
+ "key_phrases": [{"fr": "Tu viens d'où ?", "pron": "tü vyen du", "uz": "Qayerdansan?"}, {"fr": "Je viens d'Ouzbékistan", "pron": "jö vyen duzbekistan", "uz": "Men O'zbekistondanman"}],
+ "tip_uz": "Fransuz qiz — «française» [fransez], fransuz yigit — «français» [franse]."},
+
+{"id": 6, "topic": "Rahmat aytish", "title_uz": "Rahmat va «arzimaydi»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Voilà ton thé.", "uz": "Mana, choying."},
+  {"speaker": "Shohista", "lang": "uz", "text": "Rahmat aytamiz: «Merci beaucoup !» — «mersi boku» — «Katta rahmat!»"},
+  {"speaker": "Claire", "lang": "fr", "text": "De rien !", "uz": "Arzimaydi!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Dö ryen» — «Arzimaydi». Rasmiyroq javob: «Je vous en prie» — «jö vuzon pri»."}],
+ "key_phrases": [{"fr": "Merci beaucoup", "pron": "mersi boku", "uz": "Katta rahmat"}, {"fr": "De rien", "pron": "dö ryen", "uz": "Arzimaydi"}],
+ "tip_uz": "«Merci» so'zini kuniga ko'p ishlating — fransuzlar buni juda qadrlashadi."},
+
+{"id": 7, "topic": "Kechirim so'rash", "title_uz": "«Kechirasiz» ning ikki xili",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Excusez-moi, madame…", "uz": "Kechirasiz, xonim…"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Ekskyüze mua» — birovning e'tiborini tortish uchun aytiladi: «Kechirasiz…»"},
+  {"speaker": "Claire", "lang": "fr", "text": "Oh, pardon !", "uz": "Voy, uzr!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Pardon» — «pardon». Tasodifan birovni turtib yuborganda aytiladi: «Uzr!»"}],
+ "key_phrases": [{"fr": "Excusez-moi", "pron": "ekskyüze mua", "uz": "Kechirasiz"}, {"fr": "Pardon", "pron": "pardon", "uz": "Uzr"}],
+ "tip_uz": "Ayolga «madame» [madam], erkakka «monsieur» [mösyö] deb murojaat qilinadi."},
+
+{"id": 8, "topic": "Xayrlashish", "title_uz": "Fransuzcha xayrlashamiz",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Au revoir, Shohista !", "uz": "Xayr, Shohista!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«O rövuar» — «Xayr, ko'rishguncha». Hammaga aytsa bo'ladigan odatiy xayrlashuv."},
+  {"speaker": "Claire", "lang": "fr", "text": "À bientôt !", "uz": "Tez orada ko'rishamiz!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«A byento» — «Tez orada ko'rishguncha!» Ertaga ko'rishsangiz: «À demain !» — «a dömen»."}],
+ "key_phrases": [{"fr": "Au revoir", "pron": "o rövuar", "uz": "Xayr"}, {"fr": "À bientôt", "pron": "a byento", "uz": "Tez orada ko'rishguncha"}, {"fr": "À demain", "pron": "a dömen", "uz": "Ertagacha"}],
+ "tip_uz": "Do'stlar orasida «Salut !» [salü] ham «salom», ham «xayr» ma'nosida ishlatiladi."},
+
+{"id": 9, "topic": "Tushunmadim", "title_uz": "«Tushunmadim» deyishni o'rganamiz",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Tu as compris ?", "uz": "Tushundingmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Tushunmagan bo'lsak: «Je ne comprends pas» — «jö nö kompron pa» — «Tushunmayapman»."},
+  {"speaker": "Claire", "lang": "fr", "text": "Pas de problème, je répète.", "uz": "Muammo yo'q, qaytaraman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "Tushunsak: «J'ai compris !» — «je kompri» — «Tushundim!»"}],
+ "key_phrases": [{"fr": "Je ne comprends pas", "pron": "jö nö kompron pa", "uz": "Tushunmayapman"}, {"fr": "J'ai compris", "pron": "je kompri", "uz": "Tushundim"}],
+ "tip_uz": "Til o'rganishda «tushunmadim» deyishdan uyalmang — bu eng foydali ibora!"},
+
+{"id": 10, "topic": "Sekinroq gapiring", "title_uz": "«Sekinroq gapiring, iltimos»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Je parle trop vite ?", "uz": "Juda tez gapiryapmanmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Ha! Shunday so'raymiz: «Plus lentement, s'il te plaît» — «plü lontmon, sil tö ple»."},
+  {"speaker": "Claire", "lang": "fr", "text": "D'accord, je parle plus lentement.", "uz": "Mayli, sekinroq gapiraman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Dakor» — «Mayli, xo'p». Do'stga «s'il te plaît», kattalarga «s'il vous plaît» — «sil vu ple» deyiladi."}],
+ "key_phrases": [{"fr": "Plus lentement", "pron": "plü lontmon", "uz": "Sekinroq"}, {"fr": "D'accord", "pron": "dakor", "uz": "Mayli, xo'p"}, {"fr": "S'il vous plaît", "pron": "sil vu ple", "uz": "Iltimos"}],
+ "tip_uz": "«Pouvez-vous répéter ?» [puve vu repete] — «Qaytarib yuborasizmi?» ham juda foydali."},
+
+{"id": 11, "topic": "Kafeda buyurtma", "title_uz": "Kafeda qahva qanday so'raladi?",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Bonjour, je voudrais un café, s'il vous plaît.", "uz": "Salom, bitta qahva bersangiz, iltimos."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Je voudrais» — «jö vudre» — «…ni xohlardim». Juda xushmuomala shakl."},
+  {"speaker": "Claire", "lang": "fr", "text": "Avec du sucre ?", "uz": "Shakar bilanmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Avek dü sükr?» — «Shakar bilanmi?» Javob: «Oui, merci» — «Ha, rahmat» yoki «Non, merci» — «Yo'q, rahmat»."}],
+ "key_phrases": [{"fr": "Je voudrais…", "pron": "jö vudre", "uz": "…ni xohlardim"}, {"fr": "avec du sucre", "pron": "avek dü sükr", "uz": "shakar bilan"}],
+ "tip_uz": "«Je veux» (xohlayman) qo'pol eshitiladi — kafeda «Je voudrais» deng."},
+
+{"id": 12, "topic": "Restoranda hisob", "title_uz": "Hisobni so'rash",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "L'addition, s'il vous plaît !", "uz": "Hisobni bering, iltimos!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Ladisyon, sil vu ple» — restoranda hisob shunday so'raladi."},
+  {"speaker": "Claire", "lang": "fr", "text": "Je peux payer par carte ?", "uz": "Karta bilan to'lasam bo'ladimi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö pö peye par kart?» — «Karta bilan to'lay olamanmi?» Juda kerakli savol!"}],
+ "key_phrases": [{"fr": "L'addition", "pron": "ladisyon", "uz": "hisob (restoranda)"}, {"fr": "payer par carte", "pron": "peye par kart", "uz": "karta bilan to'lash"}],
+ "tip_uz": "Fransiyada xizmat haqi odatda hisobga kiritilgan bo'ladi, choychaqa majburiy emas."},
+
+{"id": 13, "topic": "Narx so'rash", "title_uz": "«Bu qancha turadi?»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Combien ça coûte ?", "uz": "Bu qancha turadi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Kombyen sa kut?» — narx so'rashning eng oson yo'li."},
+  {"speaker": "Claire", "lang": "fr", "text": "C'est trop cher !", "uz": "Bu juda qimmat!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Se tro sher!» — «Juda qimmat!» Arzon bo'lsa: «Ce n'est pas cher» — «sö ne pa sher» — «Qimmat emas»."}],
+ "key_phrases": [{"fr": "Combien ça coûte ?", "pron": "kombyen sa kut", "uz": "Bu qancha turadi?"}, {"fr": "C'est trop cher", "pron": "se tro sher", "uz": "Juda qimmat"}],
+ "tip_uz": "Fransiya do'konlarida savdolashilmaydi, lekin bozorlarda (au marché) mumkin."},
+
+{"id": 14, "topic": "Yo'nalish", "title_uz": "O'ngga, chapga, to'g'riga",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Excusez-moi, où sont les toilettes ?", "uz": "Kechirasiz, hojatxona qayerda?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«U son le tualet?» — «Hojatxona qayerda?» Sayohatda eng kerakli savol!"},
+  {"speaker": "Claire", "lang": "fr", "text": "C'est à droite.", "uz": "O'ng tomonda."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Se a druat» — «O'ngda». «À gauche» — «a gosh» — «Chapda». «Tout droit» — «tu drua» — «To'g'riga»."}],
+ "key_phrases": [{"fr": "Où sont les toilettes ?", "pron": "u son le tualet", "uz": "Hojatxona qayerda?"}, {"fr": "à droite", "pron": "a druat", "uz": "o'ngda"}, {"fr": "à gauche", "pron": "a gosh", "uz": "chapda"}],
+ "tip_uz": "«Où est… ?» [u e] — «… qayerda?» Masalan: «Où est la gare ?» — «Vokzal qayerda?»"},
+
+{"id": 15, "topic": "Vaqt so'rash", "title_uz": "«Soat necha?»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Quelle heure est-il ?", "uz": "Soat necha?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Kel ör eti?» — «Soat necha?» deb so'raymiz."},
+  {"speaker": "Claire", "lang": "fr", "text": "Il est neuf heures.", "uz": "Soat to'qqiz."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Il e növ ör» — «Soat to'qqiz». «Il est midi» — «il e midi» — «Soat o'n ikki, tush payti»."}],
+ "key_phrases": [{"fr": "Quelle heure est-il ?", "pron": "kel ör eti", "uz": "Soat necha?"}, {"fr": "Il est neuf heures", "pron": "il e növ ör", "uz": "Soat to'qqiz"}],
+ "tip_uz": "Fransiyada vaqt ko'pincha 24 soatlik shaklda aytiladi: 18:00 — «dix-huit heures» [dizüit ör]."},
+
+{"id": 16, "topic": "Yosh", "title_uz": "Yoshni aytishning qiziq qoidasi",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Tu as quel âge ?", "uz": "Necha yoshdasan?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Tü a kel aj?» Diqqat: fransuzlar yoshni «avoir» — «ega bo'lmoq» fe'li bilan aytadi."},
+  {"speaker": "Claire", "lang": "fr", "text": "J'ai vingt-cinq ans.", "uz": "Men yigirma besh yoshdaman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Je ventsenk on» — so'zma-so'z «Menda 25 yil bor». «Je suis 25» deyish xato!"}],
+ "key_phrases": [{"fr": "Tu as quel âge ?", "pron": "tü a kel aj", "uz": "Necha yoshdasan?"}, {"fr": "J'ai … ans", "pron": "je … on", "uz": "Men … yoshdaman"}],
+ "tip_uz": "Kattalardan yoshni so'rash Fransiyada ham noqulay hisoblanadi — ehtiyot bo'ling!"},
+
+{"id": 17, "topic": "Kasb", "title_uz": "Kasbingizni fransuzcha ayting",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Qu'est-ce que tu fais dans la vie ?", "uz": "Nima ish qilasan?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Keskö tü fe don la vi?» — so'zma-so'z «Hayotda nima qilasan?», ya'ni «Kasbing nima?»"},
+  {"speaker": "Claire", "lang": "fr", "text": "Je suis professeur. Et toi ?", "uz": "Men o'qituvchiman. Sen-chi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö süi profesör» — «Men o'qituvchiman». Kasbdan oldin artikl qo'yilmaydi: «Je suis médecin» — «Men shifokorman»."}],
+ "key_phrases": [{"fr": "Qu'est-ce que tu fais dans la vie ?", "pron": "keskö tü fe don la vi", "uz": "Kasbing nima?"}, {"fr": "Je suis professeur", "pron": "jö süi profesör", "uz": "Men o'qituvchiman"}, {"fr": "médecin", "pron": "medsen", "uz": "shifokor"}],
+ "tip_uz": "Talaba bo'lsangiz: «Je suis étudiant» [jö süiz etüdyon], qiz bola — «étudiante» [etüdyont]."},
+
+{"id": 18, "topic": "Oila", "title_uz": "Aka-uka va opa-singil",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Tu as des frères et sœurs ?", "uz": "Aka-uka, opa-singillaring bormi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Tü a de frer e sör?» — «Aka-uka va opa-singillaring bormi?»"},
+  {"speaker": "Claire", "lang": "fr", "text": "Oui, j'ai deux frères et une sœur.", "uz": "Ha, ikkita aka-ukam va bitta opa-singlim bor."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Frère» — «frer» — aka yoki uka, «sœur» — «sör» — opa yoki singil. Fransuzlar yoshiga qarab ajratmaydi!"}],
+ "key_phrases": [{"fr": "un frère", "pron": "ön frer", "uz": "aka / uka"}, {"fr": "une sœur", "pron": "ün sör", "uz": "opa / singil"}],
+ "tip_uz": "Akani aniq aytish uchun: «mon grand frère» [mon gron frer], ukani — «mon petit frère» [mon pöti frer]."},
+
+{"id": 19, "topic": "Yoqtirish", "title_uz": "«Yoqtiraman» va «juda yaxshi ko'raman»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Tu aimes le café ?", "uz": "Qahvani yoqtirasanmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Tü em lö kafe?» Mening javobim: «Non, j'aime le thé vert» — «non, jem lö te ver» — «Yo'q, men ko'k choyni yoqtiraman»."},
+  {"speaker": "Claire", "lang": "fr", "text": "Le thé vert ? Comme en Ouzbékistan !", "uz": "Ko'k choymi? Xuddi O'zbekistondagidek!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«J'aime» — «jem» — «yoqtiraman». «J'adore» — «jador» — «juda yaxshi ko'raman»."}],
+ "key_phrases": [{"fr": "J'aime", "pron": "jem", "uz": "yoqtiraman"}, {"fr": "J'adore", "pron": "jador", "uz": "juda yaxshi ko'raman"}, {"fr": "le thé vert", "pron": "lö te ver", "uz": "ko'k choy"}],
+ "tip_uz": "Yoqmasa: «Je n'aime pas» [jö nem pa] — «Yoqtirmayman»."},
+
+{"id": 20, "topic": "Ob-havo", "title_uz": "Issiq, sovuq, havo yaxshi",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Il fait chaud aujourd'hui !", "uz": "Bugun issiq!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Il fe sho» — «Issiq». Ob-havo fransuzchada «il fait» bilan aytiladi."},
+  {"speaker": "Claire", "lang": "fr", "text": "Et en hiver, il fait froid à Khiva ?", "uz": "Qishda Xivada sovuq bo'ladimi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Ha! «Il fait froid» — «il fe frua» — «Sovuq». Havo yoqimli bo'lsa: «Il fait beau» — «il fe bo»."}],
+ "key_phrases": [{"fr": "Il fait chaud", "pron": "il fe sho", "uz": "Issiq"}, {"fr": "Il fait froid", "pron": "il fe frua", "uz": "Sovuq"}, {"fr": "Il fait beau", "pron": "il fe bo", "uz": "Havo yaxshi"}],
+ "tip_uz": "Yomg'ir yog'yapti: «Il pleut» [il plö]."},
+
+{"id": 21, "topic": "Ochlik va chanqoq", "title_uz": "«Qornim och!»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "J'ai faim ! On mange ?", "uz": "Qornim och! Ovqatlanamizmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Je fen» — «Qornim och». Fransuzlar buni ham «avoir» bilan aytadi: so'zma-so'z «Menda ochlik bor»."},
+  {"speaker": "Claire", "lang": "fr", "text": "Oui, et j'ai soif aussi.", "uz": "Ha, chanqadim ham."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Je suaf» — «Chanqadim». «On mange ?» — «on monj?» — «Ovqatlanamizmi?»"}],
+ "key_phrases": [{"fr": "J'ai faim", "pron": "je fen", "uz": "Qornim och"}, {"fr": "J'ai soif", "pron": "je suaf", "uz": "Chanqadim"}],
+ "tip_uz": "Ovqat oldidan aytiladi: «Bon appétit !» [bon apeti] — «Yoqimli ishtaha!»"},
+
+{"id": 22, "topic": "Kecha, bugun, ertaga", "title_uz": "Kecha, bugun, ertaga",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "On se voit demain ?", "uz": "Ertaga ko'rishamizmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«On sö vua dömen?» — «Ertaga ko'rishamizmi?»"},
+  {"speaker": "Claire", "lang": "fr", "text": "Pas demain. Aujourd'hui, si tu veux.", "uz": "Ertaga emas. Xohlasang, bugun."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Hier» — «yer» — kecha, «aujourd'hui» — «ojurdüi» — bugun, «demain» — «dömen» — ertaga."}],
+ "key_phrases": [{"fr": "hier", "pron": "yer", "uz": "kecha"}, {"fr": "aujourd'hui", "pron": "ojurdüi", "uz": "bugun"}, {"fr": "demain", "pron": "dömen", "uz": "ertaga"}],
+ "tip_uz": "«Si tu veux» [si tü vö] — «Xohlasang». Juda ko'p ishlatiladigan ibora."},
+
+{"id": 23, "topic": "Raqamlar 1–5", "title_uz": "Birdan beshgacha sanaymiz",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Un, deux, trois… tu continues ?", "uz": "Bir, ikki, uch… davom ettirasanmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Albatta! «Ön, dö, trua» — 1, 2, 3. Keyin: «katr, senk» — 4, 5."},
+  {"speaker": "Claire", "lang": "fr", "text": "Bravo ! C'est parfait !", "uz": "Barakalla! Juda zo'r!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Yozilishini yodlab oling: un, deux, trois, quatre, cinq. «Parfait» — «parfe» — «a'lo, mukammal»."}],
+ "key_phrases": [{"fr": "un, deux, trois", "pron": "ön, dö, trua", "uz": "bir, ikki, uch"}, {"fr": "quatre, cinq", "pron": "katr, senk", "uz": "to'rt, besh"}],
+ "tip_uz": "Barmoqda sanash ham farq qiladi: fransuzlar «bir»ni bosh barmoq bilan ko'rsatadi."},
+
+{"id": 24, "topic": "Uzoqmi, yaqinmi?", "title_uz": "Manzil uzoqmi?",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Pardon, le musée, c'est loin ?", "uz": "Kechirasiz, muzey uzoqmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Se luen?» — «Uzoqmi?» Javob: «C'est tout près» — «se tu pre» — «Juda yaqin»."},
+  {"speaker": "Claire", "lang": "fr", "text": "C'est à cinq minutes à pied.", "uz": "Piyoda besh daqiqalik yo'l."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Se a senk minüt a pye» — «Piyoda besh daqiqa». «À pied» — «a pye» — «piyoda»."}],
+ "key_phrases": [{"fr": "C'est loin ?", "pron": "se luen", "uz": "Uzoqmi?"}, {"fr": "C'est tout près", "pron": "se tu pre", "uz": "Juda yaqin"}, {"fr": "à pied", "pron": "a pye", "uz": "piyoda"}],
+ "tip_uz": "Mashinada: «en voiture» [on vuatür], avtobusda: «en bus» [on büs]."},
+
+{"id": 25, "topic": "Taksida", "title_uz": "Taksida manzil aytish",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "À la gare, s'il vous plaît.", "uz": "Vokzalga, iltimos."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«A la gar, sil vu ple» — taksida manzil shunday aytiladi."},
+  {"speaker": "Claire", "lang": "fr", "text": "Vous pouvez vous arrêter ici ?", "uz": "Shu yerda to'xtay olasizmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Vu puve vuzarete isi?» — «Shu yerda to'xtay olasizmi?» «Ici» — «isi» — «shu yerda»."}],
+ "key_phrases": [{"fr": "À la gare", "pron": "a la gar", "uz": "vokzalga"}, {"fr": "ici", "pron": "isi", "uz": "shu yerda"}],
+ "tip_uz": "Aeroportga: «À l'aéroport, s'il vous plaît» [a laeropor, sil vu ple]."},
+
+{"id": 26, "topic": "Do'konda", "title_uz": "Do'konda: «Shunchaki ko'ryapman»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Je peux vous aider ?", "uz": "Sizga yordam bera olamanmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö pö vuzede?» — sotuvchi shunday so'raydi. Javob: «Je cherche un cadeau» — «jö shersh ön kado» — «Sovg'a qidiryapman»."},
+  {"speaker": "Claire", "lang": "fr", "text": "Un cadeau ? Regardez ce foulard !", "uz": "Sovg'ami? Mana bu ro'molni ko'ring!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Agar faqat tomosha qilsangiz: «Je regarde seulement» — «jö rögard sölmon» — «Shunchaki ko'ryapman»."}],
+ "key_phrases": [{"fr": "Je cherche…", "pron": "jö shersh", "uz": "…ni qidiryapman"}, {"fr": "un cadeau", "pron": "ön kado", "uz": "sovg'a"}, {"fr": "Je regarde seulement", "pron": "jö rögard sölmon", "uz": "Shunchaki ko'ryapman"}],
+ "tip_uz": "Kiyim o'lchab ko'rish: «Je peux l'essayer ?» [jö pö lesseye] — «O'lchab ko'rsam bo'ladimi?»"},
+
+{"id": 27, "topic": "Telefonda", "title_uz": "Telefonda gaplashamiz",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Allô ? C'est Claire !", "uz": "Allo? Bu Kler!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Telefonda fransuzlar ham «Allô» — «alo» deyishadi."},
+  {"speaker": "Claire", "lang": "fr", "text": "Je te rappelle plus tard.", "uz": "Keyinroq qayta qo'ng'iroq qilaman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Jö tö rapel plü tar» — «Keyinroq qo'ng'iroq qilaman». «Plus tard» — «plü tar» — «keyinroq»."}],
+ "key_phrases": [{"fr": "Allô", "pron": "alo", "uz": "Allo"}, {"fr": "Je te rappelle", "pron": "jö tö rapel", "uz": "Qayta qo'ng'iroq qilaman"}, {"fr": "plus tard", "pron": "plü tar", "uz": "keyinroq"}],
+ "tip_uz": "«C'est qui ?» [se ki] — «Kim bu?» Lekin «Qui est à l'appareil ?» ancha odobliroq."},
+
+{"id": 28, "topic": "Tug'ilgan kun", "title_uz": "Tug'ilgan kun tabrigi",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Joyeux anniversaire, Shohista !", "uz": "Tug'ilgan kuning muborak, Shohista!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Juayö zaniverser!» — «Tug'ilgan kuning muborak!» Endi rahmat aytaman."},
+  {"speaker": "Claire", "lang": "fr", "text": "Voilà un petit cadeau pour toi.", "uz": "Mana, senga kichik sovg'a."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Merci, c'est gentil !» — «mersi, se jonti» — «Rahmat, juda yoqimli!» «Gentil» — «mehribon»."}],
+ "key_phrases": [{"fr": "Joyeux anniversaire", "pron": "juayö zaniverser", "uz": "Tug'ilgan kuning muborak"}, {"fr": "C'est gentil", "pron": "se jonti", "uz": "Juda yoqimli / mehribonsiz"}],
+ "tip_uz": "Tug'ilgan kunda fransuzlar ham «Joyeux anniversaire» qo'shig'ini kuylashadi."},
+
+{"id": 29, "topic": "Tabriklash", "title_uz": "«Tabriklayman!» va «Omad!»",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "J'ai réussi mon examen !", "uz": "Imtihonimdan o'tdim!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Tabriklaymiz: «Félicitations !» — «felisitasyon» — «Tabriklayman!»"},
+  {"speaker": "Claire", "lang": "fr", "text": "Merci ! Je suis très heureuse.", "uz": "Rahmat! Juda baxtliman."},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Bravo !» — «Barakalla!» Imtihondan oldin esa «Bonne chance !» — «bon shans» — «Omad!» deyiladi."}],
+ "key_phrases": [{"fr": "Félicitations", "pron": "felisitasyon", "uz": "Tabriklayman"}, {"fr": "Bonne chance", "pron": "bon shans", "uz": "Omad"}],
+ "tip_uz": "«Je suis heureux» [jö süiz örö] — yigit, «heureuse» [öröz] — qiz «baxtliman» deganda."},
+
+{"id": 30, "topic": "Xivaga xush kelibsiz", "title_uz": "Mehmonni Xivada kutib olamiz",
+ "dialogue": [
+  {"speaker": "Claire", "lang": "fr", "text": "Waouh, c'est magnifique ici !", "uz": "Voy, bu yer ajoyib ekan!"},
+  {"speaker": "Shohista", "lang": "uz", "text": "Ha, bu Xiva! «Bienvenue à Khiva !» — «byenvönü a kiva» — «Xivaga xush kelibsiz!»"},
+  {"speaker": "Claire", "lang": "fr", "text": "C'est une ville très ancienne ?", "uz": "Bu juda qadimiy shaharmi?"},
+  {"speaker": "Shohista", "lang": "uz", "text": "«Oui, très ancienne !» — «ui, tre zansyen». «Magnifique» — «manifik» — «Ajoyib»."}],
+ "key_phrases": [{"fr": "Bienvenue", "pron": "byenvönü", "uz": "Xush kelibsiz"}, {"fr": "magnifique", "pron": "manifik", "uz": "ajoyib"}, {"fr": "très ancienne", "pron": "tre zansyen", "uz": "juda qadimiy"}],
+ "tip_uz": "Mehmonlarni «Bienvenue en Ouzbékistan !» [byenvönü on uzbekistan] deb kutib oling."}
+]

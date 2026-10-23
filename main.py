@@ -1,4 +1,4 @@
-"""Bosh boshqaruvchi: 6 agentni ketma-ket ishga tushiradi.
+"""Bosh boshqaruvchi. Darslar lessons.json faylidan olinadi (Gemini kerak emas).
 
 python main.py                    # vaqtga qarab slotni o'zi tanlaydi (GitHub jadvali)
 SLOT=noon python main.py          # aniq slot: morning / noon / evening
@@ -12,14 +12,23 @@ import tempfile
 import traceback
 from pathlib import Path
 
+import card
 import config
-import artist, publisher, quality, researcher, video, voice
+import publisher
+import video
+import voice
 
-HISTORY = Path(__file__).parent / "data" / "history.json"
+ROOT = Path(__file__).parent
+LESSONS = ROOT / "lessons.json"
+HISTORY = ROOT / "data" / "history.json"
+
+
+def load_lessons():
+    return json.loads(LESSONS.read_text(encoding="utf-8"))
 
 
 def load_history():
-    if not HISTORY.exists():  # data/ papkasi yuklanmagan bo'lsa ham ishlaydi
+    if not HISTORY.exists():
         HISTORY.parent.mkdir(exist_ok=True)
         HISTORY.write_text("[]", encoding="utf-8")
     return json.loads(HISTORY.read_text(encoding="utf-8"))
@@ -28,8 +37,12 @@ def load_history():
 def save_history(entry):
     hist = load_history()
     hist.append(entry)
-    HISTORY.parent.mkdir(exist_ok=True)
-    HISTORY.write_text(json.dumps(hist[-500:], ensure_ascii=False, indent=1), encoding="utf-8")
+    HISTORY.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def unused_lessons(skip=()):
+    used = {h.get("id") for h in load_history()} | set(skip)
+    return [l for l in load_lessons() if l["id"] not in used]
 
 
 def pick_slot(now):
@@ -43,50 +56,47 @@ def pick_slot(now):
     return "evening"
 
 
-def build(kind, lesson, issues, workdir):
-    """Dars matnidan tayyor post (fayllar bilan) yasaydi."""
+def build(kind, lesson, notes, workdir):
+    """Darsdan tayyor post yasaydi. Ovoz ishlamasa ham post tayyor bo'ladi."""
     workdir = Path(workdir)
-    files = {}
-    if kind == "text_audio":
-        _, files["audio"] = voice.speak_dialogue(lesson, workdir)            # 4-agent
-    elif kind == "photo":
-        files["photo"] = artist.draw(lesson, workdir / "post.png")           # 3-agent
+    notes = list(notes)
+    files, clips = {}, None
+    if kind in ("text_audio", "video"):
+        try:
+            clips, full = voice.speak_dialogue(lesson, workdir)
+            if kind == "text_audio":
+                files["audio"] = full
+        except Exception as exc:
+            notes.append(f"Ovoz qo'shilmadi (ElevenLabs): {str(exc)[:200]}")
+    if kind == "photo":
+        files["photo"] = card.photo_card(lesson, workdir / "post.png")
     elif kind == "video":
-        files["video"] = video.make(lesson, workdir)                          # 2-agent (+3, +4)
-    return {"kind": kind, "lesson": lesson, "issues": issues, "files": {k: str(v) for k, v in files.items()}}
+        files["video"] = video.make(lesson, workdir, clips=clips)
+    return {"kind": kind, "lesson": lesson, "issues": notes,
+            "files": {k: str(v) for k, v in files.items()}}
 
 
-def make_characters():
-    import characters
-    files = characters.generate()
-    if not files:
-        raise RuntimeError("Hech bir poza chizilmadi — Gemini rasm chizishga ruxsat bermadi (429). "
-                           "Kalit loyihasida billing yoqilganini tekshiring.")
-    publisher._notify("🎨 Qahramon-stikerlar tayyor. Yoqmasa, <b>characters</b> ni qayta ishga tushiring.")
-    for f in files:
-        publisher._api("sendDocument", files={"document": str(f)}, chat_id=publisher._admin())
-
-
-def make_demo():
-    """demo/lesson.json dan namunaviy video — faqat adminga, kanalga emas."""
-    lesson = json.loads((Path(__file__).parent / "demo" / "lesson.json").read_text(encoding="utf-8"))
-    out = video.make(lesson, Path(tempfile.mkdtemp(prefix="demo_")))
-    Path("demo/video.mp4").write_bytes(Path(out).read_bytes())
-    publisher._notify("🎬 Namunaviy video (kanalga chiqmaydi):")
-    publisher.send_package(publisher._admin(), {"kind": "video", "lesson": lesson, "files": {"video": str(out)}})
+def revise_with_ai(lesson, instruction):
+    import gemini
+    prompt = (
+        "You edit a French lesson for Uzbek speakers. Keep the same JSON structure and keys. "
+        "French must be correct; Uzbek in Latin script. Apply the admin's request (in Uzbek): "
+        f"«{instruction}». Return ONLY the full updated JSON.\n\n"
+        + json.dumps(lesson, ensure_ascii=False)
+    )
+    new = gemini.ask(prompt, want_json=True)
+    for key in ("title_uz", "dialogue", "key_phrases", "tip_uz"):
+        if not new.get(key):
+            raise ValueError(f"'{key}' yo'q")
+    new["id"] = lesson["id"]
+    return new
 
 
 def main():
     now = datetime.datetime.now(config.TZ)
     slot = pick_slot(now)
-    if slot == "characters":
-        return make_characters()
-    if slot == "demo":
-        return make_demo()
     hour, kind = config.SLOTS[slot]
-    test = os.environ.get("TEST", "").strip() in ("1", "true", "yes")
-    if not test:
-        publisher.check_channel()
+    test = os.environ.get("TEST", "").strip().lower() in ("1", "true", "yes")
 
     if os.environ.get("SLOT"):  # qo'lda ishga tushirilgan — 12 daqiqadan keyin chiqadi
         publish_at = now + datetime.timedelta(minutes=config.PREVIEW_MINUTES + 2)
@@ -95,47 +105,47 @@ def main():
         if publish_at < now - datetime.timedelta(hours=2):
             sys.exit("Bu slot vaqti allaqachon o'tib ketgan.")
 
-    workdir = Path(tempfile.mkdtemp(prefix=f"{slot}_"))
-    used = [h["topic"] for h in load_history()]
+    pool = unused_lessons()
+    if not pool:
+        raise RuntimeError("Darslar tugadi! lessons.json fayliga yangi darslar qo'shing.")
+    lesson = pool[0]
+    notes = []
+    if len(pool) <= config.LOW_STOCK_WARNING:
+        notes.append(f"Faqat {len(pool)} ta dars qoldi — yangi darslar qo'shish vaqti keldi.")
 
-    print(f"[{slot}] 1-agent: dars tayyorlanmoqda…")
-    lesson = researcher.make_lesson(kind, used)
-    print(f"[{slot}] 5-agent: sifat nazorati…")
-    lesson, issues = quality.check(lesson)
-    print(f"[{slot}] Media tayyorlanmoqda ({kind})…")
-    pkg = build(kind, lesson, issues, workdir)
+    print(f"[{slot}] Dars #{lesson['id']}: {lesson['topic']} ({kind})")
+    pkg = build(kind, lesson, notes, tempfile.mkdtemp(prefix=f"{slot}_"))
 
     def rebuild(old_lesson, instruction):
-        new_lesson = researcher.revise(old_lesson, instruction)
-        new_lesson, new_issues = quality.check(new_lesson, rounds=1)
-        new_dir = Path(tempfile.mkdtemp(prefix=f"{slot}_edit_"))
-        return build(kind, new_lesson, new_issues, new_dir)
+        new_dir = tempfile.mkdtemp(prefix=f"{slot}_edit_")
+        try:
+            new_lesson = revise_with_ai(old_lesson, instruction)
+            return build(kind, new_lesson, [], new_dir)
+        except Exception:
+            # AI ishlamasa — shu dars o'rniga keyingi darsni chiqaramiz
+            rest = unused_lessons(skip=[old_lesson["id"]])
+            if not rest:
+                raise
+            if not test:
+                save_history({"date": f"{now:%Y-%m-%d}", "slot": slot, "id": old_lesson["id"],
+                              "topic": old_lesson["topic"], "skipped": True})
+            publisher._notify(
+                f"ℹ️ Tahrirni avtomatik bajarib bo'lmadi. Bu dars o'rniga keyingisi chiqadi: "
+                f"«{publisher.e(rest[0]['title_uz'])}».")
+            return build(kind, rest[0], [], new_dir)
 
-    print(f"[{slot}] 6-agent: adminga ko'rsatish va chiqarish ({publish_at:%H:%M})…")
     final = publisher.run(pkg, publish_at, rebuild, dry_run=test)
 
     if not test:
-        save_history({"date": f"{now:%Y-%m-%d}", "slot": slot, "topic": final["lesson"]["topic"]})
+        save_history({"date": f"{now:%Y-%m-%d}", "slot": slot, "id": final["lesson"]["id"],
+                      "topic": final["lesson"]["topic"]})
     print("Tayyor ✅")
-
-
-def write_log(status):
-    import gemini
-    HISTORY.parent.mkdir(exist_ok=True)
-    (HISTORY.parent / "last_run.txt").write_text(
-        f"{datetime.datetime.now(config.TZ):%Y-%m-%d %H:%M} — {status}\n" + "\n".join(gemini.LOG),
-        encoding="utf-8")
 
 
 if __name__ == "__main__":
     try:
         main()
-        write_log("OK")
     except Exception as exc:
         traceback.print_exc()
-        HISTORY.parent.mkdir(exist_ok=True)
-        (HISTORY.parent / "last_error.txt").write_text(
-            f"{datetime.datetime.now(config.TZ):%Y-%m-%d %H:%M}\n{traceback.format_exc()}", encoding="utf-8")
-        write_log(f"XATO: {type(exc).__name__}: {exc}")
         publisher.report_error(f"{type(exc).__name__}: {exc}")
         sys.exit(1)
