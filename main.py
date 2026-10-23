@@ -56,6 +56,17 @@ def pick_slot(now):
     return "evening"
 
 
+def _log(text):
+    """Oxirgi ishga tushirish haqida qisqa hisobot (GitHub'ga saqlanadi)."""
+    try:
+        path = ROOT / "data" / "last_run.txt"
+        path.parent.mkdir(exist_ok=True)
+        stamp = datetime.datetime.now(config.TZ).strftime("%Y-%m-%d %H:%M")
+        path.write_text(f"{stamp} — {text}\n", encoding="utf-8")
+    except Exception:
+        pass
+
+
 def build(kind, lesson, notes, workdir):
     """Darsdan tayyor post yasaydi. Ovoz ishlamasa ham post tayyor bo'ladi."""
     workdir = Path(workdir)
@@ -68,6 +79,7 @@ def build(kind, lesson, notes, workdir):
                 files["audio"] = full
         except Exception as exc:
             notes.append(f"Ovoz qo'shilmadi (ElevenLabs): {str(exc)[:200]}")
+        _log(f"{kind}: ovoz — {'OK' if clips else 'XATO: ' + notes[-1]}")
     if kind == "photo":
         files["photo"] = card.photo_card(lesson, workdir / "post.png")
     elif kind == "video":

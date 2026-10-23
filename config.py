@@ -28,9 +28,11 @@ def _voice(raw):
 
 CHANNEL_ID = _channel(os.environ.get("CHANNEL_ID"))
 CHANNEL_TAG = os.environ.get("CHANNEL_TAG") or CHANNEL_ID
-VOICE_SHOHISTA = _voice(os.environ.get("VOICE_SHOHISTA"))
-VOICE_CLAIRE = _voice(os.environ.get("VOICE_CLAIRE"))
-ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"
+# Ovozlar akkauntdagi ishlaydigan ovozlar: Shohista — «Gulnora» (o'zbekcha), Claire — «Sarah».
+# Boshqasini qo'yish uchun GitHub Variables'ga VOICE_SHOHISTA_ID / VOICE_CLAIRE_ID qo'shing.
+VOICE_SHOHISTA = _voice(os.environ.get("VOICE_SHOHISTA_ID")) or "6Fkh9WgMXOqBcOWxX91f"
+VOICE_CLAIRE = _voice(os.environ.get("VOICE_CLAIRE_ID")) or "EXAVITQu4vr4xnSDxMaL"
+ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_v3"
 
 GEMINI_TEXT_MODELS = [m for m in [os.environ.get("GEMINI_TEXT_MODEL"),
                       "gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"] if m]
