@@ -3,8 +3,13 @@ from PIL import Image, ImageDraw, ImageFont
 
 import config
 
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
-FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+from pathlib import Path
+
+_HERE = Path(__file__).resolve().parent / "assets" / "fonts"
+_SYS = Path("/usr/share/fonts/truetype/dejavu")
+FONT = str(_HERE / "DejaVuSans.ttf" if (_HERE / "DejaVuSans.ttf").exists() else _SYS / "DejaVuSans.ttf")
+FONT_BOLD = str(_HERE / "DejaVuSans-Bold.ttf" if (_HERE / "DejaVuSans-Bold.ttf").exists()
+                else _SYS / "DejaVuSans-Bold.ttf")
 
 NAVY = (22, 38, 84)
 NAVY_2 = (34, 64, 132)

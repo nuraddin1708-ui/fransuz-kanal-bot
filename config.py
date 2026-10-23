@@ -5,7 +5,7 @@ import os
 TZ = datetime.timezone(datetime.timedelta(hours=5))  # Toshkent / Xiva vaqti
 
 # --- Kalitlar (GitHub Secrets) ---
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN", "")
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID", "")
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")  # ixtiyoriy: faqat «Tahrirlash» uchun

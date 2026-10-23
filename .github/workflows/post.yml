@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
     inputs:
       slot:
-        description: "Qaysi post: morning (matn+audio), noon (rasm), evening (video), characters (pozalar), demo (namunaviy video)"
+        description: "Qaysi post: morning (matn+audio), noon (kartochka), evening (video)"
         required: true
         default: "morning"
         type: choice
-        options: [morning, noon, evening, characters, demo]
+        options: [morning, noon, evening]
       test:
         description: "Sinov: faqat menga (adminga) yuborilsin, kanalga emas"
         required: true
@@ -43,12 +43,16 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo timeout 300 apt-get update -qq || true
-          sudo timeout 300 apt-get install -y -qq --no-install-recommends ffmpeg fonts-dejavu-core fonts-liberation
           pip install -r requirements.txt
-          # Namunadagi kabi ensiz qalin shrift (Oswald, OFL litsenziya). Yuklanmasa, zaxira shrift ishlaydi.
-          mkdir -p assets/fonts
-          curl -sSfL -m 30 -o assets/fonts/Oswald.ttf "https://github.com/google/fonts/raw/main/ofl/oswald/Oswald%5Bwght%5D.ttf" || true
+          # ffmpeg: avval apt (4 daqiqa chegara), sekin bo'lsa — pip orqali tayyor ffmpeg
+          if ! command -v ffmpeg >/dev/null; then
+            sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg || true
+          fi
+          if ! command -v ffmpeg >/dev/null; then
+            pip install imageio-ffmpeg
+            sudo ln -sf "$(python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg
+          fi
+          ffmpeg -version | head -1
 
       - name: 6 agentni ishga tushirish
         env:
@@ -81,11 +85,3 @@ jobs:
             sleep 5
           done
           exit 1
-
-
-      - name: Namunaviy videoni «demo-video» shoxobchasiga saqlash
-        if: github.event.inputs.slot == 'demo' && success()
-        run: |
-          cd demo && git init -q -b demo-video && git add video.mp4 \
-            && git -c user.name=kanal-bot -c user.email=kanal-bot@users.noreply.github.com commit -qm demo \
-            && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" demo-video
