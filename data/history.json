@@ -19,5 +19,11 @@
   "slot": "morning",
   "id": 1,
   "topic": "Salomlashish"
+ },
+ {
+  "date": "2026-10-23",
+  "slot": "noon",
+  "id": 2,
+  "topic": "Hol-ahvol so'rash"
  }
 ]
