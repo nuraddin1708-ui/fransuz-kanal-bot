@@ -117,10 +117,19 @@ def main():
         if publish_at < now - datetime.timedelta(hours=2):
             sys.exit("Bu slot vaqti allaqachon o'tib ketgan.")
 
+    # Kuniga bitta mavzu: ertalab yangi dars olinadi, 14:00 va 18:00 da o'sha dars
+    # boshqa formatda (kartochka, video) takrorlanadi — o'rganish mustahkam bo'ladi.
+    today = f"{now:%Y-%m-%d}"
+    todays = [h for h in load_history()
+              if h.get("date") == today and h.get("id") and not h.get("skipped")]
+    by_id = {l["id"]: l for l in load_lessons()}
     pool = unused_lessons()
-    if not pool:
+    if todays and todays[-1]["id"] in by_id:
+        lesson = by_id[todays[-1]["id"]]
+    elif pool:
+        lesson = pool[0]
+    else:
         raise RuntimeError("Darslar tugadi! lessons.json fayliga yangi darslar qo'shing.")
-    lesson = pool[0]
     notes = []
     if len(pool) <= config.LOW_STOCK_WARNING:
         notes.append(f"Faqat {len(pool)} ta dars qoldi — yangi darslar qo'shish vaqti keldi.")
