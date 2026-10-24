@@ -31,5 +31,11 @@
   "slot": "evening",
   "id": 3,
   "topic": "Ism so'rash"
+ },
+ {
+  "date": "2026-10-24",
+  "slot": "morning",
+  "id": 4,
+  "topic": "Tanishuv"
  }
 ]
