@@ -1,4 +1,4 @@
-"""Mavzuga mos rasm: faqat erkin litsenziyali (CC0, jamoat mulki, CC BY) bazalardan.
+"""Mavzuga mos rasm: faqat CC0 va jamoat mulki (public domain) — manba yozish shart emas.
 
 Manbalar: Openverse (Flickr, Wikimedia va boshqalar) → Wikimedia Commons. Kalit kerak emas.
 Ishlatilgan rasmlar data/used_images.json da saqlanadi — takrorlanmaydi.
@@ -39,7 +39,7 @@ def _clean(s):
 
 def _openverse(query):
     r = requests.get("https://api.openverse.org/v1/images/", headers=UA, timeout=25, params={
-        "q": query, "license": "cc0,pdm,by", "page_size": 20, "mature": "false"})
+        "q": query, "license": "cc0,pdm", "page_size": 20, "mature": "false"})
     r.raise_for_status()
     out = []
     for it in r.json().get("results", []):
@@ -63,8 +63,8 @@ def _commons(query):
         info = (page.get("imageinfo") or [{}])[0]
         meta = info.get("extmetadata") or {}
         lic = _clean((meta.get("LicenseShortName") or {}).get("value"))
-        ok = lic.lower().startswith(("cc0", "public domain", "pd")) or re.match(r"(?i)^cc by \d", lic)
-        if not ok or "sa" in lic.lower().split() or (info.get("width") or 0) < MIN_W:
+        ok = lic.lower().startswith(("cc0", "public domain", "pd"))
+        if not ok or (info.get("width") or 0) < MIN_W:
             continue
         out.append({"url": info.get("thumburl") or info.get("url"),
                     "author": _clean((meta.get("Artist") or {}).get("value"))[:60] or "noma'lum",
@@ -94,8 +94,8 @@ def find(lesson, workdir):
                 path = Path(workdir) / "topic_photo.jpg"
                 im.save(path, quality=90)
                 _mark(it["url"])
-                credit = f"Foto: {it['author']} · {it['license']} · {it['source']}"
-                return str(path), credit
+                # CC0 / jamoat mulki: manba ko'rsatish shart emas
+                return str(path), ""
             except Exception as exc:
                 print(f"Rasm yuklanmadi: {exc}")
     return None
