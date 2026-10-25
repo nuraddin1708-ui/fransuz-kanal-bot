@@ -49,5 +49,11 @@
   "slot": "evening",
   "id": 6,
   "topic": "Rahmat aytish"
+ },
+ {
+  "date": "2026-10-25",
+  "slot": "morning",
+  "id": 7,
+  "topic": "Kechirim so'rash"
  }
 ]
