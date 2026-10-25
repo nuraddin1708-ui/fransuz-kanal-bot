@@ -1,35 +1,250 @@
-"""Vertikal video: har bir dialog qatori — alohida kartochka + ovoz (bo'lsa)."""
+"""2-agent: jonli vertikal video.
+
+Kirish (mavzu) → dialog (ikkala qahramon ekranda, gapirayotgani qimirlaydi, gap pufakchasi)
+→ yakun («Yodda tuting» + obuna). Ovoz bo'lmasa ham ishlaydi.
+"""
+import math
+import re
 import subprocess
+import wave
 from pathlib import Path
 
+from PIL import Image, ImageDraw, ImageEnhance
+
 import card
+import config
 
-SILENT_SECONDS = 4.5  # ovoz bo'lmasa, har kadr shuncha turadi
+W, H, FPS = 1080, 1920, 15
+INTRO_S, OUTRO_S, GAP_S, SILENT_S = 2.4, 4.0, 0.45, 4.5
+CHAR_H = 900
+CHAR_DIR = Path(__file__).resolve().parent / "assets" / "characters"
+
+NAVY = card.NAVY
+WHITE = (255, 255, 255)
+FR_BLUE, UZ_GREEN, GOLD = card.FR_BLUE, card.UZ_GREEN, card.GOLD
 
 
-def _clip(image, audio, out_path):
-    base = ["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(image)]
-    if audio:
-        cmd = base + ["-i", str(audio), "-af", "apad=pad_dur=0.6", "-shortest"]
-    else:
-        cmd = base + ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-t", str(SILENT_SECONDS)]
-    cmd += ["-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage", "-pix_fmt", "yuv420p",
-            "-r", "25", "-c:a", "aac", "-ar", "44100", "-ac", "2", str(out_path)]
-    subprocess.run(cmd, check=True)
-    return out_path
+# ---------- Qahramonlar ----------
 
+def _load(name):
+    p = CHAR_DIR / f"{name}.png"
+    if not p.exists():
+        return None
+    im = Image.open(p).convert("RGBA")
+    im = im.crop(im.getbbox())
+    return im.resize((int(im.width * CHAR_H / im.height), CHAR_H), Image.LANCZOS)
+
+
+def _dim(im):
+    rgb = ImageEnhance.Brightness(im.convert("RGB")).enhance(0.72)
+    out = rgb.convert("RGBA")
+    out.putalpha(im.getchannel("A"))
+    return out
+
+
+def _scaled(im, k):
+    return im.resize((int(im.width * k), int(im.height * k)), Image.LANCZOS)
+
+
+class Cast:
+    """Qahramon rasmlari: har holat uchun [a, b] juftligi (og'iz/qo'l harakati)."""
+
+    def __init__(self):
+        sh = {}
+        for pose in ("talk", "laugh", "surprised"):
+            a, b = _load(f"shohista_{pose}"), _load(f"shohista_{pose}_b")
+            if a:
+                sh[pose] = [a, b or _scaled(a, 1.025)]
+        cl = _load("claire_talk")
+        self.ok = bool(sh) and cl is not None
+        if not self.ok:
+            return
+        self.sh = sh
+        self.cl = {"talk": [cl, _scaled(cl, 1.025)]}
+        self.sh_idle = _dim(_scaled(sh["talk"][0], 0.93))
+        self.cl_idle = _dim(_scaled(cl, 0.93))
+
+    def frames(self, speaker, pose):
+        if speaker == config.FRENCH_GIRL:
+            return self.cl["talk"]
+        return self.sh.get(pose) or self.sh["talk"]
+
+
+def _pose(text):
+    t = text.lower()
+    if re.search(r"ha-ha|barakalla|zo'r|ajoyib|qiziq|kulgi", t):
+        return "laugh"
+    if re.search(r"voy|rostdan|hayron|diqqat|ehtiyot", t) or t.strip().endswith("?"):
+        return "surprised"
+    return "talk"
+
+
+# ---------- Statik qatlamlar ----------
+
+def _base(title):
+    img, draw = card._background(W, H)
+    draw.text((60, 50), config.RUBRIC.upper(), font=card._font(card.FONT_BOLD, 26), fill=GOLD)
+    font = card._fit(draw, title, card.FONT_BOLD, 58, 40, W - 120, 2)
+    card._text(draw, (60, 100), title, font, WHITE, W - 120, 1.2)
+    # pastda «sahna» — yerga yumshoq soya
+    draw.ellipse([120, H - 210, W - 120, H - 150], fill=(16, 28, 64))
+    tag = config.CHANNEL_TAG
+    f = card._font(card.FONT_BOLD, 28)
+    draw.text(((W - draw.textlength(tag, font=f)) / 2, H - 92), tag, font=f, fill=card.SOFT)
+    return img
+
+
+def _bubble(img, line, side):
+    """Gap pufakchasi: kim gapirsa, dumi o'sha tomonga qaraydi."""
+    draw = ImageDraw.Draw(img)
+    is_fr = line["speaker"] == config.FRENCH_GIRL
+    color = FR_BLUE if is_fr else UZ_GREEN
+    x0, x1, top = 50, W - 50, 300
+    inner = x1 - x0 - 90
+    main_font = card._fit(draw, line["text"], card.FONT_BOLD, 60, 36, inner, 6)
+    main_lines = card._wrap(draw, line["text"], main_font, inner)
+    sub = line.get("uz", "") if is_fr else ""
+    sub_font = card._fit(draw, sub, card.FONT, 44, 30, inner, 3) if sub else None
+    sub_lines = card._wrap(draw, sub, sub_font, inner) if sub else []
+    h = 120 + len(main_lines) * int(main_font.size * 1.25)
+    if sub_lines:
+        h += 50 + len(sub_lines) * int(sub_font.size * 1.25)
+    bottom = min(top + h, H - CHAR_H - 230)
+    draw.rounded_rectangle([x0, top, x1, bottom], radius=40, fill=card.CREAM, outline=color, width=6)
+    tx = 300 if side == "left" else W - 300
+    draw.polygon([(tx - 40, bottom - 3), (tx + 40, bottom - 3), (tx, bottom + 60)], fill=card.CREAM)
+    draw.line([(tx - 40, bottom), (tx, bottom + 60), (tx + 40, bottom)], fill=color, width=6)
+    nf = card._font(card.FONT_BOLD, 40)
+    name = line["speaker"]
+    nw = draw.textlength(name, font=nf)
+    draw.rounded_rectangle([x0 + 30, top - 34, x0 + 30 + nw + 50, top + 34], radius=34, fill=color)
+    draw.text((x0 + 55, top - 25), name, font=nf, fill=WHITE)
+    y = card._text(draw, (x0 + 45, top + 60), line["text"], main_font, NAVY, inner, 1.25, center=True)
+    if sub_lines:
+        draw.line([(x0 + 120, y + 18), (x1 - 120, y + 18)], fill=card.SOFT, width=4)
+        card._text(draw, (x0 + 45, y + 42), sub, sub_font, (60, 70, 90), inner, 1.25, center=True)
+    return img
+
+
+def _intro(lesson):
+    img = _base(lesson["title_uz"])
+    d = ImageDraw.Draw(img)
+    f1 = card._font(card.FONT_BOLD, 44)
+    label = "Bugungi dars"
+    d.text(((W - d.textlength(label, font=f1)) / 2, 400), label, font=f1, fill=GOLD)
+    topic = lesson["topic"]
+    f2 = card._fit(d, topic, card.FONT_BOLD, 92, 56, W - 160, 2)
+    card._text(d, (80, 480), topic, f2, WHITE, W - 160, 1.15, center=True)
+    return img
+
+
+def _outro(lesson):
+    img = _base(lesson["title_uz"])
+    d = ImageDraw.Draw(img)
+    f = card._font(card.FONT_BOLD, 46)
+    d.text((80, 300), "Yodda tuting:", font=f, fill=GOLD)
+    y = 380
+    for p in lesson["key_phrases"][:3]:
+        d.rounded_rectangle([60, y, W - 60, y + 150], radius=28, fill=card.CREAM)
+        ff = card._fit(d, p["fr"], card.FONT_BOLD, 46, 30, W - 180, 1)
+        d.text((90, y + 18), p["fr"], font=ff, fill=NAVY)
+        d.text((90, y + 80), f"[{p.get('pron', '')}]  {p.get('uz', '')}"[:60],
+               font=card._font(card.FONT, 32), fill=(60, 70, 90))
+        y += 170
+    sub = "Obuna bo'ling!"
+    fs = card._font(card.FONT_BOLD, 56)
+    sw = d.textlength(sub, font=fs)
+    d.rounded_rectangle([(W - sw) / 2 - 40, y + 20, (W + sw) / 2 + 40, y + 120], radius=50, fill=card.FR_RED)
+    d.text(((W - sw) / 2, y + 35), sub, font=fs, fill=WHITE)
+    return img
+
+
+# ---------- Ovoz ----------
+
+def _to_wav(src, dst):
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-ar", "44100", "-ac", "1",
+                    "-sample_fmt", "s16", str(dst)], check=True)
+    with wave.open(str(dst)) as w:
+        return w.getnframes() / w.getframerate()
+
+
+def _silence(dst, seconds):
+    with wave.open(str(dst), "wb") as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(44100)
+        w.writeframes(b"\x00\x00" * int(44100 * seconds))
+    return seconds
+
+
+# ---------- Yig'ish ----------
 
 def make(lesson, workdir, clips=None):
     workdir = Path(workdir).resolve()
-    parts = []
-    for i, line in enumerate(lesson["dialogue"]):
-        img = card.line_card(lesson, line, workdir / f"frame_{i:02d}.png")
-        audio = clips[i] if clips else None
-        parts.append(_clip(img, audio, workdir / f"part_{i:02d}.mp4"))
-    listing = workdir / "parts.txt"
+    cast = Cast()
+    lines = lesson["dialogue"]
+
+    # 1) Ovoz va vaqtlar
+    parts, durs = [], []
+    parts.append(workdir / "a_intro.wav"); _silence(parts[-1], INTRO_S)
+    for i, line in enumerate(lines):
+        wav = workdir / f"a_{i:02d}.wav"
+        if clips:
+            d = _to_wav(clips[i], wav)
+        else:
+            d = _silence(wav, SILENT_S)
+        parts.append(wav); durs.append(d)
+        gap = workdir / f"a_{i:02d}_gap.wav"; _silence(gap, GAP_S); parts.append(gap)
+    parts.append(workdir / "a_outro.wav"); _silence(parts[-1], OUTRO_S)
+    listing = workdir / "audio.txt"
     listing.write_text("".join(f"file '{p.name}'\n" for p in parts), encoding="utf-8")
+    audio = workdir / "audio.wav"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
+                    "-c", "copy", str(audio)], check=True, cwd=workdir)
+
+    # 2) Kadrlar — to'g'ridan-to'g'ri ffmpeg'ga uzatiladi
     out = workdir / "video.mp4"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
-                    "-i", str(listing), "-c", "copy", "-movflags", "+faststart", str(out)],
-                   check=True, cwd=workdir)
+    enc = subprocess.Popen([
+        "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
+        "-r", str(FPS), "-i", "-", "-i", str(audio), "-c:v", "libx264", "-preset", "veryfast",
+        "-crf", "23", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-shortest",
+        "-movflags", "+faststart", str(out)], stdin=subprocess.PIPE)
+
+    def emit(frame, n=1):
+        data = frame.convert("RGB").tobytes()
+        for _ in range(n):
+            enc.stdin.write(data)
+
+    def scene(static, speaker=None, pose="talk", seconds=1.0, fade=0.0):
+        n = max(1, int(round(seconds * FPS)))
+        base = card._watermark(static, W, H).convert("RGBA")
+        for k in range(n):
+            t = k / FPS
+            frame = base.copy()
+            if cast.ok:
+                talking = speaker is not None
+                for who, cx in ((config.FRENCH_GIRL, 290), (config.UZBEK_GIRL, W - 290)):
+                    if talking and who == speaker:
+                        pair = cast.frames(who, pose)
+                        im = pair[(k // 4) % 2]
+                        bob = int(10 * abs(math.sin(t * 5.5)))
+                    else:
+                        im = cast.cl_idle if who == config.FRENCH_GIRL else cast.sh_idle
+                        if not talking:  # kirish/yakun: ikkalasi ham yorqin, sekin tebranadi
+                            im = cast.frames(who, "talk")[0]
+                        bob = int(4 * math.sin(t * 2 + (0 if who == config.FRENCH_GIRL else 1.5)))
+                    frame.alpha_composite(im, (int(cx - im.width / 2), H - 150 - im.height - bob))
+            if fade and t < fade:
+                frame = Image.blend(base, frame, 0.35 + 0.65 * t / fade)
+            emit(frame)
+
+    scene(_intro(lesson), None, seconds=INTRO_S)
+    for line, d in zip(lines, durs):
+        side = "left" if line["speaker"] == config.FRENCH_GIRL else "right"
+        static = _bubble(_base(lesson["title_uz"]), line, side)
+        scene(static, line["speaker"], _pose(line["text"]) if side == "right" else "talk",
+              seconds=d + GAP_S)
+    scene(_outro(lesson), None, seconds=OUTRO_S)
+
+    enc.stdin.close()
+    if enc.wait() != 0:
+        raise RuntimeError("Video yig'ishda ffmpeg xatosi")
     return out
