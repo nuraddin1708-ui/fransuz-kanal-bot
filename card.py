@@ -109,22 +109,40 @@ def _watermark(img, w, h):
     return _I.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
 
 
-def photo_card(lesson, out_path):
-    """14:00 dagi post uchun 1080x1350 kartochka: asosiy iboralar."""
+def photo_card(lesson, out_path, photo=None, credit=None):
+    """14:00 dagi post uchun 1080x1350 kartochka: mavzu rasmi (bo'lsa) va asosiy iboralar."""
     w, h = 1080, 1350
     img, draw = _background(w, h)
-    y = _header(draw, w, lesson["title_uz"]) + 30
+    y = _header(draw, w, lesson["title_uz"]) + 25
 
     phrases = lesson["key_phrases"][:4]
-    box_h = (h - 200 - y - 30 * len(phrases)) // max(1, len(phrases))
+    if photo:
+        from PIL import Image as _I
+        import photos
+        band_h = 320
+        pic = photos.cover(_I.open(photo).convert("RGB"), w - 100, band_h)
+        mask = _I.new("L", pic.size, 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, pic.width, pic.height], radius=28, fill=255)
+        img.paste(pic, (50, y), mask)
+        if credit:
+            cf = _font(FONT, 18)
+            cw = draw.textlength(credit[:90], font=cf)
+            draw.rectangle([w - 50 - cw - 16, y + band_h - 30, w - 50, y + band_h], fill=(0, 0, 0))
+            draw.text((w - 50 - cw - 8, y + band_h - 26), credit[:90], font=cf, fill=(230, 230, 230))
+        y += band_h + 25
+        phrases = phrases[:3]
+
+    box_h = (h - 170 - y - 25 * len(phrases)) // max(1, len(phrases))
     box_h = min(box_h, 250)
     for p in phrases:
         draw.rounded_rectangle([50, y, w - 50, y + box_h], radius=28, fill=CREAM)
-        fy = _text(draw, (90, y + 26), p["fr"], _fit(draw, p["fr"], FONT_BOLD, 54, 34, w - 180, 2),
+        big = 54 if box_h > 190 else 44
+        fy = _text(draw, (90, y + 20), p["fr"], _fit(draw, p["fr"], FONT_BOLD, big, 32, w - 180, 2),
                    NAVY, w - 180, 1.15)
-        fy = _text(draw, (90, fy + 4), f"[{p.get('pron', '')}]", _font(FONT, 34), FR_RED, w - 180)
-        _text(draw, (90, fy + 4), p.get("uz", ""), _font(FONT, 34), (60, 70, 90), w - 180)
-        y += box_h + 30
+        sm = 34 if box_h > 190 else 30
+        fy = _text(draw, (90, fy + 2), f"[{p.get('pron', '')}]", _font(FONT, sm), FR_RED, w - 180)
+        _text(draw, (90, fy + 2), p.get("uz", ""), _font(FONT, sm), (60, 70, 90), w - 180)
+        y += box_h + 25
     _footer(draw, w, h)
     img = _watermark(img, w, h)
     img.save(out_path)

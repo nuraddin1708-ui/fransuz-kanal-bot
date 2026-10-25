@@ -9,7 +9,7 @@ import subprocess
 import wave
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
 
 import card
 import config
@@ -81,22 +81,49 @@ def _pose(text):
 
 # ---------- Statik qatlamlar ----------
 
+_PHOTO = {"bg": None, "pic": None, "credit": ""}
+
+
+def _photo_bg():
+    """Mavzu rasmi: xiralashtirilgan va qoraytirilgan to'liq ekran fon."""
+    import photos
+    bg = photos.cover(_PHOTO["pic"], W, H).filter(ImageFilter.GaussianBlur(16))
+    shade = Image.new("RGB", (W, H), NAVY)
+    img = Image.blend(bg, shade, 0.55)
+    draw = ImageDraw.Draw(img)
+    third = W // 3
+    for i, c in enumerate((card.FR_BLUE, WHITE, card.FR_RED)):
+        draw.rectangle([i * third, 0, (i + 1) * third, 14], fill=c)
+    for i, c in enumerate((card.UZ_BLUE, WHITE, card.UZ_GREEN)):
+        draw.rectangle([0, H - 42 + i * 14, W, H - 28 + i * 14], fill=c)
+    return img
+
+
 def _base(title):
-    img, draw = card._background(W, H)
+    if _PHOTO["pic"] is not None:
+        if _PHOTO["bg"] is None:
+            _PHOTO["bg"] = _photo_bg()
+        img = _PHOTO["bg"].copy()
+        draw = ImageDraw.Draw(img)
+    else:
+        img, draw = card._background(W, H)
     draw.text((60, 50), config.RUBRIC.upper(), font=card._font(card.FONT_BOLD, 26), fill=GOLD)
     font = card._fit(draw, title, card.FONT_BOLD, 58, 40, W - 120, 2)
     card._text(draw, (60, 100), title, font, WHITE, W - 120, 1.2)
-    # pastda «sahna» — yerga yumshoq soya
-    draw.ellipse([120, H - 210, W - 120, H - 150], fill=(16, 28, 64))
     tag = config.CHANNEL_TAG
     f = card._font(card.FONT_BOLD, 28)
     draw.text(((W - draw.textlength(tag, font=f)) / 2, H - 92), tag, font=f, fill=card.SOFT)
+    if _PHOTO["credit"]:
+        cf = card._font(card.FONT, 18)
+        cr = _PHOTO["credit"][:100]
+        draw.text(((W - draw.textlength(cr, font=cf)) / 2, H - 128), cr, font=cf, fill=(190, 200, 220))
     return img
 
 
 def _bubble(img, line, side):
     """Gap pufakchasi: kim gapirsa, dumi o'sha tomonga qaraydi."""
     draw = ImageDraw.Draw(img)
+    draw.ellipse([120, H - 210, W - 120, H - 150], fill=(16, 28, 64))  # sahna soyasi
     is_fr = line["speaker"] == config.FRENCH_GIRL
     color = FR_BLUE if is_fr else UZ_GREEN
     x0, x1, top = 50, W - 50, 300
@@ -126,9 +153,20 @@ def _bubble(img, line, side):
     return img
 
 
+PANEL = (60, 330, W - 60, 330 + 640)
+
+
 def _intro(lesson):
     img = _base(lesson["title_uz"])
     d = ImageDraw.Draw(img)
+    if _PHOTO["pic"] is not None:
+        f1 = card._font(card.FONT_BOLD, 44)
+        label = "Bugungi dars"
+        d.text(((W - d.textlength(label, font=f1)) / 2, PANEL[3] + 60), label, font=f1, fill=GOLD)
+        topic = lesson["topic"]
+        f2 = card._fit(d, topic, card.FONT_BOLD, 92, 56, W - 160, 2)
+        card._text(d, (80, PANEL[3] + 130), topic, f2, WHITE, W - 160, 1.15, center=True)
+        return img
     f1 = card._font(card.FONT_BOLD, 44)
     label = "Bugungi dars"
     d.text(((W - d.textlength(label, font=f1)) / 2, 400), label, font=f1, fill=GOLD)
@@ -177,14 +215,17 @@ def _silence(dst, seconds):
 
 # ---------- Yig'ish ----------
 
-def make(lesson, workdir, clips=None):
+def make(lesson, workdir, clips=None, photo=None, credit=""):
+    import photos as photos_mod
     workdir = Path(workdir).resolve()
+    _PHOTO.update(bg=None, pic=Image.open(photo).convert("RGB") if photo else None, credit=credit or "")
     cast = Cast()
     lines = lesson["dialogue"]
 
     # 1) Ovoz va vaqtlar
     parts, durs = [], []
-    parts.append(workdir / "a_intro.wav"); _silence(parts[-1], INTRO_S)
+    parts.append(workdir / "a_intro.wav")
+    _silence(parts[-1], INTRO_S + (0.6 if photo else 0))
     for i, line in enumerate(lines):
         wav = workdir / f"a_{i:02d}.wav"
         if clips:
@@ -213,13 +254,27 @@ def make(lesson, workdir, clips=None):
         for _ in range(n):
             enc.stdin.write(data)
 
-    def scene(static, speaker=None, pose="talk", seconds=1.0, fade=0.0):
+    def kenburns(frame, t):
+        x0, y0, x1, y1 = PANEL
+        pw, ph = x1 - x0, y1 - y0
+        k = 1.0 + 0.10 * min(1.0, t / INTRO_S)
+        src = photos_mod.cover(_PHOTO["pic"], int(pw * k), int(ph * k))
+        ox, oy = (src.width - pw) // 2, (src.height - ph) // 2
+        pic = src.crop((ox, oy, ox + pw, oy + ph)).convert("RGBA")
+        mask = Image.new("L", (pw, ph), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, pw, ph], radius=36, fill=255)
+        pic.putalpha(mask)
+        frame.alpha_composite(pic, (x0, y0))
+
+    def scene(static, speaker=None, pose="talk", seconds=1.0, fade=0.0, overlay=None, show_cast=True):
         n = max(1, int(round(seconds * FPS)))
         base = card._watermark(static, W, H).convert("RGBA")
         for k in range(n):
             t = k / FPS
             frame = base.copy()
-            if cast.ok:
+            if overlay:
+                overlay(frame, t)
+            if cast.ok and show_cast:
                 talking = speaker is not None
                 for who, cx in ((config.FRENCH_GIRL, 290), (config.UZBEK_GIRL, W - 290)):
                     if talking and who == speaker:
@@ -236,13 +291,16 @@ def make(lesson, workdir, clips=None):
                 frame = Image.blend(base, frame, 0.35 + 0.65 * t / fade)
             emit(frame)
 
-    scene(_intro(lesson), None, seconds=INTRO_S)
+    if _PHOTO["pic"] is not None:
+        scene(_intro(lesson), None, seconds=INTRO_S + 0.6, overlay=kenburns, show_cast=False)
+    else:
+        scene(_intro(lesson), None, seconds=INTRO_S)
     for line, d in zip(lines, durs):
         side = "left" if line["speaker"] == config.FRENCH_GIRL else "right"
         static = _bubble(_base(lesson["title_uz"]), line, side)
         scene(static, line["speaker"], _pose(line["text"]) if side == "right" else "talk",
               seconds=d + GAP_S)
-    scene(_outro(lesson), None, seconds=OUTRO_S)
+    scene(_outro(lesson), None, seconds=OUTRO_S, show_cast=False)
 
     enc.stdin.close()
     if enc.wait() != 0:

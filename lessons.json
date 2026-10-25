@@ -39,7 +39,8 @@
     "uz": "Xayrli kech"
    }
   ],
-  "tip_uz": "Fransiyada do'konga kirganda ham albatta «Bonjour» deyiladi — bu odob belgisi."
+  "tip_uz": "Fransiyada do'konga kirganda ham albatta «Bonjour» deyiladi — bu odob belgisi.",
+  "image_query": "Paris street morning"
  },
  {
   "id": 2,
@@ -86,7 +87,8 @@
     "uz": "O'zing-chi?"
    }
   ],
-  "tip_uz": "«Salut» va «Ça va ?» — do'stlar orasida. Kattalarga «Bonjour, comment allez-vous ?» deyiladi."
+  "tip_uz": "«Salut» va «Ça va ?» — do'stlar orasida. Kattalarga «Bonjour, comment allez-vous ?» deyiladi.",
+  "image_query": "friends greeting smile"
  },
  {
   "id": 3,
@@ -128,7 +130,8 @@
     "uz": "Mening ismim…"
    }
   ],
-  "tip_uz": "Hurmat bilan so'rash uchun: «Comment vous appelez-vous ?» — «Ismingiz nima?»"
+  "tip_uz": "Hurmat bilan so'rash uchun: «Comment vous appelez-vous ?» — «Ismingiz nima?»",
+  "image_query": "handshake meeting"
  },
  {
   "id": 4,
@@ -170,7 +173,8 @@
     "uz": "Men ham"
    }
   ],
-  "tip_uz": "Fransuz do'stlar uchrashganda yuzdan o'pishib ko'rishadi — bu «la bise» [la biz] deyiladi."
+  "tip_uz": "Fransuz do'stlar uchrashganda yuzdan o'pishib ko'rishadi — bu «la bise» [la biz] deyiladi.",
+  "image_query": "friends meeting cafe"
  },
  {
   "id": 5,
@@ -212,7 +216,8 @@
     "uz": "Men O'zbekistondanman"
    }
   ],
-  "tip_uz": "Fransuz qiz — «française» [fransez], fransuz yigit — «français» [franse]."
+  "tip_uz": "Fransuz qiz — «française» [fransez], fransuz yigit — «français» [franse].",
+  "image_query": "Uzbekistan landscape"
  },
  {
   "id": 6,
@@ -254,7 +259,8 @@
     "uz": "Arzimaydi"
    }
   ],
-  "tip_uz": "«Merci» so'zini kuniga ko'p ishlating — fransuzlar buni juda qadrlashadi."
+  "tip_uz": "«Merci» so'zini kuniga ko'p ishlating — fransuzlar buni juda qadrlashadi.",
+  "image_query": "cup of tea"
  },
  {
   "id": 7,
@@ -296,7 +302,8 @@
     "uz": "Uzr"
    }
   ],
-  "tip_uz": "Ayolga «madame» [madam], erkakka «monsieur» [mösyö] deb murojaat qilinadi."
+  "tip_uz": "Ayolga «madame» [madam], erkakka «monsieur» [mösyö] deb murojaat qilinadi.",
+  "image_query": "busy street Paris"
  },
  {
   "id": 8,
@@ -343,7 +350,8 @@
     "uz": "Ertagacha"
    }
   ],
-  "tip_uz": "Do'stlar orasida «Salut !» [salü] ham «salom», ham «xayr» ma'nosida ishlatiladi."
+  "tip_uz": "Do'stlar orasida «Salut !» [salü] ham «salom», ham «xayr» ma'nosida ishlatiladi.",
+  "image_query": "railway station platform"
  },
  {
   "id": 9,
@@ -385,7 +393,8 @@
     "uz": "Tushundim"
    }
   ],
-  "tip_uz": "Til o'rganishda «tushunmadim» deyishdan uyalmang — bu eng foydali ibora!"
+  "tip_uz": "Til o'rganishda «tushunmadim» deyishdan uyalmang — bu eng foydali ibora!",
+  "image_query": "student thinking"
  },
  {
   "id": 10,
@@ -432,7 +441,8 @@
     "uz": "Iltimos"
    }
   ],
-  "tip_uz": "«Pouvez-vous répéter ?» [puve vu repete] — «Qaytarib yuborasizmi?» ham juda foydali."
+  "tip_uz": "«Pouvez-vous répéter ?» [puve vu repete] — «Qaytarib yuborasizmi?» ham juda foydali.",
+  "image_query": "two women talking"
  },
  {
   "id": 11,
@@ -474,7 +484,8 @@
     "uz": "shakar bilan"
    }
   ],
-  "tip_uz": "«Je veux» (xohlayman) qo'pol eshitiladi — kafeda «Je voudrais» deng."
+  "tip_uz": "«Je veux» (xohlayman) qo'pol eshitiladi — kafeda «Je voudrais» deng.",
+  "image_query": "coffee croissant"
  },
  {
   "id": 12,
@@ -516,7 +527,8 @@
     "uz": "karta bilan to'lash"
    }
   ],
-  "tip_uz": "Fransiyada xizmat haqi odatda hisobga kiritilgan bo'ladi, choychaqa majburiy emas."
+  "tip_uz": "Fransiyada xizmat haqi odatda hisobga kiritilgan bo'ladi, choychaqa majburiy emas.",
+  "image_query": "restaurant table"
  },
  {
   "id": 13,
@@ -558,7 +570,8 @@
     "uz": "Juda qimmat"
    }
   ],
-  "tip_uz": "Fransiya do'konlarida savdolashilmaydi, lekin bozorlarda (au marché) mumkin."
+  "tip_uz": "Fransiya do'konlarida savdolashilmaydi, lekin bozorlarda (au marché) mumkin.",
+  "image_query": "market stall"
  },
  {
   "id": 14,
@@ -605,7 +618,8 @@
     "uz": "chapda"
    }
   ],
-  "tip_uz": "«Où est… ?» [u e] — «… qayerda?» Masalan: «Où est la gare ?» — «Vokzal qayerda?»"
+  "tip_uz": "«Où est… ?» [u e] — «… qayerda?» Masalan: «Où est la gare ?» — «Vokzal qayerda?»",
+  "image_query": "Paris street sign"
  },
  {
   "id": 15,
@@ -647,7 +661,8 @@
     "uz": "Soat to'qqiz"
    }
   ],
-  "tip_uz": "Fransiyada vaqt ko'pincha 24 soatlik shaklda aytiladi: 18:00 — «dix-huit heures» [dizüit ör]."
+  "tip_uz": "Fransiyada vaqt ko'pincha 24 soatlik shaklda aytiladi: 18:00 — «dix-huit heures» [dizüit ör].",
+  "image_query": "clock tower"
  },
  {
   "id": 16,
@@ -689,7 +704,8 @@
     "uz": "Men … yoshdaman"
    }
   ],
-  "tip_uz": "Kattalardan yoshni so'rash Fransiyada ham noqulay hisoblanadi — ehtiyot bo'ling!"
+  "tip_uz": "Kattalardan yoshni so'rash Fransiyada ham noqulay hisoblanadi — ehtiyot bo'ling!",
+  "image_query": "birthday cake candles"
  },
  {
   "id": 17,
@@ -736,7 +752,8 @@
     "uz": "shifokor"
    }
   ],
-  "tip_uz": "Talaba bo'lsangiz: «Je suis étudiant» [jö süiz etüdyon], qiz bola — «étudiante» [etüdyont]."
+  "tip_uz": "Talaba bo'lsangiz: «Je suis étudiant» [jö süiz etüdyon], qiz bola — «étudiante» [etüdyont].",
+  "image_query": "teacher classroom"
  },
  {
   "id": 18,
@@ -778,7 +795,8 @@
     "uz": "opa / singil"
    }
   ],
-  "tip_uz": "Akani aniq aytish uchun: «mon grand frère» [mon gron frer], ukani — «mon petit frère» [mon pöti frer]."
+  "tip_uz": "Akani aniq aytish uchun: «mon grand frère» [mon gron frer], ukani — «mon petit frère» [mon pöti frer].",
+  "image_query": "family portrait"
  },
  {
   "id": 19,
@@ -825,7 +843,8 @@
     "uz": "ko'k choy"
    }
   ],
-  "tip_uz": "Yoqmasa: «Je n'aime pas» [jö nem pa] — «Yoqtirmayman»."
+  "tip_uz": "Yoqmasa: «Je n'aime pas» [jö nem pa] — «Yoqtirmayman».",
+  "image_query": "green tea teapot"
  },
  {
   "id": 20,
@@ -872,7 +891,8 @@
     "uz": "Havo yaxshi"
    }
   ],
-  "tip_uz": "Yomg'ir yog'yapti: «Il pleut» [il plö]."
+  "tip_uz": "Yomg'ir yog'yapti: «Il pleut» [il plö].",
+  "image_query": "sunny day blue sky"
  },
  {
   "id": 21,
@@ -914,7 +934,8 @@
     "uz": "Chanqadim"
    }
   ],
-  "tip_uz": "Ovqat oldidan aytiladi: «Bon appétit !» [bon apeti] — «Yoqimli ishtaha!»"
+  "tip_uz": "Ovqat oldidan aytiladi: «Bon appétit !» [bon apeti] — «Yoqimli ishtaha!»",
+  "image_query": "lunch plate"
  },
  {
   "id": 22,
@@ -961,7 +982,8 @@
     "uz": "ertaga"
    }
   ],
-  "tip_uz": "«Si tu veux» [si tü vö] — «Xohlasang». Juda ko'p ishlatiladigan ibora."
+  "tip_uz": "«Si tu veux» [si tü vö] — «Xohlasang». Juda ko'p ishlatiladigan ibora.",
+  "image_query": "calendar"
  },
  {
   "id": 23,
@@ -1003,7 +1025,8 @@
     "uz": "to'rt, besh"
    }
   ],
-  "tip_uz": "Barmoqda sanash ham farq qiladi: fransuzlar «bir»ni bosh barmoq bilan ko'rsatadi."
+  "tip_uz": "Barmoqda sanash ham farq qiladi: fransuzlar «bir»ni bosh barmoq bilan ko'rsatadi.",
+  "image_query": "counting fingers"
  },
  {
   "id": 24,
@@ -1050,7 +1073,8 @@
     "uz": "piyoda"
    }
   ],
-  "tip_uz": "Mashinada: «en voiture» [on vuatür], avtobusda: «en bus» [on büs]."
+  "tip_uz": "Mashinada: «en voiture» [on vuatür], avtobusda: «en bus» [on büs].",
+  "image_query": "Paris museum"
  },
  {
   "id": 25,
@@ -1092,7 +1116,8 @@
     "uz": "shu yerda"
    }
   ],
-  "tip_uz": "Aeroportga: «À l'aéroport, s'il vous plaît» [a laeropor, sil vu ple]."
+  "tip_uz": "Aeroportga: «À l'aéroport, s'il vous plaît» [a laeropor, sil vu ple].",
+  "image_query": "taxi Paris"
  },
  {
   "id": 26,
@@ -1139,7 +1164,8 @@
     "uz": "Shunchaki ko'ryapman"
    }
   ],
-  "tip_uz": "Kiyim o'lchab ko'rish: «Je peux l'essayer ?» [jö pö lesseye] — «O'lchab ko'rsam bo'ladimi?»"
+  "tip_uz": "Kiyim o'lchab ko'rish: «Je peux l'essayer ?» [jö pö lesseye] — «O'lchab ko'rsam bo'ladimi?»",
+  "image_query": "clothing boutique"
  },
  {
   "id": 27,
@@ -1186,7 +1212,8 @@
     "uz": "keyinroq"
    }
   ],
-  "tip_uz": "«C'est qui ?» [se ki] — «Kim bu?» Lekin «Qui est à l'appareil ?» ancha odobliroq."
+  "tip_uz": "«C'est qui ?» [se ki] — «Kim bu?» Lekin «Qui est à l'appareil ?» ancha odobliroq.",
+  "image_query": "vintage telephone"
  },
  {
   "id": 28,
@@ -1228,7 +1255,8 @@
     "uz": "Juda yoqimli / mehribonsiz"
    }
   ],
-  "tip_uz": "Tug'ilgan kunda fransuzlar ham «Joyeux anniversaire» qo'shig'ini kuylashadi."
+  "tip_uz": "Tug'ilgan kunda fransuzlar ham «Joyeux anniversaire» qo'shig'ini kuylashadi.",
+  "image_query": "birthday party balloons"
  },
  {
   "id": 29,
@@ -1270,7 +1298,8 @@
     "uz": "Omad"
    }
   ],
-  "tip_uz": "«Je suis heureux» [jö süiz örö] — yigit, «heureuse» [öröz] — qiz «baxtliman» deganda."
+  "tip_uz": "«Je suis heureux» [jö süiz örö] — yigit, «heureuse» [öröz] — qiz «baxtliman» deganda.",
+  "image_query": "graduation celebration"
  },
  {
   "id": 30,
@@ -1317,7 +1346,8 @@
     "uz": "juda qadimiy"
    }
   ],
-  "tip_uz": "Mehmonlarni «Bienvenue en Ouzbékistan !» [byenvönü on uzbekistan] deb kutib oling."
+  "tip_uz": "Mehmonlarni «Bienvenue en Ouzbékistan !» [byenvönü on uzbekistan] deb kutib oling.",
+  "image_query": "Itchan Kala Khiva"
  },
  {
   "id": 31,
@@ -1359,7 +1389,8 @@
     "uz": "to'qqiz, o'n"
    }
   ],
-  "tip_uz": "«Neuf» ikki ma'noli: «to'qqiz» va «yangi». Masalan: «un livre neuf» — yangi kitob."
+  "tip_uz": "«Neuf» ikki ma'noli: «to'qqiz» va «yangi». Masalan: «un livre neuf» — yangi kitob.",
+  "image_query": "dice numbers"
  },
  {
   "id": 32,
@@ -1406,7 +1437,8 @@
     "uz": "20"
    }
   ],
-  "tip_uz": "«Vingt» so'zining oxiridagi «gt» o'qilmaydi — faqat «ven»."
+  "tip_uz": "«Vingt» so'zining oxiridagi «gt» o'qilmaydi — faqat «ven».",
+  "image_query": "numbers wall"
  },
  {
   "id": 33,
@@ -1453,7 +1485,8 @@
     "uz": "100"
    }
   ],
-  "tip_uz": "21 — «vingt et un» [vente ön], 22 — «vingt-deux» [vent-dö]."
+  "tip_uz": "21 — «vingt et un» [vente ön], 22 — «vingt-deux» [vent-dö].",
+  "image_query": "abacus"
  },
  {
   "id": 34,
@@ -1495,7 +1528,8 @@
     "uz": "yevro"
    }
   ],
-  "tip_uz": "Fransiyada narx vergul bilan yoziladi: 12,50 € — «douze euros cinquante»."
+  "tip_uz": "Fransiyada narx vergul bilan yoziladi: 12,50 € — «douze euros cinquante».",
+  "image_query": "euro coins"
  },
  {
   "id": 35,
@@ -1542,7 +1576,8 @@
     "uz": "shanba, yakshanba"
    }
   ],
-  "tip_uz": "Hafta kunlari fransuzchada kichik harf bilan yoziladi: lundi, mardi."
+  "tip_uz": "Hafta kunlari fransuzchada kichik harf bilan yoziladi: lundi, mardi.",
+  "image_query": "weekly planner"
  },
  {
   "id": 36,
@@ -1589,7 +1624,8 @@
     "uz": "iyul, avgust"
    }
   ],
-  "tip_uz": "Oyning 1-kuni «le premier», qolganlari oddiy son bilan: «le deux mai» — 2-may."
+  "tip_uz": "Oyning 1-kuni «le premier», qolganlari oddiy son bilan: «le deux mai» — 2-may.",
+  "image_query": "calendar pages"
  },
  {
   "id": 37,
@@ -1631,7 +1667,8 @@
     "uz": "Qanday omad!"
    }
   ],
-  "tip_uz": "«Je suis né(e) le…» [jö süi ne lö] — «Men … da tug'ilganman»."
+  "tip_uz": "«Je suis né(e) le…» [jö süi ne lö] — «Men … da tug'ilganman».",
+  "image_query": "Navruz celebration"
  },
  {
   "id": 38,
@@ -1683,7 +1720,8 @@
     "uz": "qish"
    }
   ],
-  "tip_uz": "«Bahorda» — «au printemps» [o prentom], qolganlari «en»: en été, en automne, en hiver."
+  "tip_uz": "«Bahorda» — «au printemps» [o prentom], qolganlari «en»: en été, en automne, en hiver.",
+  "image_query": "autumn tree leaves"
  },
  {
   "id": 39,
@@ -1730,7 +1768,8 @@
     "uz": "chorak kam"
    }
   ],
-  "tip_uz": "Rasmiy joylarda daqiqa bilan aytiladi: 8:30 — «huit heures trente»."
+  "tip_uz": "Rasmiy joylarda daqiqa bilan aytiladi: 8:30 — «huit heures trente».",
+  "image_query": "wall clock"
  },
  {
   "id": 40,
@@ -1777,7 +1816,8 @@
     "uz": "oldida"
    }
   ],
-  "tip_uz": "Kechiksangiz yozing: «Je suis en retard» [jö süiz on rötar] — «Kechikyapman»."
+  "tip_uz": "Kechiksangiz yozing: «Je suis en retard» [jö süiz on rötar] — «Kechikyapman».",
+  "image_query": "Louvre pyramid"
  },
  {
   "id": 41,
@@ -1824,7 +1864,8 @@
     "uz": "bobo-buvilar"
    }
   ],
-  "tip_uz": "Uyda bolalar «papa» va «maman» [mamon] deyishadi — xuddi «dada» va «oyi» kabi."
+  "tip_uz": "Uyda bolalar «papa» va «maman» [mamon] deyishadi — xuddi «dada» va «oyi» kabi.",
+  "image_query": "parents and children"
  },
  {
   "id": 42,
@@ -1871,7 +1912,8 @@
     "uz": "bola, farzand"
    }
   ],
-  "tip_uz": "Fransiyada begona odamdan oilaviy ahvolni so'rash biroz shaxsiy hisoblanadi."
+  "tip_uz": "Fransiyada begona odamdan oilaviy ahvolni so'rash biroz shaxsiy hisoblanadi.",
+  "image_query": "wedding rings"
  },
  {
   "id": 43,
@@ -1918,7 +1960,8 @@
     "uz": "xona"
    }
   ],
-  "tip_uz": "Fransiyada kvartira xonalari «T2, T3» deb yoziladi: T3 — uch xonali."
+  "tip_uz": "Fransiyada kvartira xonalari «T2, T3» deb yoziladi: T3 — uch xonali.",
+  "image_query": "Paris apartment building"
  },
  {
   "id": 44,
@@ -1965,7 +2008,8 @@
     "uz": "hammom"
    }
   ],
-  "tip_uz": "«Voici» [vuasi] — «mana bu (yaqinda)», «voilà» [vuala] — «mana (u yerda)»."
+  "tip_uz": "«Voici» [vuasi] — «mana bu (yaqinda)», «voilà» [vuala] — «mana (u yerda)».",
+  "image_query": "kitchen interior"
  },
  {
   "id": 45,
@@ -2012,7 +2056,8 @@
     "uz": "markaz"
    }
   ],
-  "tip_uz": "Fransuz manzilida avval uy raqami, keyin ko'cha yoziladi: «12, rue de Paris»."
+  "tip_uz": "Fransuz manzilida avval uy raqami, keyin ko'cha yoziladi: «12, rue de Paris».",
+  "image_query": "Paris street name sign"
  },
  {
   "id": 46,
@@ -2054,7 +2099,8 @@
     "uz": "juda mehribon"
    }
   ],
-  "tip_uz": "«Qo'shni haqqi — Tangri haqqi» degan maqolimizni fransuz do'stlarga aytib bering!"
+  "tip_uz": "«Qo'shni haqqi — Tangri haqqi» degan maqolimizni fransuz do'stlarga aytib bering!",
+  "image_query": "neighbors street houses"
  },
  {
   "id": 47,
@@ -2101,7 +2147,8 @@
     "uz": "qush"
    }
   ],
-  "tip_uz": "Fransuzlar mushuk ovozini «miaou» [myau], it ovozini «ouaf» [uaf] deb yozadi."
+  "tip_uz": "Fransuzlar mushuk ovozini «miaou» [myau], it ovozini «ouaf» [uaf] deb yozadi.",
+  "image_query": "cat and dog"
  },
  {
   "id": 48,
@@ -2148,7 +2195,8 @@
     "uz": "ko'zlar"
    }
   ],
-  "tip_uz": "Bitta ko'z — «un œil» [önöy], ikkita — «les yeux» [le zyö]. Butunlay boshqa so'z!"
+  "tip_uz": "Bitta ko'z — «un œil» [önöy], ikkita — «les yeux» [le zyö]. Butunlay boshqa so'z!",
+  "image_query": "portrait of a man"
  },
  {
   "id": 49,
@@ -2190,7 +2238,8 @@
     "uz": "yashil, oq, qora"
    }
   ],
-  "tip_uz": "Fransiya bayrog'i ranglari: «bleu, blanc, rouge» — ko'k, oq, qizil."
+  "tip_uz": "Fransiya bayrog'i ranglari: «bleu, blanc, rouge» — ko'k, oq, qizil.",
+  "image_query": "ikat fabric"
  },
  {
   "id": 50,
@@ -2237,7 +2286,8 @@
     "uz": "ko'ylak (tugmali)"
    }
   ],
-  "tip_uz": "Maqtov: «Ça te va très bien !» [sa tö va tre byen] — «Senga juda yarashibdi!»"
+  "tip_uz": "Maqtov: «Ça te va très bien !» [sa tö va tre byen] — «Senga juda yarashibdi!»",
+  "image_query": "dress shop"
  },
  {
   "id": 51,
@@ -2284,7 +2334,8 @@
     "uz": "sariyog'"
    }
   ],
-  "tip_uz": "Tushlik — «le déjeuner» [lö dejöne], kechki ovqat — «le dîner» [lö dine]."
+  "tip_uz": "Tushlik — «le déjeuner» [lö dejöne], kechki ovqat — «le dîner» [lö dine].",
+  "image_query": "breakfast table"
  },
  {
   "id": 52,
@@ -2331,7 +2382,8 @@
     "uz": "nonvoyxona"
    }
   ],
-  "tip_uz": "Fransiyada bagetni ko'pincha qo'ltiqqa qistirib olib ketishadi — bu odatiy holat!"
+  "tip_uz": "Fransiyada bagetni ko'pincha qo'ltiqqa qistirib olib ketishadi — bu odatiy holat!",
+  "image_query": "bakery baguette"
  },
  {
   "id": 53,
@@ -2378,7 +2430,8 @@
     "uz": "uzum"
    }
   ],
-  "tip_uz": "Tarvuz — «une pastèque» [ün pastek]. Qovundan farqi bor!"
+  "tip_uz": "Tarvuz — «une pastèque» [ün pastek]. Qovundan farqi bor!",
+  "image_query": "melon market"
  },
  {
   "id": 54,
@@ -2425,7 +2478,8 @@
     "uz": "guruch"
    }
   ],
-  "tip_uz": "Kartoshka — «une pomme de terre» [ün pom dö ter], so'zma-so'z «yer olmasi»!"
+  "tip_uz": "Kartoshka — «une pomme de terre» [ün pom dö ter], so'zma-so'z «yer olmasi»!",
+  "image_query": "vegetable market"
  },
  {
   "id": 55,
@@ -2472,7 +2526,8 @@
     "uz": "asosiy taom"
    }
   ],
-  "tip_uz": "Diqqat: Fransiyada «entrée» — asosiy emas, birinchi kichik taom!"
+  "tip_uz": "Diqqat: Fransiyada «entrée» — asosiy emas, birinchi kichik taom!",
+  "image_query": "restaurant menu"
  },
  {
   "id": 56,
@@ -2519,7 +2574,8 @@
     "uz": "qo'y go'shti"
    }
   ],
-  "tip_uz": "Halol taom so'rash: «C'est halal ?» [se alal] — Fransiyada ko'p joyda tushunishadi."
+  "tip_uz": "Halol taom so'rash: «C'est halal ?» [se alal] — Fransiyada ko'p joyda tushunishadi.",
+  "image_query": "grilled meat skewers"
  },
  {
   "id": 57,
@@ -2566,7 +2622,8 @@
     "uz": "tort, pirog"
    }
   ],
-  "tip_uz": "Sut mahsulotlari — «les produits laitiers» [le prodüi letye]."
+  "tip_uz": "Sut mahsulotlari — «les produits laitiers» [le prodüi letye].",
+  "image_query": "walnuts"
  },
  {
   "id": 58,
@@ -2613,7 +2670,8 @@
     "uz": "gazsiz suv"
    }
   ],
-  "tip_uz": "Muzli suv: «avec des glaçons» [avek de glason] — «muz bilan»."
+  "tip_uz": "Muzli suv: «avec des glaçons» [avek de glason] — «muz bilan».",
+  "image_query": "water carafe glass"
  },
  {
   "id": 59,
@@ -2660,7 +2718,8 @@
     "uz": "albatta"
    }
   ],
-  "tip_uz": "«Une glace» — muzqaymoq ham, oyna ham bo'lishi mumkin. Gapdan tushuniladi!"
+  "tip_uz": "«Une glace» — muzqaymoq ham, oyna ham bo'lishi mumkin. Gapdan tushuniladi!",
+  "image_query": "ice cream"
  },
  {
   "id": 60,
@@ -2702,7 +2761,8 @@
     "uz": "Oshpazga maqtovlarim"
    }
   ],
-  "tip_uz": "«C'est bon !» [se bon] — «Mazali!» — oddiy va ko'p ishlatiladigan ibora."
+  "tip_uz": "«C'est bon !» [se bon] — «Mazali!» — oddiy va ko'p ishlatiladigan ibora.",
+  "image_query": "plov pilaf"
  },
  {
   "id": 61,
@@ -2749,7 +2809,8 @@
     "uz": "bankomat"
    }
   ],
-  "tip_uz": "«L'argent» ham «pul», ham «kumush» degani. Kumush uzuk — «une bague en argent»."
+  "tip_uz": "«L'argent» ham «pul», ham «kumush» degani. Kumush uzuk — «une bague en argent».",
+  "image_query": "currency exchange"
  },
  {
   "id": 62,
@@ -2796,7 +2857,8 @@
     "uz": "otkritka"
    }
   ],
-  "tip_uz": "Posilka — «un colis» [ön koli]."
+  "tip_uz": "Posilka — «un colis» [ön koli].",
+  "image_query": "post office mailbox"
  },
  {
   "id": 63,
@@ -2843,7 +2905,8 @@
     "uz": "bekat"
    }
   ],
-  "tip_uz": "Haydovchiga: «Le prochain arrêt, s'il vous plaît» [lö proshen nare] — «Keyingi bekatda, iltimos»."
+  "tip_uz": "Haydovchiga: «Le prochain arrêt, s'il vous plaît» [lö proshen nare] — «Keyingi bekatda, iltimos».",
+  "image_query": "Paris bus"
  },
  {
   "id": 64,
@@ -2890,7 +2953,8 @@
     "uz": "…da tushing"
    }
   ],
-  "tip_uz": "Toshkent metrosi bilan Parij metrosi ikkalasi ham chiroyli bekatlari bilan mashhur!"
+  "tip_uz": "Toshkent metrosi bilan Parij metrosi ikkalasi ham chiroyli bekatlari bilan mashhur!",
+  "image_query": "Paris metro station"
  },
  {
   "id": 65,
@@ -2937,7 +3001,8 @@
     "uz": "platforma"
    }
   ],
-  "tip_uz": "Fransiyaning tezyurar poyezdi — TGV [te-je-ve]."
+  "tip_uz": "Fransiyaning tezyurar poyezdi — TGV [te-je-ve].",
+  "image_query": "TGV train"
  },
  {
   "id": 66,
@@ -2984,7 +3049,8 @@
     "uz": "kiritilgan"
    }
   ],
-  "tip_uz": "«À quelle heure est le départ ?» — «Soat nechagacha xonani bo'shatish kerak?»"
+  "tip_uz": "«À quelle heure est le départ ?» — «Soat nechagacha xonani bo'shatish kerak?»",
+  "image_query": "hotel reception"
  },
  {
   "id": 67,
@@ -3031,7 +3097,8 @@
     "uz": "konditsioner"
    }
   ],
-  "tip_uz": "Wi-Fi ishlamasa: «Le wifi ne marche pas» [lö vifi nö marsh pa]."
+  "tip_uz": "Wi-Fi ishlamasa: «Le wifi ne marche pas» [lö vifi nö marsh pa].",
+  "image_query": "hotel room"
  },
  {
   "id": 68,
@@ -3078,7 +3145,8 @@
     "uz": "maydon"
    }
   ],
-  "tip_uz": "Yigit kishi «perdu», qiz «perdue» deb yozadi — talaffuzi bir xil."
+  "tip_uz": "Yigit kishi «perdu», qiz «perdue» deb yozadi — talaffuzi bir xil.",
+  "image_query": "tourist map"
  },
  {
   "id": 69,
@@ -3125,7 +3193,8 @@
     "uz": "Ko'rsating…"
    }
   ],
-  "tip_uz": "Luvr muzeyi har oyning ba'zi kunlari bepul bo'ladi — saytini tekshiring."
+  "tip_uz": "Luvr muzeyi har oyning ba'zi kunlari bepul bo'ladi — saytini tekshiring.",
+  "image_query": "Louvre museum"
  },
  {
   "id": 70,
@@ -3172,7 +3241,8 @@
     "uz": "ish vaqti"
    }
   ],
-  "tip_uz": "Eshikdagi yozuvlar: «Poussez» [puse] — itaring, «Tirez» [tire] — torting."
+  "tip_uz": "Eshikdagi yozuvlar: «Poussez» [puse] — itaring, «Tirez» [tire] — torting.",
+  "image_query": "shop closed sign"
  },
  {
   "id": 71,
@@ -3219,7 +3289,8 @@
     "uz": "erta / kech"
    }
   ],
-  "tip_uz": "Kechqurun: «Je me couche à onze heures» [jö mö kush] — «Soat o'n birda yotaman»."
+  "tip_uz": "Kechqurun: «Je me couche à onze heures» [jö mö kush] — «Soat o'n birda yotaman».",
+  "image_query": "alarm clock"
  },
  {
   "id": 72,
@@ -3266,7 +3337,8 @@
     "uz": "oxirida, nihoyat"
    }
   ],
-  "tip_uz": "«Raconte !» [rakont] — «Gapirib ber!» — do'stlar orasida juda ko'p ishlatiladi."
+  "tip_uz": "«Raconte !» [rakont] — «Gapirib ber!» — do'stlar orasida juda ko'p ishlatiladi.",
+  "image_query": "morning coffee"
  },
  {
   "id": 73,
@@ -3313,7 +3385,8 @@
     "uz": "…dan …gacha"
    }
   ],
-  "tip_uz": "Fransiyada rasmiy ish haftasi 35 soat — dunyodagi eng qisqalaridan biri."
+  "tip_uz": "Fransiyada rasmiy ish haftasi 35 soat — dunyodagi eng qisqalaridan biri.",
+  "image_query": "office desk work"
  },
  {
   "id": 74,
@@ -3360,7 +3433,8 @@
     "uz": "dam olaman"
    }
   ],
-  "tip_uz": "Dushanba kuni hamkasbga: «Bon week-end ?» — «Dam olish yaxshi o'tdimi?»"
+  "tip_uz": "Dushanba kuni hamkasbga: «Bon week-end ?» — «Dam olish yaxshi o'tdimi?»",
+  "image_query": "picnic park"
  },
  {
   "id": 75,
@@ -3407,7 +3481,8 @@
     "uz": "sayohat qilish"
    }
   ],
-  "tip_uz": "«J'aime» dan keyin fe'l o'zgarmaydi: J'aime danser — Raqsga tushishni yoqtiraman."
+  "tip_uz": "«J'aime» dan keyin fe'l o'zgarmaydi: J'aime danser — Raqsga tushishni yoqtiraman.",
+  "image_query": "watercolor painting"
  },
  {
   "id": 76,
@@ -3454,7 +3529,8 @@
     "uz": "suzish"
    }
   ],
-  "tip_uz": "Fransuzlar futbolni ko'pincha qisqa qilib «le foot» [lö fut] deyishadi."
+  "tip_uz": "Fransuzlar futbolni ko'pincha qisqa qilib «le foot» [lö fut] deyishadi.",
+  "image_query": "football field"
  },
  {
   "id": 77,
@@ -3501,7 +3577,8 @@
     "uz": "gitara"
    }
   ],
-  "tip_uz": "Diqqat: o'yinlar «jouer AU…», cholg'ular «jouer DU…». Futbol — au, pianino — du."
+  "tip_uz": "Diqqat: o'yinlar «jouer AU…», cholg'ular «jouer DU…». Futbol — au, pianino — du.",
+  "image_query": "dutar instrument"
  },
  {
   "id": 78,
@@ -3548,7 +3625,8 @@
     "uz": "kitob"
    }
   ],
-  "tip_uz": "«Kichkina shahzoda» kitobi o'zbek tiliga ham tarjima qilingan — ikkalasini yonma-yon o'qing!"
+  "tip_uz": "«Kichkina shahzoda» kitobi o'zbek tiliga ham tarjima qilingan — ikkalasini yonma-yon o'qing!",
+  "image_query": "open book reading"
  },
  {
   "id": 79,
@@ -3595,7 +3673,8 @@
     "uz": "film boshlanadi"
    }
   ],
-  "tip_uz": "«VO» — «version originale», ya'ni asl tilda, subtitr bilan."
+  "tip_uz": "«VO» — «version originale», ya'ni asl tilda, subtitr bilan.",
+  "image_query": "cinema seats"
  },
  {
   "id": 80,
@@ -3642,7 +3721,8 @@
     "uz": "Biror narsa olib kelaymi?"
    }
   ],
-  "tip_uz": "Fransiyada mehmonga borganda gul yoki shirinlik olib borish odat — xuddi bizdagidek!"
+  "tip_uz": "Fransiyada mehmonga borganda gul yoki shirinlik olib borish odat — xuddi bizdagidek!",
+  "image_query": "dinner table friends"
  },
  {
   "id": 81,
@@ -3689,7 +3769,8 @@
     "uz": "biz …miz"
    }
   ],
-  "tip_uz": "To'liq: je suis, tu es, il est, nous sommes, vous êtes, ils sont. Bugun yodlab oling!"
+  "tip_uz": "To'liq: je suis, tu es, il est, nous sommes, vous êtes, ils sont. Bugun yodlab oling!",
+  "image_query": "Eiffel Tower"
  },
  {
   "id": 82,
@@ -3736,7 +3817,8 @@
     "uz": "bizda bor"
    }
   ],
-  "tip_uz": "«Avoir» bilan aytiladiganlar: yosh (j'ai 20 ans), ochlik (j'ai faim), sovuq (j'ai froid)."
+  "tip_uz": "«Avoir» bilan aytiladiganlar: yosh (j'ai 20 ans), ochlik (j'ai faim), sovuq (j'ai froid).",
+  "image_query": "question mark"
  },
  {
   "id": 83,
@@ -3783,7 +3865,8 @@
     "uz": "birga"
    }
   ],
-  "tip_uz": "«Aller» noto'g'ri fe'l: ko'rinishidan qoidaga bo'ysunmaydi, shuning uchun yodlash kerak."
+  "tip_uz": "«Aller» noto'g'ri fe'l: ko'rinishidan qoidaga bo'ysunmaydi, shuning uchun yodlash kerak.",
+  "image_query": "people walking city"
  },
  {
   "id": 84,
@@ -3830,7 +3913,8 @@
     "uz": "xarid qilish"
    }
   ],
-  "tip_uz": "«Vous faites» — «vous faisez» emas! Bu ko'p uchraydigan xato."
+  "tip_uz": "«Vous faites» — «vous faisez» emas! Bu ko'p uchraydigan xato.",
+  "image_query": "cooking kitchen"
  },
  {
   "id": 85,
@@ -3877,7 +3961,8 @@
     "uz": "ular xohlashadi"
    }
   ],
-  "tip_uz": "Muloyim so'rov uchun «je voudrais», do'stona taklifga javob uchun «je veux bien»."
+  "tip_uz": "Muloyim so'rov uchun «je voudrais», do'stona taklifga javob uchun «je veux bien».",
+  "image_query": "pouring tea"
  },
  {
   "id": 86,
@@ -3924,7 +4009,8 @@
     "uz": "chamadon"
    }
   ],
-  "tip_uz": "Juda muloyim: «Pourriez-vous… ?» [puriye vu] — «…olmasmidingiz?»"
+  "tip_uz": "Juda muloyim: «Pourriez-vous… ?» [puriye vu] — «…olmasmidingiz?»",
+  "image_query": "open door"
  },
  {
   "id": 87,
@@ -3971,7 +4057,8 @@
     "uz": "Kech bo'ldi"
    }
   ],
-  "tip_uz": "«Les devoirs» [le dövuar] — maktabdagi uy vazifasi."
+  "tip_uz": "«Les devoirs» [le dövuar] — maktabdagi uy vazifasi.",
+  "image_query": "suitcase travel"
  },
  {
   "id": 88,
@@ -4018,7 +4105,8 @@
     "uz": "Suzishni bilaman"
    }
   ],
-  "tip_uz": "Odamni tanish — doim «connaître»: «Tu connais Claire ?» — «Klerni taniysanmi?»"
+  "tip_uz": "Odamni tanish — doim «connaître»: «Tu connais Claire ?» — «Klerni taniysanmi?»",
+  "image_query": "library bookshelves"
  },
  {
   "id": 89,
@@ -4065,7 +4153,8 @@
     "uz": "ular olishadi"
    }
   ],
-  "tip_uz": "«Prendre une photo» [prondr ün foto] — rasmga olish."
+  "tip_uz": "«Prendre une photo» [prondr ün foto] — rasmga olish.",
+  "image_query": "bus stop"
  },
  {
   "id": 90,
@@ -4112,7 +4201,8 @@
     "uz": "ular kelishadi"
    }
   ],
-  "tip_uz": "Qiziq: fransuzlar «hozir boraman» deyish uchun «kelyapman» — «J'arrive» deyishadi."
+  "tip_uz": "Qiziq: fransuzlar «hozir boraman» deyish uchun «kelyapman» — «J'arrive» deyishadi.",
+  "image_query": "arrivals airport"
  },
  {
   "id": 91,
@@ -4159,7 +4249,8 @@
     "uz": "isitma"
    }
   ],
-  "tip_uz": "Tez tuzalish tilagi: «Bon rétablissement !» [bon retablisman]."
+  "tip_uz": "Tez tuzalish tilagi: «Bon rétablissement !» [bon retablisman].",
+  "image_query": "sick in bed"
  },
  {
   "id": 92,
@@ -4206,7 +4297,8 @@
     "uz": "tish og'rig'i"
    }
   ],
-  "tip_uz": "«Ça fait mal !» [sa fe mal] — «Og'riyapti!» — biror joy og'riganda tez aytiladi."
+  "tip_uz": "«Ça fait mal !» [sa fe mal] — «Og'riyapti!» — biror joy og'riganda tez aytiladi.",
+  "image_query": "headache"
  },
  {
   "id": 93,
@@ -4253,7 +4345,8 @@
     "uz": "Mumkinmi?"
    }
   ],
-  "tip_uz": "Fransuzlar shifokorni og'zaki nutqda «le docteur» [lö doktör] ham deyishadi."
+  "tip_uz": "Fransuzlar shifokorni og'zaki nutqda «le docteur» [lö doktör] ham deyishadi.",
+  "image_query": "doctor"
  },
  {
   "id": 94,
@@ -4300,7 +4393,8 @@
     "uz": "retsept"
    }
   ],
-  "tip_uz": "«Depuis» — «…dan beri»: depuis lundi — dushanbadan beri, depuis 2020 — 2020-yildan beri."
+  "tip_uz": "«Depuis» — «…dan beri»: depuis lundi — dushanbadan beri, depuis 2020 — 2020-yildan beri.",
+  "image_query": "stethoscope"
  },
  {
   "id": 95,
@@ -4347,7 +4441,8 @@
     "uz": "yo'talayapman"
    }
   ],
-  "tip_uz": "Kattalarga: «À vos souhaits !» [a vo sue]."
+  "tip_uz": "Kattalarga: «À vos souhaits !» [a vo sue].",
+  "image_query": "tissues cold"
  },
  {
   "id": 96,
@@ -4394,7 +4489,8 @@
     "uz": "bu kecha"
    }
   ],
-  "tip_uz": "Kechqurun xayrlashganda: «Bonne nuit !» [bon nüi] — «Xayrli tun!»"
+  "tip_uz": "Kechqurun xayrlashganda: «Bonne nuit !» [bon nüi] — «Xayrli tun!»",
+  "image_query": "sleeping"
  },
  {
   "id": 97,
@@ -4441,7 +4537,8 @@
     "uz": "O'zingga ehtiyot bo'l"
    }
   ],
-  "tip_uz": "«Mieux» — «yaxshiroq», «bien» — «yaxshi». Ularni adashtirmang!"
+  "tip_uz": "«Mieux» — «yaxshiroq», «bien» — «yaxshi». Ularni adashtirmang!",
+  "image_query": "smiling woman"
  },
  {
   "id": 98,
@@ -4488,7 +4585,8 @@
     "uz": "tez"
    }
   ],
-  "tip_uz": "O'zbekistonda tez yordam — 103, Yevropada umumiy raqam — 112. Eslab qoling!"
+  "tip_uz": "O'zbekistonda tez yordam — 103, Yevropada umumiy raqam — 112. Eslab qoling!",
+  "image_query": "ambulance"
  },
  {
   "id": 99,
@@ -4535,7 +4633,8 @@
     "uz": "oyoq (panja)"
    }
   ],
-  "tip_uz": "«Les cheveux» [le shövö] — soch. Fransuzchada doim ko'plikda ishlatiladi."
+  "tip_uz": "«Les cheveux» [le shövö] — soch. Fransuzchada doim ko'plikda ishlatiladi.",
+  "image_query": "yoga"
  },
  {
   "id": 100,
@@ -4582,7 +4681,8 @@
     "uz": "Hammaga barakalla!"
    }
   ],
-  "tip_uz": "Tartib sonlar «-ième» bilan: deuxième (2-), troisième (3-), centième (100-)."
+  "tip_uz": "Tartib sonlar «-ième» bilan: deuxième (2-), troisième (3-), centième (100-).",
+  "image_query": "fireworks"
  },
  {
   "id": 101,
@@ -4629,7 +4729,8 @@
     "uz": "chipta"
    }
   ],
-  "tip_uz": "«Ticket» — avtobus/metro chiptasi, «billet» — samolyot, poyezd, kino chiptasi."
+  "tip_uz": "«Ticket» — avtobus/metro chiptasi, «billet» — samolyot, poyezd, kino chiptasi.",
+  "image_query": "airport terminal"
  },
  {
   "id": 102,
@@ -4676,7 +4777,8 @@
     "uz": "bir hafta"
    }
   ],
-  "tip_uz": "Ish safari — «un voyage d'affaires» [ön vuayaj dafer]."
+  "tip_uz": "Ish safari — «un voyage d'affaires» [ön vuayaj dafer].",
+  "image_query": "passport"
  },
  {
   "id": 103,
@@ -4723,7 +4825,8 @@
     "uz": "qo'l yuki"
    }
   ],
-  "tip_uz": "Chamadoningizga ism va telefon raqamingizni yozilgan yorliq osib qo'ying."
+  "tip_uz": "Chamadoningizga ism va telefon raqamingizni yozilgan yorliq osib qo'ying.",
+  "image_query": "luggage"
  },
  {
   "id": 104,
@@ -4770,7 +4873,8 @@
     "uz": "soyabon"
    }
   ],
-  "tip_uz": "Fransiyada harorat Selsiyda o'lchanadi, xuddi bizdagidek: «Il fait vingt degrés»."
+  "tip_uz": "Fransiyada harorat Selsiyda o'lchanadi, xuddi bizdagidek: «Il fait vingt degrés».",
+  "image_query": "rain umbrella"
  },
  {
   "id": 105,
@@ -4817,7 +4921,8 @@
     "uz": "hunarmandchilik"
    }
   ],
-  "tip_uz": "«Se souvenir» — «eslamoq» fe'li ham: «Je me souviens» — «Eslayman»."
+  "tip_uz": "«Se souvenir» — «eslamoq» fe'li ham: «Je me souviens» — «Eslayman».",
+  "image_query": "carpet bazaar"
  },
  {
   "id": 106,
@@ -4864,7 +4969,8 @@
     "uz": "Jilmaying!"
    }
   ],
-  "tip_uz": "Odamlarni rasmga olishdan oldin doim ruxsat so'rang — bu hurmat belgisi."
+  "tip_uz": "Odamlarni rasmga olishdan oldin doim ruxsat so'rang — bu hurmat belgisi.",
+  "image_query": "tourist taking photo"
  },
  {
   "id": 107,
@@ -4911,7 +5017,8 @@
     "uz": "…davom etadi"
    }
   ],
-  "tip_uz": "Fransuz tilini bilgan gidlar O'zbekistonda juda qadrlanadi — bu ajoyib kasb!"
+  "tip_uz": "Fransuz tilini bilgan gidlar O'zbekistonda juda qadrlanadi — bu ajoyib kasb!",
+  "image_query": "tour guide group"
  },
  {
   "id": 108,
@@ -4958,7 +5065,8 @@
     "uz": "eng tepasida"
    }
   ],
-  "tip_uz": "Diqqat: «la tour» — minora, «le tour» — aylanish, sayohat. Artikl ma'noni o'zgartiradi!"
+  "tip_uz": "Diqqat: «la tour» — minora, «le tour» — aylanish, sayohat. Artikl ma'noni o'zgartiradi!",
+  "image_query": "Eiffel Tower night"
  },
  {
   "id": 109,
@@ -5005,7 +5113,8 @@
     "uz": "yonida"
    }
   ],
-  "tip_uz": "Ichan qal'a YuNESKO ro'yxatida — fransuz turistlar uni «musée à ciel ouvert» deyishadi: ochiq osmon ostidagi muzey."
+  "tip_uz": "Ichan qal'a YuNESKO ro'yxatida — fransuz turistlar uni «musée à ciel ouvert» deyishadi: ochiq osmon ostidagi muzey.",
+  "image_query": "Kalta Minor Khiva"
  },
  {
   "id": 110,
@@ -5052,7 +5161,8 @@
     "uz": "odamlar"
    }
   ],
-  "tip_uz": "Yomon o'tgan bo'lsa: «C'était nul» [sete nül] — «Yomon bo'ldi» (og'zaki)."
+  "tip_uz": "Yomon o'tgan bo'lsa: «C'était nul» [sete nül] — «Yomon bo'ldi» (og'zaki).",
+  "image_query": "travel suitcase map"
  },
  {
   "id": 111,
@@ -5099,7 +5209,8 @@
     "uz": "to'y"
    }
   ],
-  "tip_uz": "Palov YuNESKO nomoddiy madaniy merosi ro'yxatiga kiritilgan — fransuzlarga aytib bering!"
+  "tip_uz": "Palov YuNESKO nomoddiy madaniy merosi ro'yxatiga kiritilgan — fransuzlarga aytib bering!",
+  "image_query": "plov pilaf"
  },
  {
   "id": 112,
@@ -5146,7 +5257,8 @@
     "uz": "hech qachon"
    }
   ],
-  "tip_uz": "«Chez nous» [she nu] — «bizda, bizning yurtda» degan ma'noda ham ishlatiladi."
+  "tip_uz": "«Chez nous» [she nu] — «bizda, bizning yurtda» degan ma'noda ham ishlatiladi.",
+  "image_query": "tandir bread Uzbekistan"
  },
  {
   "id": 113,
@@ -5193,7 +5305,8 @@
     "uz": "piyola, kosa"
    }
   ],
-  "tip_uz": "Mehmonga piyolani to'ldirmay quyish — hurmat belgisi. Buni fransuz do'stlarga ham tushuntiring!"
+  "tip_uz": "Mehmonga piyolani to'ldirmay quyish — hurmat belgisi. Buni fransuz do'stlarga ham tushuntiring!",
+  "image_query": "teahouse"
  },
  {
   "id": 114,
@@ -5240,7 +5353,8 @@
     "uz": "butun tun"
    }
   ],
-  "tip_uz": "Bayram tabrigi: «Bonne fête de Navrouz !» [bon fet dö navruz]."
+  "tip_uz": "Bayram tabrigi: «Bonne fête de Navrouz !» [bon fet dö navruz].",
+  "image_query": "sumalak"
  },
  {
   "id": 115,
@@ -5287,7 +5401,8 @@
     "uz": "ko'rmoq"
    }
   ],
-  "tip_uz": "Samarqand haqida mashhur fransuz kitobi bor — Amin Maalufning «Samarcande» romani."
+  "tip_uz": "Samarqand haqida mashhur fransuz kitobi bor — Amin Maalufning «Samarcande» romani.",
+  "image_query": "Registan Samarkand"
  },
  {
   "id": 116,
@@ -5334,7 +5449,8 @@
     "uz": "kesib o'tmoq"
    }
   ],
-  "tip_uz": "Fransuzchada Buxoro — «Boukhara», Xiva — «Khiva», Qizilqum — «Kyzylkoum»."
+  "tip_uz": "Fransuzchada Buxoro — «Boukhara», Xiva — «Khiva», Qizilqum — «Kyzylkoum».",
+  "image_query": "Bukhara"
  },
  {
   "id": 117,
@@ -5381,7 +5497,8 @@
     "uz": "Qayerda tayyorlanadi?"
    }
   ],
-  "tip_uz": "Buyuk Ipak yo'li — «la route de la soie» [la rut dö la sua]."
+  "tip_uz": "Buyuk Ipak yo'li — «la route de la soie» [la rut dö la sua].",
+  "image_query": "silk ikat"
  },
  {
   "id": 118,
@@ -5428,7 +5545,8 @@
     "uz": "Oling, marhamat!"
    }
   ],
-  "tip_uz": "Fransuzlar ham mehmonni hurmat qiladi, lekin odatda oldindan aytib kelishadi."
+  "tip_uz": "Fransuzlar ham mehmonni hurmat qiladi, lekin odatda oldindan aytib kelishadi.",
+  "image_query": "dastarkhan"
  },
  {
   "id": 119,
@@ -5475,7 +5593,8 @@
     "uz": "aksariyat, ko'proq"
    }
   ],
-  "tip_uz": "To'y tabrigi: «Félicitations aux mariés !» — «Kelin-kuyovni tabriklaymiz!»"
+  "tip_uz": "To'y tabrigi: «Félicitations aux mariés !» — «Kelin-kuyovni tabriklaymiz!»",
+  "image_query": "Uzbek wedding"
  },
  {
   "id": 120,
@@ -5522,7 +5641,8 @@
     "uz": "Menga o'rgata olasanmi?"
    }
   ],
-  "tip_uz": "Lazgi YuNESKO nomoddiy madaniy merosi ro'yxatida — bu bilan faxrlanamiz!"
+  "tip_uz": "Lazgi YuNESKO nomoddiy madaniy merosi ro'yxatida — bu bilan faxrlanamiz!",
+  "image_query": "Khorezm dance"
  },
  {
   "id": 121,
@@ -5569,7 +5689,8 @@
     "uz": "chunki"
    }
   ],
-  "tip_uz": "«Pourquoi ?» [purkua] — «Nega?», javobi doim «Parce que…» [parskö] — «Chunki…»."
+  "tip_uz": "«Pourquoi ?» [purkua] — «Nega?», javobi doim «Parce que…» [parskö] — «Chunki…».",
+  "image_query": "job interview"
  },
  {
   "id": 122,
@@ -5616,7 +5737,8 @@
     "uz": "yig'ilish"
    }
   ],
-  "tip_uz": "Ishda tushlik tanaffusi — «la pause déjeuner» [la poz dejöne]."
+  "tip_uz": "Ishda tushlik tanaffusi — «la pause déjeuner» [la poz dejöne].",
+  "image_query": "office meeting"
  },
  {
   "id": 123,
@@ -5663,7 +5785,8 @@
     "uz": "O'paman (do'stga)"
    }
   ],
-  "tip_uz": "Ish xatida «Bises» yozmang — u faqat yaqin do'stlar uchun!"
+  "tip_uz": "Ish xatida «Bises» yozmang — u faqat yaqin do'stlar uchun!",
+  "image_query": "laptop email"
  },
  {
   "id": 124,
@@ -5710,7 +5833,8 @@
     "uz": "xabar qoldirish"
    }
   ],
-  "tip_uz": "«Ne quittez pas» so'zma-so'z «Tashlab ketmang» — telefonda «Kutib turing» degani."
+  "tip_uz": "«Ne quittez pas» so'zma-so'z «Tashlab ketmang» — telefonda «Kutib turing» degani.",
+  "image_query": "office telephone"
  },
  {
   "id": 125,
@@ -5757,7 +5881,8 @@
     "uz": "ikkinchi kursda"
    }
   ],
-  "tip_uz": "Xivada Urganch davlat universitetining fakulteti bor — «la faculté» [la fakülte]."
+  "tip_uz": "Xivada Urganch davlat universitetining fakulteti bor — «la faculté» [la fakülte].",
+  "image_query": "university campus"
  },
  {
   "id": 126,
@@ -5804,7 +5929,8 @@
     "uz": "baho"
    }
   ],
-  "tip_uz": "Imtihondan oldin: «Bon courage !» [bon kuraj] — «Kuch-quvvat tilayman!»"
+  "tip_uz": "Imtihondan oldin: «Bon courage !» [bon kuraj] — «Kuch-quvvat tilayman!»",
+  "image_query": "exam students"
  },
  {
   "id": 127,
@@ -5851,7 +5977,8 @@
     "uz": "deyarli"
    }
   ],
-  "tip_uz": "Ota-onalar so'raydigan savol: «Tu as fait tes devoirs ?» — «Uy vazifangni qildingmi?»"
+  "tip_uz": "Ota-onalar so'raydigan savol: «Tu as fait tes devoirs ?» — «Uy vazifangni qildingmi?»",
+  "image_query": "homework desk"
  },
  {
   "id": 128,
@@ -5898,7 +6025,8 @@
     "uz": "…qanday aytiladi?"
    }
   ],
-  "tip_uz": "Fransiyada o'qituvchiga «Madame» yoki «Monsieur» deb murojaat qilinadi."
+  "tip_uz": "Fransiyada o'qituvchiga «Madame» yoki «Monsieur» deb murojaat qilinadi.",
+  "image_query": "classroom"
  },
  {
   "id": 129,
@@ -5945,7 +6073,8 @@
     "uz": "sevimli"
    }
   ],
-  "tip_uz": "Fanlar: les maths, l'histoire, la géographie [jeografi], la physique [fizik]."
+  "tip_uz": "Fanlar: les maths, l'histoire, la géographie [jeografi], la physique [fizik].",
+  "image_query": "school books"
  },
  {
   "id": 130,
@@ -5992,7 +6121,8 @@
     "uz": "Harakat qilyapman"
    }
   ],
-  "tip_uz": "Kuniga 15 daqiqa — yiliga 90 soatdan ortiq! Har kuni kanalimizdagi darsni takrorlang."
+  "tip_uz": "Kuniga 15 daqiqa — yiliga 90 soatdan ortiq! Har kuni kanalimizdagi darsni takrorlang.",
+  "image_query": "French books"
  },
  {
   "id": 131,
@@ -6039,7 +6169,8 @@
     "uz": "juda baxtli bo'lmoq"
    }
   ],
-  "tip_uz": "«J'ai hâte !» [je at] — «Sabrsizlik bilan kutyapman!»"
+  "tip_uz": "«J'ai hâte !» [je at] — «Sabrsizlik bilan kutyapman!»",
+  "image_query": "happy jumping"
  },
  {
   "id": 132,
@@ -6086,7 +6217,8 @@
     "uz": "Men yoningdaman"
    }
   ],
-  "tip_uz": "«Tu me manques» [tü mö monk] — «Seni sog'indim». Diqqat: so'zma-so'z «Sen menga yetishmaysan»."
+  "tip_uz": "«Tu me manques» [tü mö monk] — «Seni sog'indim». Diqqat: so'zma-so'z «Sen menga yetishmaysan».",
+  "image_query": "rain window"
  },
  {
   "id": 133,
@@ -6133,7 +6265,8 @@
     "uz": "Tinchlan"
    }
   ],
-  "tip_uz": "«Encore» ham «yana», ham «hali» degani: «pas encore» — «hali yo'q»."
+  "tip_uz": "«Encore» ham «yana», ham «hali» degani: «pas encore» — «hali yo'q».",
+  "image_query": "traffic jam"
  },
  {
   "id": 134,
@@ -6180,7 +6313,8 @@
     "uz": "Ishonolmayapman"
    }
   ],
-  "tip_uz": "Yoshlar «Sans blague !» [son blag] ham deyishadi — «Hazillashma!»"
+  "tip_uz": "Yoshlar «Sans blague !» [son blag] ham deyishadi — «Hazillashma!»",
+  "image_query": "Khiva city walls"
  },
  {
   "id": 135,
@@ -6227,7 +6361,8 @@
     "uz": "javob bermoq"
    }
   ],
-  "tip_uz": "Qisqa og'zaki shakli: «T'inquiète !» [tenkyet] — yoshlar orasida."
+  "tip_uz": "Qisqa og'zaki shakli: «T'inquiète !» [tenkyet] — yoshlar orasida.",
+  "image_query": "woman with phone"
  },
  {
   "id": 136,
@@ -6274,7 +6409,8 @@
     "uz": "oyijon"
    }
   ],
-  "tip_uz": "Fransuzchada «bien» qo'shilsa, «aimer» ma'nosi yumshaydi — bu nozik farq!"
+  "tip_uz": "Fransuzchada «bien» qo'shilsa, «aimer» ma'nosi yumshaydi — bu nozik farq!",
+  "image_query": "heart"
  },
  {
   "id": 137,
@@ -6321,7 +6457,8 @@
     "uz": "tez orada"
    }
   ],
-  "tip_uz": "«Je te manque» — «Sen meni sog'inding» degani. Teskari tartib — ehtiyot bo'ling!"
+  "tip_uz": "«Je te manque» — «Sen meni sog'inding» degani. Teskari tartib — ehtiyot bo'ling!",
+  "image_query": "video call laptop"
  },
  {
   "id": 138,
@@ -6368,7 +6505,8 @@
     "uz": "Bardam bo'l!"
    }
   ],
-  "tip_uz": "«Tu as tort» [tü a tor] — «Haq emassan»."
+  "tip_uz": "«Tu as tort» [tü a tor] — «Haq emassan».",
+  "image_query": "mountain summit hiker"
  },
  {
   "id": 139,
@@ -6410,7 +6548,8 @@
     "uz": "Chuqur hamdardlik bildiraman"
    }
   ],
-  "tip_uz": "Og'ir paytda ko'p gapirish shart emas — «Je pense à toi» [jö pons a tua] — «Seni o'ylayapman» yetarli."
+  "tip_uz": "Og'ir paytda ko'p gapirish shart emas — «Je pense à toi» [jö pons a tua] — «Seni o'ylayapman» yetarli.",
+  "image_query": "white candle flowers"
  },
  {
   "id": 140,
@@ -6457,7 +6596,8 @@
     "uz": "Senga minnatdorman"
    }
   ],
-  "tip_uz": "«Merci d'avance» [mersi davons] — «Oldindan rahmat» — iltimos xatlarida."
+  "tip_uz": "«Merci d'avance» [mersi davons] — «Oldindan rahmat» — iltimos xatlarida.",
+  "image_query": "thank you card"
  },
  {
   "id": 141,
@@ -6504,7 +6644,8 @@
     "uz": "Ovqatlandingmi?"
    }
   ],
-  "tip_uz": "Passé composé — fransuz tilidagi eng ko'p ishlatiladigan o'tgan zamon."
+  "tip_uz": "Passé composé — fransuz tilidagi eng ko'p ishlatiladigan o'tgan zamon.",
+  "image_query": "shashlik"
  },
  {
   "id": 142,
@@ -6551,7 +6692,8 @@
     "uz": "chiqding"
    }
   ],
-  "tip_uz": "«Être» bilan keladigan fe'llarni eslab qolish uchun ular «uy» ichidagi harakatlar: kirdi, chiqdi, keldi, ketdi…"
+  "tip_uz": "«Être» bilan keladigan fe'llarni eslab qolish uchun ular «uy» ichidagi harakatlar: kirdi, chiqdi, keldi, ketdi…",
+  "image_query": "museum gallery"
  },
  {
   "id": 143,
@@ -6598,7 +6740,8 @@
     "uz": "ko'rdim (tomosha qildim)"
    }
   ],
-  "tip_uz": "Noto'g'ri fe'llar: faire → fait, prendre → pris [pri], voir → vu [vü]."
+  "tip_uz": "Noto'g'ri fe'llar: faire → fait, prendre → pris [pri], voir → vu [vü].",
+  "image_query": "watching movie"
  },
  {
   "id": 144,
@@ -6645,7 +6788,8 @@
     "uz": "oldim"
    }
   ],
-  "tip_uz": "«La semaine dernière» — o'tgan hafta, «l'année dernière» — o'tgan yil."
+  "tip_uz": "«La semaine dernière» — o'tgan hafta, «l'année dernière» — o'tgan yil.",
+  "image_query": "sea beach"
  },
  {
   "id": 145,
@@ -6692,7 +6836,8 @@
     "uz": "ziyorat qildim"
    }
   ],
-  "tip_uz": "«Bonnes vacances !» [bon vakons] — «Ta'tilingiz yaxshi o'tsin!»"
+  "tip_uz": "«Bonnes vacances !» [bon vakons] — «Ta'tilingiz yaxshi o'tsin!»",
+  "image_query": "Samarkand"
  },
  {
   "id": 146,
@@ -6739,7 +6884,8 @@
     "uz": "bazm, bayram"
    }
   ],
-  "tip_uz": "«Jamais» bilan: «Je n'ai jamais vu Paris» — «Parijni hech qachon ko'rmaganman»."
+  "tip_uz": "«Jamais» bilan: «Je n'ai jamais vu Paris» — «Parijni hech qachon ko'rmaganman».",
+  "image_query": "smartphone message"
  },
  {
   "id": 147,
@@ -6786,7 +6932,8 @@
     "uz": "samolyotda"
    }
   ],
-  "tip_uz": "Lekin piyoda — «à pied», velosipedda — «à vélo» [a velo]."
+  "tip_uz": "Lekin piyoda — «à pied», velosipedda — «à vélo» [a velo].",
+  "image_query": "train arriving"
  },
  {
   "id": 148,
@@ -6833,7 +6980,8 @@
     "uz": "juda yoqdi"
    }
   ],
-  "tip_uz": "«Il y a» ikki ma'noli: «bor» (il y a du thé) va «…oldin» (il y a un an)."
+  "tip_uz": "«Il y a» ikki ma'noli: «bor» (il y a du thé) va «…oldin» (il y a un an).",
+  "image_query": "cooking pot kazan"
  },
  {
   "id": 149,
@@ -6880,7 +7028,8 @@
     "uz": "uzoq vaqt"
    }
   ],
-  "tip_uz": "Taqqoslang: «Je viens de Paris» — Parijdanman, «Je viens de manger» — hozirgina ovqatlandim."
+  "tip_uz": "Taqqoslang: «Je viens de Paris» — Parijdanman, «Je viens de manger» — hozirgina ovqatlandim.",
+  "image_query": "front door"
  },
  {
   "id": 150,
@@ -6927,7 +7076,8 @@
     "uz": "keyin"
    }
   ],
-  "tip_uz": "«Le jour» — kun (sana), «la journée» — kun davomida o'tgan vaqt. «Bonne journée !» — «Kuningiz xayrli o'tsin!»"
+  "tip_uz": "«Le jour» — kun (sana), «la journée» — kun davomida o'tgan vaqt. «Bonne journée !» — «Kuningiz xayrli o'tsin!»",
+  "image_query": "diary writing"
  },
  {
   "id": 151,
@@ -6974,7 +7124,8 @@
     "uz": "qo'ng'iroq qilmoq"
    }
   ],
-  "tip_uz": "Futur proche og'zaki nutqda juda ko'p ishlatiladi — avval shuni o'rganing."
+  "tip_uz": "Futur proche og'zaki nutqda juda ko'p ishlatiladi — avval shuni o'rganing.",
+  "image_query": "cooking evening"
  },
  {
   "id": 152,
@@ -7021,7 +7172,8 @@
     "uz": "daraja"
    }
   ],
-  "tip_uz": "Ob-havo ham futur proche bilan: «Il va pleuvoir» — «Yomg'ir yog'adi»."
+  "tip_uz": "Ob-havo ham futur proche bilan: «Il va pleuvoir» — «Yomg'ir yog'adi».",
+  "image_query": "Kunya Ark Khiva"
  },
  {
   "id": 153,
@@ -7068,7 +7220,8 @@
     "uz": "Hammasi yaxshi bo'ladi"
    }
   ],
-  "tip_uz": "«L'année prochaine» — kelasi yil, «le mois prochain» — kelasi oy."
+  "tip_uz": "«L'année prochaine» — kelasi yil, «le mois prochain» — kelasi oy.",
+  "image_query": "new office"
  },
  {
   "id": 154,
@@ -7115,7 +7268,8 @@
     "uz": "orzuim"
    }
   ],
-  "tip_uz": "Siz kim bo'lmoqchisiz? Izohda fransuzcha yozing: «Je veux devenir…»"
+  "tip_uz": "Siz kim bo'lmoqchisiz? Izohda fransuzcha yozing: «Je veux devenir…»",
+  "image_query": "tour guide"
  },
  {
   "id": 155,
@@ -7162,7 +7316,8 @@
     "uz": "qaytib kelmoq"
    }
   ],
-  "tip_uz": "«Promis, juré !» [promi, jüre] — bolalar orasida «Qasam ichaman!»"
+  "tip_uz": "«Promis, juré !» [promi, jüre] — bolalar orasida «Qasam ichaman!»",
+  "image_query": "handwritten letter"
  },
  {
   "id": 156,
@@ -7209,7 +7364,8 @@
     "uz": "bir kun"
    }
   ],
-  "tip_uz": "«On verra» — aniq javob bermaslik uchun ham ishlatiladi, xuddi bizdagi «Ko'ramiz-da»."
+  "tip_uz": "«On verra» — aniq javob bermaslik uchun ham ishlatiladi, xuddi bizdagi «Ko'ramiz-da».",
+  "image_query": "Registan"
  },
  {
   "id": 157,
@@ -7256,7 +7412,8 @@
     "uz": "yomg'ir yog'sa"
    }
   ],
-  "tip_uz": "«Si» yana «ha» ma'nosida ham keladi — inkor savolga qarshi javobda: «Tu ne viens pas ? — Si !»"
+  "tip_uz": "«Si» yana «ha» ma'nosida ham keladi — inkor savolga qarshi javobda: «Tu ne viens pas ? — Si !»",
+  "image_query": "rain city street"
  },
  {
   "id": 158,
@@ -7303,7 +7460,8 @@
     "uz": "kutilmagan sovg'a"
    }
   ],
-  "tip_uz": "«Moi, …» — gap boshidagi urg'u: «Men esa…». Fransuzlar buni juda yaxshi ko'radi."
+  "tip_uz": "«Moi, …» — gap boshidagi urg'u: «Men esa…». Fransuzlar buni juda yaxshi ko'radi.",
+  "image_query": "party balloons"
  },
  {
   "id": 159,
@@ -7350,7 +7508,8 @@
     "uz": "mehmonxona"
    }
   ],
-  "tip_uz": "Xivani ko'rish uchun kamida ikki kun ajrating — kechki Ichan qal'a juda go'zal!"
+  "tip_uz": "Xivani ko'rish uchun kamida ikki kun ajrating — kechki Ichan qal'a juda go'zal!",
+  "image_query": "Khiva hotel courtyard"
  },
  {
   "id": 160,
@@ -7397,7 +7556,8 @@
     "uz": "o'zbek tili"
    }
   ],
-  "tip_uz": "Tillar fransuzchada kichik harf bilan yoziladi: le français, l'ouzbek, l'anglais."
+  "tip_uz": "Tillar fransuzchada kichik harf bilan yoziladi: le français, l'ouzbek, l'anglais.",
+  "image_query": "new year notebook"
  },
  {
   "id": 161,
@@ -7444,7 +7604,8 @@
     "uz": "…dek, …chalik"
    }
   ],
-  "tip_uz": "Tenglik: «Elle est aussi grande que moi» — «U men bilan bir xil bo'yda»."
+  "tip_uz": "Tenglik: «Elle est aussi grande que moi» — «U men bilan bir xil bo'yda».",
+  "image_query": "Paris skyline"
  },
  {
   "id": 162,
@@ -7491,7 +7652,8 @@
     "uz": "hayotimdagi"
    }
   ],
-  "tip_uz": "«Mieux» — fe'l bilan (je chante mieux), «meilleur» — ot bilan (un meilleur plov)."
+  "tip_uz": "«Mieux» — fe'l bilan (je chante mieux), «meilleur» — ot bilan (un meilleur plov).",
+  "image_query": "pilaf rice dish"
  },
  {
   "id": 163,
@@ -7538,7 +7700,8 @@
     "uz": "Qanday chiroyli…!"
    }
   ],
-  "tip_uz": "Xuddi shunday: nouveau / nouvelle / nouvel — yangi."
+  "tip_uz": "Xuddi shunday: nouveau / nouvelle / nouvel — yangi.",
+  "image_query": "minaret"
  },
  {
   "id": 164,
@@ -7585,7 +7748,8 @@
     "uz": "ko'p"
    }
   ],
-  "tip_uz": "«Ville» — ayol jinsida, shuning uchun «elle»: «Elle est belle, ma ville»."
+  "tip_uz": "«Ville» — ayol jinsida, shuning uchun «elle»: «Elle est belle, ma ville».",
+  "image_query": "Khiva street"
  },
  {
   "id": 165,
@@ -7632,7 +7796,8 @@
     "uz": "unisi"
    }
   ],
-  "tip_uz": "Ayol jinsidagi narsa uchun: «celle-ci» [selsi], «celle-là» [sella]."
+  "tip_uz": "Ayol jinsidagi narsa uchun: «celle-ci» [selsi], «celle-là» [sella].",
+  "image_query": "shop shelves"
  },
  {
   "id": 166,
@@ -7679,7 +7844,8 @@
     "uz": "iqlim"
    }
   ],
-  "tip_uz": "«Moins» — ham «kamroq», ham «minus» degani."
+  "tip_uz": "«Moins» — ham «kamroq», ham «minus» degani.",
+  "image_query": "desert heat"
  },
  {
   "id": 167,
@@ -7726,7 +7892,8 @@
     "uz": "saxiy"
    }
   ],
-  "tip_uz": "«Timide» [timid] — uyatchan. «Gentil(le)» [jonti, jontiy] — mehribon."
+  "tip_uz": "«Timide» [timid] — uyatchan. «Gentil(le)» [jonti, jontiy] — mehribon.",
+  "image_query": "friends laughing"
  },
  {
   "id": 168,
@@ -7773,7 +7940,8 @@
     "uz": "yetarli"
    }
   ],
-  "tip_uz": "«Merci, j'ai assez mangé» — «Rahmat, yetarlicha yedim» — dasturxonda kerakli ibora."
+  "tip_uz": "«Merci, j'ai assez mangé» — «Rahmat, yetarlicha yedim» — dasturxonda kerakli ibora.",
+  "image_query": "melon slice"
  },
  {
   "id": 169,
@@ -7820,7 +7988,8 @@
     "uz": "Bizda ham xuddi shunday!"
    }
   ],
-  "tip_uz": "«Se ressembler» — o'xshamoq: «Tu ressembles à ta mère» — «Onangga o'xshaysan»."
+  "tip_uz": "«Se ressembler» — o'xshamoq: «Tu ressembles à ta mère» — «Onangga o'xshaysan».",
+  "image_query": "friends diversity"
  },
  {
   "id": 170,
@@ -7867,7 +8036,8 @@
     "uz": "salqin, yangi"
    }
   ],
-  "tip_uz": "«Ça m'est égal» [sa met egal] — «Menga farqi yo'q»."
+  "tip_uz": "«Ça m'est égal» [sa met egal] — «Menga farqi yo'q».",
+  "image_query": "mountains"
  },
  {
   "id": 171,
@@ -7914,7 +8084,8 @@
     "uz": "poyabzal"
    }
   ],
-  "tip_uz": "Fransuzlar o'lcham uchun «faire» fe'lini ishlatadi: «Je fais du 38»."
+  "tip_uz": "Fransuzlar o'lcham uchun «faire» fe'lini ishlatadi: «Je fais du 38».",
+  "image_query": "shoe store"
  },
  {
   "id": 172,
@@ -7961,7 +8132,8 @@
     "uz": "bir o'lcham kichigi"
    }
   ],
-  "tip_uz": "Kiyim yarashsa: «Ça vous va très bien !» — «Sizga juda yarashdi!»"
+  "tip_uz": "Kiyim yarashsa: «Ça vous va très bien !» — «Sizga juda yarashdi!»",
+  "image_query": "fitting room"
  },
  {
   "id": 173,
@@ -8008,7 +8180,8 @@
     "uz": "foiz"
    }
   ],
-  "tip_uz": "«Une promo» [ün promo] — aksiya, maxsus taklif."
+  "tip_uz": "«Une promo» [ün promo] — aksiya, maxsus taklif.",
+  "image_query": "sale shop window"
  },
  {
   "id": 174,
@@ -8055,7 +8228,8 @@
     "uz": "kontaktsiz"
    }
   ],
-  "tip_uz": "Mayda pul — «la monnaie» [la mone]. «Vous avez de la monnaie ?» — «Maydangiz bormi?»"
+  "tip_uz": "Mayda pul — «la monnaie» [la mone]. «Vous avez de la monnaie ?» — «Maydangiz bormi?»",
+  "image_query": "card payment"
  },
  {
   "id": 175,
@@ -8102,7 +8276,8 @@
     "uz": "Qaytim qolsin"
    }
   ],
-  "tip_uz": "«La caisse» [la kes] — kassa. «Le caissier / la caissière» — kassir."
+  "tip_uz": "«La caisse» [la kes] — kassa. «Le caissier / la caissière» — kassir.",
+  "image_query": "cash register"
  },
  {
   "id": 176,
@@ -8149,7 +8324,8 @@
     "uz": "pulni qaytarish"
    }
   ],
-  "tip_uz": "«Un pull» [ön pül] — sviter (inglizcha «pullover» dan)."
+  "tip_uz": "«Un pull» [ön pül] — sviter (inglizcha «pullover» dan).",
+  "image_query": "sweater"
  },
  {
   "id": 177,
@@ -8196,7 +8372,8 @@
     "uz": "lenta"
    }
   ],
-  "tip_uz": "Fransiyada sovg'ani darhol, mehmon oldida ochish odat — bizdan farqli!"
+  "tip_uz": "Fransiyada sovg'ani darhol, mehmon oldida ochish odat — bizdan farqli!",
+  "image_query": "gift wrapping"
  },
  {
   "id": 178,
@@ -8243,7 +8420,8 @@
     "uz": "etik"
    }
   ],
-  "tip_uz": "Poyabzal o'lchami Fransiya va O'zbekistonda bir xil tizimda — 38 = 38."
+  "tip_uz": "Poyabzal o'lchami Fransiya va O'zbekistonda bir xil tizimda — 38 = 38.",
+  "image_query": "shoes"
  },
  {
   "id": 179,
@@ -8290,7 +8468,8 @@
     "uz": "oxirgi narx"
    }
   ],
-  "tip_uz": "Fransiyada bozorni «le marché aux puces» [lö marshe o püs] — «burgalar bozori», ya'ni eski buyumlar bozori deyishadi!"
+  "tip_uz": "Fransiyada bozorni «le marché aux puces» [lö marshe o püs] — «burgalar bozori», ya'ni eski buyumlar bozori deyishadi!",
+  "image_query": "Uzbek bazaar"
  },
  {
   "id": 180,
@@ -8337,7 +8516,8 @@
     "uz": "savat"
    }
   ],
-  "tip_uz": "Fransiyada paket pullik — o'z sumkangizni olib boring: «un sac réutilisable»."
+  "tip_uz": "Fransiyada paket pullik — o'z sumkangizni olib boring: «un sac réutilisable».",
+  "image_query": "supermarket"
  },
  {
   "id": 181,
@@ -8384,7 +8564,8 @@
     "uz": "ulanish"
    }
   ],
-  "tip_uz": "«Mot de passe» so'zma-so'z «o'tish so'zi» degani."
+  "tip_uz": "«Mot de passe» so'zma-so'z «o'tish so'zi» degani.",
+  "image_query": "cafe laptop wifi"
  },
  {
   "id": 182,
@@ -8431,7 +8612,8 @@
     "uz": "quvvatlagich"
    }
   ],
-  "tip_uz": "Fransiyada rozetka shakli O'zbekistondagidek — adapter shart emas!"
+  "tip_uz": "Fransiyada rozetka shakli O'zbekistondagidek — adapter shart emas!",
+  "image_query": "phone charging"
  },
  {
   "id": 183,
@@ -8478,7 +8660,8 @@
     "uz": "senga yozaman"
    }
   ],
-  "tip_uz": "«MDR» — «mort de rire» — fransuzcha «LOL», ya'ni «kulgidan o'ldim»."
+  "tip_uz": "«MDR» — «mort de rire» — fransuzcha «LOL», ya'ni «kulgidan o'ldim».",
+  "image_query": "texting smartphone"
  },
  {
   "id": 184,
@@ -8525,7 +8708,8 @@
     "uz": "ijtimoiy tarmoqlar"
    }
   ],
-  "tip_uz": "Do'stlaringizga ulashing: «Partage avec tes amis !» [partaj avek tezami]."
+  "tip_uz": "Do'stlaringizga ulashing: «Partage avec tes amis !» [partaj avek tezami].",
+  "image_query": "social media phone"
  },
  {
   "id": 185,
@@ -8572,7 +8756,8 @@
     "uz": "Uzilib qolyapti"
    }
   ],
-  "tip_uz": "Mikrofon o'chiq bo'lsa: «Tu es en muet !» [tü e on müe] — «Ovozing o'chiq!»"
+  "tip_uz": "Mikrofon o'chiq bo'lsa: «Tu es en muet !» [tü e on müe] — «Ovozing o'chiq!»",
+  "image_query": "video call"
  },
  {
   "id": 186,
@@ -8619,7 +8804,8 @@
     "uz": "Qanday yoziladi?"
    }
   ],
-  "tip_uz": "Fransuzlar emailni «un mail» yoki «un courriel» [ön kuryel] deyishadi."
+  "tip_uz": "Fransuzlar emailni «un mail» yoki «un courriel» [ön kuryel] deyishadi.",
+  "image_query": "keyboard"
  },
  {
   "id": 187,
@@ -8666,7 +8852,8 @@
     "uz": "mobil telefon"
    }
   ],
-  "tip_uz": "O'zbekiston kodi +998 — «plus neuf cent quatre-vingt-dix-huit»!"
+  "tip_uz": "O'zbekiston kodi +998 — «plus neuf cent quatre-vingt-dix-huit»!",
+  "image_query": "phone dialing"
  },
  {
   "id": 188,
@@ -8713,7 +8900,8 @@
     "uz": "foydali"
    }
   ],
-  "tip_uz": "Til o'rganish uchun eng yaxshi «appli» — har kuni kanalimizni o'qish!"
+  "tip_uz": "Til o'rganish uchun eng yaxshi «appli» — har kuni kanalimizni o'qish!",
+  "image_query": "smartphone apps"
  },
  {
   "id": 189,
@@ -8760,7 +8948,8 @@
     "uz": "kompyuter"
    }
   ],
-  "tip_uz": "Fransuzlar inglizcha so'zlarning o'rniga o'z so'zlarini ishlatishga harakat qiladi: computer emas, «ordinateur»."
+  "tip_uz": "Fransuzlar inglizcha so'zlarning o'rniga o'z so'zlarini ishlatishga harakat qiladi: computer emas, «ordinateur».",
+  "image_query": "computer"
  },
  {
   "id": 190,
@@ -8807,7 +8996,8 @@
     "uz": "yetkazib berish"
    }
   ],
-  "tip_uz": "Diqqat: «livre» [livr] — kitob, «livrer» [livre] — yetkazib bermoq. O'xshash, lekin boshqa so'zlar!"
+  "tip_uz": "Diqqat: «livre» [livr] — kitob, «livrer» [livre] — yetkazib bermoq. O'xshash, lekin boshqa so'zlar!",
+  "image_query": "parcel delivery"
  },
  {
   "id": 191,
@@ -8854,7 +9044,8 @@
     "uz": "ko'rsatmoq"
    }
   ],
-  "tip_uz": "Fransiyada odob juda muhim: avval «Bonjour», keyin iltimos!"
+  "tip_uz": "Fransiyada odob juda muhim: avval «Bonjour», keyin iltimos!",
+  "image_query": "asking directions"
  },
  {
   "id": 192,
@@ -8901,7 +9092,8 @@
     "uz": "Sizga ham!"
    }
   ],
-  "tip_uz": "«Bonsoir» — kechqurun salomlashish, «Bonne soirée» — kechqurun xayrlashish."
+  "tip_uz": "«Bonsoir» — kechqurun salomlashish, «Bonne soirée» — kechqurun xayrlashish.",
+  "image_query": "Paris cafe terrace"
  },
  {
   "id": 193,
@@ -8948,7 +9140,8 @@
     "uz": "Senga ham!"
    }
   ],
-  "tip_uz": "«Bonnes vacances !» — ta'til oldidan, «Bon voyage !» — sayohat oldidan."
+  "tip_uz": "«Bonnes vacances !» — ta'til oldidan, «Bon voyage !» — sayohat oldidan.",
+  "image_query": "countryside weekend"
  },
  {
   "id": 194,
@@ -8995,7 +9188,8 @@
     "uz": "…ga muhtoj bo'lmoq"
    }
   ],
-  "tip_uz": "«Bonne chance» — omad (tasodifga), «Bon courage» — kuch (mehnatga) tilash."
+  "tip_uz": "«Bonne chance» — omad (tasodifga), «Bon courage» — kuch (mehnatga) tilash.",
+  "image_query": "desk coffee work"
  },
  {
   "id": 195,
@@ -9042,7 +9236,8 @@
     "uz": "do'stlik"
    }
   ],
-  "tip_uz": "Fransuzlar ko'targanda bir-birining ko'ziga qarashadi — bu odob belgisi."
+  "tip_uz": "Fransuzlar ko'targanda bir-birining ko'ziga qarashadi — bu odob belgisi.",
+  "image_query": "tea glasses"
  },
  {
   "id": 196,
@@ -9089,7 +9284,8 @@
     "uz": "Marhamat"
    }
   ],
-  "tip_uz": "Do'stga: «Tiens !» [tyen] — «Mana, ol!»"
+  "tip_uz": "Do'stga: «Tiens !» [tyen] — «Mana, ol!»",
+  "image_query": "doorway"
  },
  {
   "id": 197,
@@ -9136,7 +9332,8 @@
     "uz": "Aslo!"
    }
   ],
-  "tip_uz": "«La fenêtre» [la fönetr] — deraza, «la porte» [la port] — eshik."
+  "tip_uz": "«La fenêtre» [la fönetr] — deraza, «la porte» [la port] — eshik.",
+  "image_query": "train seats"
  },
  {
   "id": 198,
@@ -9183,7 +9380,8 @@
     "uz": "tirbandlik"
    }
   ],
-  "tip_uz": "Fransiyada 5–10 daqiqa kechikish ko'pincha normal hisoblanadi — «le quart d'heure de politesse»."
+  "tip_uz": "Fransiyada 5–10 daqiqa kechikish ko'pincha normal hisoblanadi — «le quart d'heure de politesse».",
+  "image_query": "Paris traffic"
  },
  {
   "id": 199,
@@ -9230,7 +9428,8 @@
     "uz": "juda, zo'r"
    }
   ],
-  "tip_uz": "Fransuzlar maqtovga «Non, non…» deb kamtarlik qilmaydi, oddiy «Merci» deyishadi."
+  "tip_uz": "Fransuzlar maqtovga «Non, non…» deb kamtarlik qilmaydi, oddiy «Merci» deyishadi.",
+  "image_query": "elegant dress"
  },
  {
   "id": 200,
@@ -9277,7 +9476,8 @@
     "uz": "ikki yuz"
    }
   ],
-  "tip_uz": "«Deux cents» — «s» bilan, lekin «deux cent un» — «s» siz. Fransuz imlosi qiziq!"
+  "tip_uz": "«Deux cents» — «s» bilan, lekin «deux cent un» — «s» siz. Fransuz imlosi qiziq!",
+  "image_query": "confetti celebration"
  },
  {
   "id": 201,
@@ -9324,7 +9524,8 @@
     "uz": "aniq, ishonch bilan"
    }
   ],
-  "tip_uz": "Fransuz maqollari juda qisqa va qofiyali — yodlash oson!"
+  "tip_uz": "Fransuz maqollari juda qisqa va qofiyali — yodlash oson!",
+  "image_query": "turtle"
  },
  {
   "id": 202,
@@ -9371,7 +9572,8 @@
     "uz": "tanimoq"
    }
   ],
-  "tip_uz": "«Les amis de mes amis sont mes amis» — «Do'stlarimning do'stlari — mening do'stlarim»."
+  "tip_uz": "«Les amis de mes amis sont mes amis» — «Do'stlarimning do'stlari — mening do'stlarim».",
+  "image_query": "friends helping"
  },
  {
   "id": 203,
@@ -9418,7 +9620,8 @@
     "uz": "ertaga qoldirmoq"
    }
   ],
-  "tip_uz": "Kattalarga: «Dépêchez-vous !» [depeshe vu]."
+  "tip_uz": "Kattalarga: «Dépêchez-vous !» [depeshe vu].",
+  "image_query": "hourglass"
  },
  {
   "id": 204,
@@ -9465,7 +9668,8 @@
     "uz": "jim turmoq"
    }
   ],
-  "tip_uz": "«Tais-toi !» [te tua] — «Jim bo'l!» — qo'pol, ehtiyot bo'lib ishlating."
+  "tip_uz": "«Tais-toi !» [te tua] — «Jim bo'l!» — qo'pol, ehtiyot bo'lib ishlating.",
+  "image_query": "quiet library"
  },
  {
   "id": 205,
@@ -9512,7 +9716,8 @@
     "uz": "uzoq"
    }
   ],
-  "tip_uz": "«Par cœur» [par kör] — yoddan: «apprendre par cœur» — yod olmoq."
+  "tip_uz": "«Par cœur» [par kör] — yoddan: «apprendre par cœur» — yod olmoq.",
+  "image_query": "letter envelope"
  },
  {
   "id": 206,
@@ -9554,7 +9759,8 @@
     "uz": "O'tib ketadi"
    }
   ],
-  "tip_uz": "Iboralarni so'zma-so'z tarjima qilmang — ma'nosini yod oling!"
+  "tip_uz": "Iboralarni so'zma-so'z tarjima qilmang — ma'nosini yod oling!",
+  "image_query": "rainy window"
  },
  {
   "id": 207,
@@ -9596,7 +9802,8 @@
     "uz": "grammatika"
    }
   ],
-  "tip_uz": "Yana bir ibora: «Les doigts dans le nez» [le dua don lö ne] — «ko'z yumib ham qilaman» (juda oson)."
+  "tip_uz": "Yana bir ibora: «Les doigts dans le nez» [le dua don lö ne] — «ko'z yumib ham qilaman» (juda oson).",
+  "image_query": "cake slice"
  },
  {
   "id": 208,
@@ -9643,7 +9850,8 @@
     "uz": "issiqda"
    }
   ],
-  "tip_uz": "Inglizlar «mushuk va itlar yog'yapti» deydi, fransuzlar — «arqonlar». Bizda-chi? «Chelaklab quyyapti»!"
+  "tip_uz": "Inglizlar «mushuk va itlar yog'yapti» deydi, fransuzlar — «arqonlar». Bizda-chi? «Chelaklab quyyapti»!",
+  "image_query": "heavy rain"
  },
  {
   "id": 209,
@@ -9690,7 +9898,8 @@
     "uz": "bo'ri"
    }
   ],
-  "tip_uz": "Teskari: «Ça tombe mal» [sa tonb mal] — «Noqulay paytga to'g'ri keldi»."
+  "tip_uz": "Teskari: «Ça tombe mal» [sa tonb mal] — «Noqulay paytga to'g'ri keldi».",
+  "image_query": "wolf"
  },
  {
   "id": 210,
@@ -9737,7 +9946,8 @@
     "uz": "hamma narsa mumkin"
    }
   ],
-  "tip_uz": "«Être dans la lune» [etr don la lün] — «xayolparast bo'lmoq, xayoli boshqa yoqda»."
+  "tip_uz": "«Être dans la lune» [etr don la lün] — «xayolparast bo'lmoq, xayoli boshqa yoqda».",
+  "image_query": "full moon"
  },
  {
   "id": 211,
@@ -9784,7 +9994,8 @@
     "uz": "sabzavotlar"
    }
   ],
-  "tip_uz": "«Pleurer» [plöre] — yig'lamoq. Piyoz «pleurer» ga majbur qiladi!"
+  "tip_uz": "«Pleurer» [plöre] — yig'lamoq. Piyoz «pleurer» ga majbur qiladi!",
+  "image_query": "cutting vegetables"
  },
  {
   "id": 212,
@@ -9831,7 +10042,8 @@
     "uz": "qozon"
    }
   ],
-  "tip_uz": "«L'huile» [lüil] — yog' (o'simlik). «Le beurre» — sariyog'."
+  "tip_uz": "«L'huile» [lüil] — yog' (o'simlik). «Le beurre» — sariyog'.",
+  "image_query": "cauldron cooking"
  },
  {
   "id": 213,
@@ -9878,7 +10090,8 @@
     "uz": "vilka"
    }
   ],
-  "tip_uz": "Fransuzlar dasturxonda doim vilka chap, pichoq o'ng qo'lda ushlashadi."
+  "tip_uz": "Fransuzlar dasturxonda doim vilka chap, pichoq o'ng qo'lda ushlashadi.",
+  "image_query": "cutlery"
  },
  {
   "id": 214,
@@ -9925,7 +10138,8 @@
     "uz": "Ovqatga marhamat!"
    }
   ],
-  "tip_uz": "«Débarrasser la table» [debarase] — dasturxonni yig'ishtirmoq."
+  "tip_uz": "«Débarrasser la table» [debarase] — dasturxonni yig'ishtirmoq.",
+  "image_query": "table setting"
  },
  {
   "id": 215,
@@ -9972,7 +10186,8 @@
     "uz": "yig'ishtirmoq"
    }
   ],
-  "tip_uz": "«Range ta chambre !» — «Xonangni yig'ishtir!» — fransuz onalarining sevimli gapi."
+  "tip_uz": "«Range ta chambre !» — «Xonangni yig'ishtir!» — fransuz onalarining sevimli gapi.",
+  "image_query": "cleaning house"
  },
  {
   "id": 216,
@@ -10019,7 +10234,8 @@
     "uz": "kir"
    }
   ],
-  "tip_uz": "Mashina buzilsa ham «en panne» deyiladi: «Ma voiture est en panne»."
+  "tip_uz": "Mashina buzilsa ham «en panne» deyiladi: «Ma voiture est en panne».",
+  "image_query": "laundry"
  },
  {
   "id": 217,
@@ -10066,7 +10282,8 @@
     "uz": "un"
    }
   ],
-  "tip_uz": "Xarid ro'yxati — «la liste de courses» [la list dö kurs]."
+  "tip_uz": "Xarid ro'yxati — «la liste de courses» [la list dö kurs].",
+  "image_query": "eggs flour"
  },
  {
   "id": 218,
@@ -10113,7 +10330,8 @@
     "uz": "Yoqimli hid kelyapti!"
    }
   ],
-  "tip_uz": "«Sentir» — hid kelmoq: «Ça sent mauvais» [sa son move] — «Yomon hid kelyapti»."
+  "tip_uz": "«Sentir» — hid kelmoq: «Ça sent mauvais» [sa son move] — «Yomon hid kelyapti».",
+  "image_query": "chocolate cake"
  },
  {
   "id": 219,
@@ -10160,7 +10378,8 @@
     "uz": "go'shtli"
    }
   ],
-  "tip_uz": "Fransuzcha «chausson» yana uy shippagi degani ham!"
+  "tip_uz": "Fransuzcha «chausson» yana uy shippagi degani ham!",
+  "image_query": "samsa pastry"
  },
  {
   "id": 220,
@@ -10207,7 +10426,8 @@
     "uz": "kutmoq"
    }
   ],
-  "tip_uz": "Fransuzlar ko'proq qora choy — «thé noir» [te nuar] ichishadi."
+  "tip_uz": "Fransuzlar ko'proq qora choy — «thé noir» [te nuar] ichishadi.",
+  "image_query": "teapot"
  },
  {
   "id": 221,
@@ -10254,7 +10474,8 @@
     "uz": "bulutlar"
    }
   ],
-  "tip_uz": "Qorbobo — «le bonhomme de neige» [lö bonom dö nej], so'zma-so'z «qor odamcha»."
+  "tip_uz": "Qorbobo — «le bonhomme de neige» [lö bonom dö nej], so'zma-so'z «qor odamcha».",
+  "image_query": "snow"
  },
  {
   "id": 222,
@@ -10301,7 +10522,8 @@
     "uz": "baland"
    }
   ],
-  "tip_uz": "«Haut» so'zidagi «h» va «t» o'qilmaydi — faqat «o»!"
+  "tip_uz": "«Haut» so'zidagi «h» va «t» o'qilmaydi — faqat «o»!",
+  "image_query": "hiking trail mountains"
  },
  {
   "id": 223,
@@ -10348,7 +10570,8 @@
     "uz": "quyosh kremi"
    }
   ],
-  "tip_uz": "Orol dengizi — «la mer d'Aral» [la mer daral]."
+  "tip_uz": "Orol dengizi — «la mer d'Aral» [la mer daral].",
+  "image_query": "beach waves"
  },
  {
   "id": 224,
@@ -10395,7 +10618,8 @@
     "uz": "o'tov, yurt"
    }
   ],
-  "tip_uz": "«Le sable» [lö sabl] — qum. Qizilqum — «sable rouge», ya'ni «qizil qum»."
+  "tip_uz": "«Le sable» [lö sabl] — qum. Qizilqum — «sable rouge», ya'ni «qizil qum».",
+  "image_query": "camels desert"
  },
  {
   "id": 225,
@@ -10442,7 +10666,8 @@
     "uz": "guldasta"
    }
   ],
-  "tip_uz": "Fransiyada xrizantema faqat qabristonga olib boriladi — sovg'a qilmang!"
+  "tip_uz": "Fransiyada xrizantema faqat qabristonga olib boriladi — sovg'a qilmang!",
+  "image_query": "tulips"
  },
  {
   "id": 226,
@@ -10489,7 +10714,8 @@
     "uz": "ot"
    }
   ],
-  "tip_uz": "«La campagne» [la kompany] — qishloq joy. «En ville» — shaharda."
+  "tip_uz": "«La campagne» [la kompany] — qishloq joy. «En ville» — shaharda.",
+  "image_query": "farm animals"
  },
  {
   "id": 227,
@@ -10536,7 +10762,8 @@
     "uz": "daraxt"
    }
   ],
-  "tip_uz": "Xorazm bog'larida tok ostidagi so'ri — fransuzlar uchun juda ekzotik manzara!"
+  "tip_uz": "Xorazm bog'larida tok ostidagi so'ri — fransuzlar uchun juda ekzotik manzara!",
+  "image_query": "apricot tree"
  },
  {
   "id": 228,
@@ -10583,7 +10810,8 @@
     "uz": "ko'prik"
    }
   ],
-  "tip_uz": "Qadimda Amudaryoni yunonlar «Oks» deyishgan."
+  "tip_uz": "Qadimda Amudaryoni yunonlar «Oks» deyishgan.",
+  "image_query": "Amu Darya"
  },
  {
   "id": 229,
@@ -10630,7 +10858,8 @@
     "uz": "tejamoq"
    }
   ],
-  "tip_uz": "«Recycler» [rösikle] — qayta ishlamoq."
+  "tip_uz": "«Recycler» [rösikle] — qayta ishlamoq.",
+  "image_query": "recycling"
  },
  {
   "id": 230,
@@ -10677,7 +10906,8 @@
     "uz": "osmon"
    }
   ],
-  "tip_uz": "Taqvimdagi oy — «le mois» [lö mua], osmondagi oy — «la lune»."
+  "tip_uz": "Taqvimdagi oy — «le mois» [lö mua], osmondagi oy — «la lune».",
+  "image_query": "sunset"
  },
  {
   "id": 231,
@@ -10724,7 +10954,8 @@
     "uz": "qishloq"
    }
   ],
-  "tip_uz": "Imparfait — «…ardim, …ar edim» ma'nosi. Passé composé — «…dim» (bir martalik)."
+  "tip_uz": "Imparfait — «…ardim, …ar edim» ma'nosi. Passé composé — «…dim» (bir martalik).",
+  "image_query": "village"
  },
  {
   "id": 232,
@@ -10771,7 +11002,8 @@
     "uz": "u qilardi"
    }
   ],
-  "tip_uz": "Kalit so'zlar: «chaque», «toujours», «souvent», «d'habitude» — imparfait belgisi."
+  "tip_uz": "Kalit so'zlar: «chaque», «toujours», «souvent», «d'habitude» — imparfait belgisi.",
+  "image_query": "crepes"
  },
  {
   "id": 233,
@@ -10818,7 +11050,8 @@
     "uz": "ko'p odam"
    }
   ],
-  "tip_uz": "Hikoyada: imparfait — fon (sahna), passé composé — voqea. Kino kabi!"
+  "tip_uz": "Hikoyada: imparfait — fon (sahna), passé composé — voqea. Kino kabi!",
+  "image_query": "town square"
  },
  {
   "id": 234,
@@ -10865,7 +11098,8 @@
     "uz": "…edi"
    }
   ],
-  "tip_uz": "Bu juda muhim qoida — bir necha marta qayta o'qing!"
+  "tip_uz": "Bu juda muhim qoida — bir necha marta qayta o'qing!",
+  "image_query": "night phone"
  },
  {
   "id": 235,
@@ -10912,7 +11146,8 @@
     "uz": "butunlay"
    }
   ],
-  "tip_uz": "Unutsangiz: «Je ne me souviens plus» — «Endi eslay olmayman»."
+  "tip_uz": "Unutsangiz: «Je ne me souviens plus» — «Endi eslay olmayman».",
+  "image_query": "old town"
  },
  {
   "id": 236,
@@ -10959,7 +11194,8 @@
     "uz": "gapirmas edim"
    }
   ],
-  "tip_uz": "Siz ham yozib ko'ring: «Avant, je ne parlais pas français. Maintenant…»"
+  "tip_uz": "Siz ham yozib ko'ring: «Avant, je ne parlais pas français. Maintenant…»",
+  "image_query": "friends talking"
  },
  {
   "id": 237,
@@ -11006,7 +11242,8 @@
     "uz": "klassik (o'yin)"
    }
   ],
-  "tip_uz": "Bolalarga ko'p aytiladigan gap: «Va jouer dehors !» — «Bor, tashqarida o'yna!»"
+  "tip_uz": "Bolalarga ko'p aytiladigan gap: «Va jouer dehors !» — «Bor, tashqarida o'yna!»",
+  "image_query": "children playing"
  },
  {
   "id": 238,
@@ -11053,7 +11290,8 @@
     "uz": "abadiy"
    }
   ],
-  "tip_uz": "«Vécurent» — kitob tilidagi o'tgan zamon (passé simple), faqat ertak va kitoblarda uchraydi."
+  "tip_uz": "«Vécurent» — kitob tilidagi o'tgan zamon (passé simple), faqat ertak va kitoblarda uchraydi.",
+  "image_query": "fairy tale castle"
  },
  {
   "id": 239,
@@ -11100,7 +11338,8 @@
     "uz": "avval / endi"
    }
   ],
-  "tip_uz": "Xivaga ilk fransuz sayyohlari XIX asrda kelgan."
+  "tip_uz": "Xivaga ilk fransuz sayyohlari XIX asrda kelgan.",
+  "image_query": "tourists old town"
  },
  {
   "id": 240,
@@ -11147,7 +11386,8 @@
     "uz": "gilam"
    }
   ],
-  "tip_uz": "«Je l'ai acheté» — «Uni sotib oldim»: «le» — «uni», unli oldidan «l'»."
+  "tip_uz": "«Je l'ai acheté» — «Uni sotib oldim»: «le» — «uni», unli oldidan «l'».",
+  "image_query": "oriental carpet"
  },
  {
   "id": 241,
@@ -11194,7 +11434,8 @@
     "uz": "betakror"
    }
   ],
-  "tip_uz": "Rasmiy: «À votre avis» [a votr avi] — «Sizning fikringizcha»."
+  "tip_uz": "Rasmiy: «À votre avis» [a votr avi] — «Sizning fikringizcha».",
+  "image_query": "Kalta Minor"
  },
  {
   "id": 242,
@@ -11241,7 +11482,8 @@
     "uz": "Aynan!"
    }
   ],
-  "tip_uz": "«D'accord» ham «xo'p», ham «qo'shilaman» degani."
+  "tip_uz": "«D'accord» ham «xo'p», ham «qo'shilaman» degani.",
+  "image_query": "handshake"
  },
  {
   "id": 243,
@@ -11288,7 +11530,8 @@
     "uz": "did, ta'm"
    }
   ],
-  "tip_uz": "Yumshoqroq: «Je ne suis pas sûre» [sür] — «Bunga ishonchim komil emas»."
+  "tip_uz": "Yumshoqroq: «Je ne suis pas sûre» [sür] — «Bunga ishonchim komil emas».",
+  "image_query": "black tea"
  },
  {
   "id": 244,
@@ -11335,7 +11578,8 @@
     "uz": "…ga bog'liq"
    }
   ],
-  "tip_uz": "«Sans doute» [son dut] — «shubhasiz» emas, aslida «ehtimol» degani! Ehtiyot bo'ling."
+  "tip_uz": "«Sans doute» [son dut] — «shubhasiz» emas, aslida «ehtimol» degani! Ehtiyot bo'ling.",
+  "image_query": "party invitation"
  },
  {
   "id": 245,
@@ -11382,7 +11626,8 @@
     "uz": "umid"
    }
   ],
-  "tip_uz": "«Espérer» — umid qilmoq. Ism ham bor: «Espérance» — Umida!"
+  "tip_uz": "«Espérer» — umid qilmoq. Ism ham bor: «Espérance» — Umida!",
+  "image_query": "crossed fingers"
  },
  {
   "id": 246,
@@ -11429,7 +11674,8 @@
     "uz": "ishonmoq"
    }
   ],
-  "tip_uz": "«Je te crois» [jö tö krua] — «Senga ishonaman»."
+  "tip_uz": "«Je te crois» [jö tö krua] — «Senga ishonaman».",
+  "image_query": "confident woman"
  },
  {
   "id": 247,
@@ -11476,7 +11722,8 @@
     "uz": "Nima bo'lsa ham"
    }
   ],
-  "tip_uz": "Diqqat: «N'importe quoi !» undov bilan — «Bema'nilik!» degani ham bo'ladi."
+  "tip_uz": "Diqqat: «N'importe quoi !» undov bilan — «Bema'nilik!» degani ham bo'ladi.",
+  "image_query": "pizza"
  },
  {
   "id": 248,
@@ -11523,7 +11770,8 @@
     "uz": "…ning sharofati bilan"
    }
   ],
-  "tip_uz": "Mashhur gap: «Je pense, donc je suis» — Dekart: «Fikrlayapman, demak, mavjudman»."
+  "tip_uz": "Mashhur gap: «Je pense, donc je suis» — Dekart: «Fikrlayapman, demak, mavjudman».",
+  "image_query": "rain window city"
  },
  {
   "id": 249,
@@ -11570,7 +11818,8 @@
     "uz": "biroq"
    }
   ],
-  "tip_uz": "«J'y vais» [ji ve] — «U yerga ketyapman». «Y» — juda qulay so'z!"
+  "tip_uz": "«J'y vais» [ji ve] — «U yerga ketyapman». «Y» — juda qulay so'z!",
+  "image_query": "Paris shopping street"
  },
  {
   "id": 250,
@@ -11617,7 +11866,8 @@
     "uz": "shovqinli"
    }
   ],
-  "tip_uz": "«Personnellement» [personelmon] — «shaxsan men» — o'z fikringizni ta'kidlash uchun."
+  "tip_uz": "«Personnellement» [personelmon] — «shaxsan men» — o'z fikringizni ta'kidlash uchun.",
+  "image_query": "countryside village"
  },
  {
   "id": 251,
@@ -11664,7 +11914,8 @@
     "uz": "Eng yaxshi tilaklar"
    }
   ],
-  "tip_uz": "31-dekabr kechasi — «le réveillon» [lö reveyon]."
+  "tip_uz": "31-dekabr kechasi — «le réveillon» [lö reveyon].",
+  "image_query": "new year fireworks"
  },
  {
   "id": 252,
@@ -11711,7 +11962,8 @@
     "uz": "bezatmoq"
    }
   ],
-  "tip_uz": "Fransuzlar uchun Rojdestvo — oilaviy bayram, xuddi bizdagi hayitlar kabi."
+  "tip_uz": "Fransuzlar uchun Rojdestvo — oilaviy bayram, xuddi bizdagi hayitlar kabi.",
+  "image_query": "Christmas tree"
  },
  {
   "id": 253,
@@ -11758,7 +12010,8 @@
     "uz": "mushaklar, salyut"
    }
   ],
-  "tip_uz": "Fransiya shiori: «Liberté, Égalité, Fraternité» — Erkinlik, Tenglik, Birodarlik."
+  "tip_uz": "Fransiya shiori: «Liberté, Égalité, Fraternité» — Erkinlik, Tenglik, Birodarlik.",
+  "image_query": "Bastille Day fireworks"
  },
  {
   "id": 254,
@@ -11805,7 +12058,8 @@
     "uz": "…dan beri"
    }
   ],
-  "tip_uz": "Fransuzlar 1991 ni «mille neuf cent quatre-vingt-onze» deb aytishadi — uzun, lekin qiziq!"
+  "tip_uz": "Fransuzlar 1991 ni «mille neuf cent quatre-vingt-onze» deb aytishadi — uzun, lekin qiziq!",
+  "image_query": "Uzbekistan flag"
  },
  {
   "id": 255,
@@ -11852,7 +12106,8 @@
     "uz": "tilamoq"
    }
   ],
-  "tip_uz": "Diqqat: odamni ziyorat qilish — «rendre visite», joyni ziyorat qilish — «visiter»."
+  "tip_uz": "Diqqat: odamni ziyorat qilish — «rendre visite», joyni ziyorat qilish — «visiter».",
+  "image_query": "family celebration"
  },
  {
   "id": 256,
@@ -11899,7 +12154,8 @@
     "uz": "Barcha tilaklarim"
    }
   ],
-  "tip_uz": "«Vive…!» — «Yashasin…!»: «Vive l'Ouzbékistan !», «Vive la France !»"
+  "tip_uz": "«Vive…!» — «Yashasin…!»: «Vive l'Ouzbékistan !», «Vive la France !»",
+  "image_query": "wedding bouquet"
  },
  {
   "id": 257,
@@ -11946,7 +12202,8 @@
     "uz": "Seni yaxshi ko'raman, onajon"
    }
   ],
-  "tip_uz": "Xalqaro xotin-qizlar kuni — «la Journée internationale des droits des femmes»."
+  "tip_uz": "Xalqaro xotin-qizlar kuni — «la Journée internationale des droits des femmes».",
+  "image_query": "bouquet of flowers mother"
  },
  {
   "id": 258,
@@ -11993,7 +12250,8 @@
     "uz": "Darslaringiz uchun rahmat"
    }
   ],
-  "tip_uz": "Butun dunyoda O'qituvchilar kuni — 5-oktabr, YuNESKO belgilagan."
+  "tip_uz": "Butun dunyoda O'qituvchilar kuni — 5-oktabr, YuNESKO belgilagan.",
+  "image_query": "teacher flowers"
  },
  {
   "id": 259,
@@ -12040,7 +12298,8 @@
     "uz": "Qattiq o'paman"
    }
   ],
-  "tip_uz": "«Je te souhaite…» [jö tö suet] — «Senga … tilayman» — har qanday tabrikka mos!"
+  "tip_uz": "«Je te souhaite…» [jö tö suet] — «Senga … tilayman» — har qanday tabrikka mos!",
+  "image_query": "greeting card"
  },
  {
   "id": 260,
@@ -12087,7 +12346,8 @@
     "uz": "shirinliklar"
    }
   ],
-  "tip_uz": "Fransuzlar o'zbek mayizi va o'rik qoqisini juda yaxshi ko'radi — sovg'a uchun ajoyib!"
+  "tip_uz": "Fransuzlar o'zbek mayizi va o'rik qoqisini juda yaxshi ko'radi — sovg'a uchun ajoyib!",
+  "image_query": "dried fruits"
  },
  {
   "id": 261,
@@ -12134,7 +12394,8 @@
     "uz": "hakam"
    }
   ],
-  "tip_uz": "«Marquer un but» [marke ön büt] — gol urmoq."
+  "tip_uz": "«Marquer un but» [marke ön büt] — gol urmoq.",
+  "image_query": "football goal"
  },
  {
   "id": 262,
@@ -12181,7 +12442,8 @@
     "uz": "durang"
    }
   ],
-  "tip_uz": "Hisob «à» bilan aytiladi: 3:0 — «trois à zéro»."
+  "tip_uz": "Hisob «à» bilan aytiladi: 3:0 — «trois à zéro».",
+  "image_query": "scoreboard"
  },
  {
   "id": 263,
@@ -12228,7 +12490,8 @@
     "uz": "Oldinga!"
    }
   ],
-  "tip_uz": "Fransiya terma jamoasini «les Bleus» [le blö] — «Ko'klar» deyishadi."
+  "tip_uz": "Fransiya terma jamoasini «les Bleus» [le blö] — «Ko'klar» deyishadi.",
+  "image_query": "football fans"
  },
  {
   "id": 264,
@@ -12275,7 +12538,8 @@
     "uz": "o'yin"
    }
   ],
-  "tip_uz": "«Mi-temps» [mi tom] — tanaffus (taym oralig'i)."
+  "tip_uz": "«Mi-temps» [mi tom] — tanaffus (taym oralig'i).",
+  "image_query": "stadium"
  },
  {
   "id": 265,
@@ -12322,7 +12586,8 @@
     "uz": "chempion"
    }
   ],
-  "tip_uz": "Zamonaviy Olimpiadani fransuz Per de Kuberten tiklagan."
+  "tip_uz": "Zamonaviy Olimpiadani fransuz Per de Kuberten tiklagan.",
+  "image_query": "Olympic medals"
  },
  {
   "id": 266,
@@ -12369,7 +12634,8 @@
     "uz": "park, bog'"
    }
   ],
-  "tip_uz": "«Faire du jogging» [fer dü joging] — yengil yugurish bilan shug'ullanmoq."
+  "tip_uz": "«Faire du jogging» [fer dü joging] — yengil yugurish bilan shug'ullanmoq.",
+  "image_query": "running park"
  },
  {
   "id": 267,
@@ -12416,7 +12682,8 @@
     "uz": "suzish kiyimi"
    }
   ],
-  "tip_uz": "Fransiya basseynlarida bosh kiyim (shapochka) majburiy!"
+  "tip_uz": "Fransiya basseynlarida bosh kiyim (shapochka) majburiy!",
+  "image_query": "swimming pool"
  },
  {
   "id": 268,
@@ -12463,7 +12730,8 @@
     "uz": "Shoh va mot!"
    }
   ],
-  "tip_uz": "Shaxmat donalari: le roi — shoh, la reine — farzin, le cavalier — ot."
+  "tip_uz": "Shaxmat donalari: le roi — shoh, la reine — farzin, le cavalier — ot.",
+  "image_query": "chess"
  },
  {
   "id": 269,
@@ -12510,7 +12778,8 @@
     "uz": "xalqaro sport"
    }
   ],
-  "tip_uz": "Fransiyada ham kurash federatsiyasi bor — «la Fédération française de kourach»."
+  "tip_uz": "Fransiyada ham kurash federatsiyasi bor — «la Fédération française de kourach».",
+  "image_query": "wrestling"
  },
  {
   "id": 270,
@@ -12557,7 +12826,8 @@
     "uz": "mashg'ulot"
    }
   ],
-  "tip_uz": "«Un(e) entraîneur(se)» [onontrenör] — murabbiy."
+  "tip_uz": "«Un(e) entraîneur(se)» [onontrenör] — murabbiy.",
+  "image_query": "gym"
  },
  {
   "id": 271,
@@ -12604,7 +12874,8 @@
     "uz": "«Sen» desak bo'ladimi?"
    }
   ],
-  "tip_uz": "Ikkilansangiz — «vous» deng. Xato qilmaysiz!"
+  "tip_uz": "Ikkilansangiz — «vous» deng. Xato qilmaysiz!",
+  "image_query": "formal conversation"
  },
  {
   "id": 272,
@@ -12651,7 +12922,8 @@
     "uz": "gazeta"
    }
   ],
-  "tip_uz": "«Attention !» [atonsyon] — «Ehtiyot bo'ling!» Diqqat: «diqqat» emas, ogohlantirish."
+  "tip_uz": "«Attention !» [atonsyon] — «Ehtiyot bo'ling!» Diqqat: «diqqat» emas, ogohlantirish.",
+  "image_query": "dictionary"
  },
  {
   "id": 273,
@@ -12698,7 +12970,8 @@
     "uz": "ayol jinsi"
    }
   ],
-  "tip_uz": "Qiziq: «le soleil» (quyosh) — erkak, «la lune» (oy) — ayol jinsida."
+  "tip_uz": "Qiziq: «le soleil» (quyosh) — erkak, «la lune» (oy) — ayol jinsida.",
+  "image_query": "grammar book"
  },
  {
   "id": 274,
@@ -12745,7 +13018,8 @@
     "uz": "kichkina"
    }
   ],
-  "tip_uz": "«CaReFuL» qoidasi: sac, mer, chef, mal — oxirgi harf o'qiladi."
+  "tip_uz": "«CaReFuL» qoidasi: sac, mer, chef, mal — oxirgi harf o'qiladi.",
+  "image_query": "Paris"
  },
  {
   "id": 275,
@@ -12792,7 +13066,8 @@
     "uz": "bog'lab o'qish"
    }
   ],
-  "tip_uz": "«Et» dan keyin hech qachon bog'lanmaydi: «et un» — «e ön»."
+  "tip_uz": "«Et» dan keyin hech qachon bog'lanmaydi: «et un» — «e ön».",
+  "image_query": "friends"
  },
  {
   "id": 276,
@@ -12839,7 +13114,8 @@
     "uz": "qo'rqaman"
    }
   ],
-  "tip_uz": "Bu xatoni ko'p o'rganuvchilar qiladi — endi siz qilmaysiz!"
+  "tip_uz": "Bu xatoni ko'p o'rganuvchilar qiladi — endi siz qilmaysiz!",
+  "image_query": "winter cold"
  },
  {
   "id": 277,
@@ -12886,7 +13162,8 @@
     "uz": "o'g'il bola"
    }
   ],
-  "tip_uz": "«Ou» doim «u», «oi» doim «ua», «au/eau» doim «o» deb o'qiladi."
+  "tip_uz": "«Ou» doim «u», «oi» doim «ua», «au/eau» doim «o» deb o'qiladi.",
+  "image_query": "typewriter"
  },
  {
   "id": 278,
@@ -12933,7 +13210,8 @@
     "uz": "90"
    }
   ],
-  "tip_uz": "Mashq: 98 = «quatre-vingt-dix-huit» [katrö ven dizüit]. Telefon kodimiz +998!"
+  "tip_uz": "Mashq: 98 = «quatre-vingt-dix-huit» [katrö ven dizüit]. Telefon kodimiz +998!",
+  "image_query": "numbers"
  },
  {
   "id": 279,
@@ -12980,7 +13258,8 @@
     "uz": "Yaxshi kuylaysan"
    }
   ],
-  "tip_uz": "Xuddi shunday: «mauvais» [move] — yomon (sifat), «mal» [mal] — yomon (ravish)."
+  "tip_uz": "Xuddi shunday: «mauvais» [move] — yomon (sifat), «mal» [mal] — yomon (ravish).",
+  "image_query": "cake"
  },
  {
   "id": 280,
@@ -13027,7 +13306,8 @@
     "uz": "ular gapirishadi"
    }
   ],
-  "tip_uz": "Xatodan qo'rqmang: «C'est en faisant des erreurs qu'on apprend» — «Xato qilib o'rganiladi»."
+  "tip_uz": "Xatodan qo'rqmang: «C'est en faisant des erreurs qu'on apprend» — «Xato qilib o'rganiladi».",
+  "image_query": "eraser pencil"
  },
  {
   "id": 281,
@@ -13074,7 +13354,8 @@
     "uz": "ko'pincha"
    }
   ],
-  "tip_uz": "Tish shifokori — «un dentiste» [ön dontist]."
+  "tip_uz": "Tish shifokori — «un dentiste» [ön dontist].",
+  "image_query": "hospital"
  },
  {
   "id": 282,
@@ -13121,7 +13402,8 @@
     "uz": "haydovchilik guvohnomasi"
    }
   ],
-  "tip_uz": "Fransiyada yo'lning o'ng tomonida yuriladi — xuddi bizdagidek."
+  "tip_uz": "Fransiyada yo'lning o'ng tomonida yuriladi — xuddi bizdagidek.",
+  "image_query": "taxi driver"
  },
  {
   "id": 283,
@@ -13168,7 +13450,8 @@
     "uz": "amaki-tog'a / xola-amma"
    }
   ],
-  "tip_uz": "Fransuz oshxonasi ham YuNESKO merosi ro'yxatida — palov bilan birga!"
+  "tip_uz": "Fransuz oshxonasi ham YuNESKO merosi ro'yxatida — palov bilan birga!",
+  "image_query": "chef cooking"
  },
  {
   "id": 284,
@@ -13215,7 +13498,8 @@
     "uz": "juda qiziqarli"
    }
   ],
-  "tip_uz": "Eyfel minorasini muhandis Gustav Eyfel qurgan — «un grand ingénieur»."
+  "tip_uz": "Eyfel minorasini muhandis Gustav Eyfel qurgan — «un grand ingénieur».",
+  "image_query": "bridge construction"
  },
  {
   "id": 285,
@@ -13262,7 +13546,8 @@
     "uz": "paxta"
    }
   ],
-  "tip_uz": "«…, non ?» — gap oxirida: «…, shundaymi?» Juda qulay!"
+  "tip_uz": "«…, non ?» — gap oxirida: «…, shundaymi?» Juda qulay!",
+  "image_query": "cotton field"
  },
  {
   "id": 286,
@@ -13309,7 +13594,8 @@
     "uz": "moda"
    }
   ],
-  "tip_uz": "«Haute couture» [ot kutür] — yuqori moda, qo'lda tikilgan eksklyuziv kiyim."
+  "tip_uz": "«Haute couture» [ot kutür] — yuqori moda, qo'lda tikilgan eksklyuziv kiyim.",
+  "image_query": "sewing machine"
  },
  {
   "id": 287,
@@ -13356,7 +13642,8 @@
     "uz": "kutubxona"
    }
   ],
-  "tip_uz": "«Travailler comme…» — «…bo'lib ishlamoq»."
+  "tip_uz": "«Travailler comme…» — «…bo'lib ishlamoq».",
+  "image_query": "bookstore"
  },
  {
   "id": 288,
@@ -13403,7 +13690,8 @@
     "uz": "masofaviy ish"
    }
   ],
-  "tip_uz": "Fransuz tilini bilish IT sohasida ham ustunlik — frankofon mijozlar ko'p!"
+  "tip_uz": "Fransuz tilini bilish IT sohasida ham ustunlik — frankofon mijozlar ko'p!",
+  "image_query": "programmer laptop"
  },
  {
   "id": 289,
@@ -13450,7 +13738,8 @@
     "uz": "intervyu"
    }
   ],
-  "tip_uz": "«Les informations» yoki «les infos» [lezenfo] — yangiliklar."
+  "tip_uz": "«Les informations» yoki «les infos» [lezenfo] — yangiliklar.",
+  "image_query": "journalist microphone"
  },
  {
   "id": 290,
@@ -13497,7 +13786,8 @@
     "uz": "a'lo"
    }
   ],
-  "tip_uz": "Fransuz tilini bilgan gidlar Xorazmda juda kerak — bu sizning kelajak kasbingiz bo'lishi mumkin!"
+  "tip_uz": "Fransuz tilini bilgan gidlar Xorazmda juda kerak — bu sizning kelajak kasbingiz bo'lishi mumkin!",
+  "image_query": "Khiva tour guide"
  },
  {
   "id": 291,
@@ -13544,7 +13834,8 @@
     "uz": "…ni juda yaxshi ko'raman"
    }
   ],
-  "tip_uz": "Bu 4 ta gapni yod oling — har qanday tanishuvda yetarli!"
+  "tip_uz": "Bu 4 ta gapni yod oling — har qanday tanishuvda yetarli!",
+  "image_query": "introduction handshake"
  },
  {
   "id": 292,
@@ -13591,7 +13882,8 @@
     "uz": "olib ketish uchun"
    }
   ],
-  "tip_uz": "Kafeda ishlatiladigan barcha iboralarni eslay olasizmi? 11, 12, 58, 59-darslarni qayta ko'ring!"
+  "tip_uz": "Kafeda ishlatiladigan barcha iboralarni eslay olasizmi? 11, 12, 58, 59-darslarni qayta ko'ring!",
+  "image_query": "cafe counter"
  },
  {
   "id": 293,
@@ -13638,7 +13930,8 @@
     "uz": "juda yaqin"
    }
   ],
-  "tip_uz": "Yo'l so'raganingizdan keyin doim: «Merci beaucoup, bonne journée !»"
+  "tip_uz": "Yo'l so'raganingizdan keyin doim: «Merci beaucoup, bonne journée !»",
+  "image_query": "city map"
  },
  {
   "id": 294,
@@ -13685,7 +13978,8 @@
     "uz": "Zo'r bo'ldi!"
    }
   ],
-  "tip_uz": "Kundalik yozing: har kecha 3 ta gap fransuzcha — bir oyda katta farqni sezasiz!"
+  "tip_uz": "Kundalik yozing: har kecha 3 ta gap fransuzcha — bir oyda katta farqni sezasiz!",
+  "image_query": "morning routine"
  },
  {
   "id": 295,
@@ -13732,7 +14026,8 @@
     "uz": "meva sharbati"
    }
   ],
-  "tip_uz": "Suhbatni boshlash uchun eng oddiy savol: «Tu fais quoi dans la vie ?» — «Nima ish qilasan?»"
+  "tip_uz": "Suhbatni boshlash uchun eng oddiy savol: «Tu fais quoi dans la vie ?» — «Nima ish qilasan?»",
+  "image_query": "party friends"
  },
  {
   "id": 296,
@@ -13779,7 +14074,8 @@
     "uz": "Mana raqamim"
    }
   ],
-  "tip_uz": "Fransuz do'st orttirish — tilni o'rganishning eng tez yo'li!"
+  "tip_uz": "Fransuz do'st orttirish — tilni o'rganishning eng tez yo'li!",
+  "image_query": "friends selfie"
  },
  {
   "id": 297,
@@ -13826,7 +14122,8 @@
     "uz": "ravon"
    }
   ],
-  "tip_uz": "«Dans» + vaqt — «…dan keyin»: «dans une heure» — bir soatdan keyin."
+  "tip_uz": "«Dans» + vaqt — «…dan keyin»: «dans une heure» — bir soatdan keyin.",
+  "image_query": "road future"
  },
  {
   "id": 298,
@@ -13873,7 +14170,8 @@
     "uz": "qo'rqmasdan"
    }
   ],
-  "tip_uz": "Sizning sirringiz qanday? Izohlarda bo'lishing — boshqalarga yordam bo'ladi!"
+  "tip_uz": "Sizning sirringiz qanday? Izohlarda bo'lishing — boshqalarga yordam bo'ladi!",
+  "image_query": "studying books"
  },
  {
   "id": 299,
@@ -13920,7 +14218,8 @@
     "uz": "Hammaga rahmat"
    }
   ],
-  "tip_uz": "Diqqat: «formidable» — inglizcha ma'noda «qo'rqinchli» emas, fransuzchada «ajoyib»!"
+  "tip_uz": "Diqqat: «formidable» — inglizcha ma'noda «qo'rqinchli» emas, fransuzchada «ajoyib»!",
+  "image_query": "thank you"
  },
  {
   "id": 300,
@@ -13967,6 +14266,7 @@
     "uz": "yangi boshlanish"
    }
   ],
-  "tip_uz": "«Petit à petit, l'oiseau fait son nid» — «Qush uyasini asta-sekin quradi». Siz ham shunday qildingiz!"
+  "tip_uz": "«Petit à petit, l'oiseau fait son nid» — «Qush uyasini asta-sekin quradi». Siz ham shunday qildingiz!",
+  "image_query": "celebration fireworks"
  }
 ]

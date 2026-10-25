@@ -14,6 +14,7 @@ from pathlib import Path
 
 import card
 import config
+import photos
 import publisher
 import video
 import voice
@@ -80,11 +81,18 @@ def build(kind, lesson, notes, workdir):
         except Exception as exc:
             notes.append(f"Ovoz qo'shilmadi: {str(exc)[:200]}")
         _log(f"{kind}: ovoz — {'OK' if clips else 'XATO: ' + notes[-1]}")
+    photo, credit = None, ""
+    if kind in ("photo", "video"):
+        found = photos.find(lesson, workdir)
+        if found:
+            photo, credit = found
+        else:
+            notes.append("Mavzuga mos rasm topilmadi — oddiy dizayn ishlatildi.")
     if kind == "photo":
-        files["photo"] = card.photo_card(lesson, workdir / "post.png")
+        files["photo"] = card.photo_card(lesson, workdir / "post.png", photo=photo, credit=credit)
     elif kind == "video":
-        files["video"] = video.make(lesson, workdir, clips=clips)
-    return {"kind": kind, "lesson": lesson, "issues": notes,
+        files["video"] = video.make(lesson, workdir, clips=clips, photo=photo, credit=credit)
+    return {"kind": kind, "lesson": lesson, "issues": notes, "credit": credit,
             "files": {k: str(v) for k, v in files.items()}}
 
 

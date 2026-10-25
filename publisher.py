@@ -90,6 +90,14 @@ def short_caption(lesson, limit=1024):
 
 # ---------- Yuborish ----------
 
+def _with_credit(caption, pkg):
+    credit = pkg.get("credit")
+    if not credit:
+        return caption
+    extra = f"\n<i>📷 {e(credit[6:] if credit.startswith('Foto: ') else credit)}</i>"
+    return caption + extra if len(caption) + len(extra) <= 1024 else caption
+
+
 def send_package(chat_id, pkg):
     """pkg: {"kind": "text_audio"|"photo"|"video", "lesson": ..., "files": {...}}"""
     lesson, kind, files = pkg["lesson"], pkg["kind"], pkg["files"]
@@ -101,10 +109,10 @@ def send_package(chat_id, pkg):
                  caption=f"🎧 {e(lesson['title_uz'])}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML")
     elif kind == "photo":
         _api("sendPhoto", files={"photo": files["photo"]}, chat_id=chat_id,
-             caption=short_caption(lesson), parse_mode="HTML")
+             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML")
     elif kind == "video":
         _api("sendVideo", files={"video": files["video"]}, chat_id=chat_id,
-             caption=short_caption(lesson), parse_mode="HTML", supports_streaming=True,
+             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML", supports_streaming=True,
              width=1080, height=1920)
 
 
