@@ -1,4 +1,7 @@
-"""4-agent: ElevenLabs orqali dialogni audioga aylantiradi."""
+"""4-agent: dialogni audioga aylantiradi.
+
+Avval ElevenLabs (kalit bo'lsa), ishlamasa — bepul Microsoft Edge ovozlari (edge-tts).
+"""
 import subprocess
 import time
 from pathlib import Path
@@ -18,7 +21,43 @@ def _voice_for(speaker):
     return voice
 
 
+# Bepul ovozlar: kalit kerak emas
+EDGE_VOICES = {"Shohista": "uz-UZ-MadinaNeural", "Claire": "fr-FR-DeniseNeural"}
+_eleven_broken = False  # bir marta xato bersa, shu ishda qayta urinmaymiz
+
+
+def speak_edge(text, speaker, out_path):
+    import asyncio
+    import edge_tts
+    voice = EDGE_VOICES.get(speaker, "fr-FR-DeniseNeural")
+
+    async def run():
+        await edge_tts.Communicate(text, voice, rate="-8%").save(str(out_path))
+
+    last = "bo'sh audio qaytdi"
+    for attempt in range(3):
+        try:
+            asyncio.run(run())
+            if Path(out_path).exists() and Path(out_path).stat().st_size > 1000:
+                return out_path
+        except Exception as exc:
+            last = exc
+            time.sleep(3 * (attempt + 1))
+    raise RuntimeError(f"Edge TTS xatosi — {last}")
+
+
 def speak(text, speaker, out_path):
+    global _eleven_broken
+    if config.ELEVENLABS_API_KEY and not _eleven_broken:
+        try:
+            return speak_eleven(text, speaker, out_path)
+        except Exception as exc:
+            _eleven_broken = True
+            print(f"ElevenLabs ishlamadi, bepul ovozga o'tildi: {str(exc)[:150]}")
+    return speak_edge(text, speaker, out_path)
+
+
+def speak_eleven(text, speaker, out_path):
     if not config.ELEVENLABS_API_KEY:
         raise RuntimeError("ELEVENLABS_API_KEY topilmadi (GitHub Secrets'ga qo'shing)")
     models = [config.ELEVEN_MODEL] + ([FALLBACK_MODEL] if config.ELEVEN_MODEL != FALLBACK_MODEL else [])

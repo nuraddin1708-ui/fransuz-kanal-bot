@@ -78,7 +78,7 @@ def build(kind, lesson, notes, workdir):
             if kind == "text_audio":
                 files["audio"] = full
         except Exception as exc:
-            notes.append(f"Ovoz qo'shilmadi (ElevenLabs): {str(exc)[:200]}")
+            notes.append(f"Ovoz qo'shilmadi: {str(exc)[:200]}")
         _log(f"{kind}: ovoz — {'OK' if clips else 'XATO: ' + notes[-1]}")
     if kind == "photo":
         files["photo"] = card.photo_card(lesson, workdir / "post.png")
