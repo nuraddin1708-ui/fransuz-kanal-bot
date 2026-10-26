@@ -67,5 +67,11 @@
   "slot": "evening",
   "id": 7,
   "topic": "Kechirim so'rash"
+ },
+ {
+  "date": "2026-10-26",
+  "slot": "morning",
+  "id": 8,
+  "topic": "Xayrlashish"
  }
 ]
