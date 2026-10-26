@@ -63,6 +63,17 @@ def pick_slot(now):
     return "evening"
 
 
+def _log(text):
+    """Oxirgi ishga tushirish haqida qisqa hisobot (GitHub'ga saqlanadi)."""
+    try:
+        path = ROOT / "data" / "last_run.txt"
+        path.parent.mkdir(exist_ok=True)
+        stamp = datetime.datetime.now(config.TZ).strftime("%Y-%m-%d %H:%M")
+        path.write_text(f"{stamp} — {text}\n", encoding="utf-8")
+    except Exception:
+        pass
+
+
 def build(kind, lesson, notes, workdir):
     """Darsdan tayyor post yasaydi. Ovoz ishlamasa ham post tayyor bo'ladi."""
     workdir = Path(workdir)
@@ -181,5 +192,11 @@ if __name__ == "__main__":
         main()
     except Exception as exc:
         traceback.print_exc()
+        try:
+            (ROOT / "data" / "last_error.txt").write_text(
+                datetime.datetime.now(config.TZ).strftime("%Y-%m-%d %H:%M") + "\n" + traceback.format_exc(),
+                encoding="utf-8")
+        except Exception:
+            pass
         publisher.report_error(f"{type(exc).__name__}: {exc}")
         sys.exit(1)
