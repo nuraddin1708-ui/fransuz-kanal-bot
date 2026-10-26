@@ -46,26 +46,21 @@ def unused_lessons(skip=()):
     return [l for l in load_lessons() if l["id"] not in used]
 
 
+CRON_SLOTS = {3: "morning", 8: "noon", 12: "evening"}  # jadval soati (UTC) → slot
+
+
 def pick_slot(now):
     manual = os.environ.get("SLOT", "").strip()
     if manual:
         return manual
+    cron = os.environ.get("CRON", "").split()
+    if len(cron) >= 2 and cron[1].isdigit() and int(cron[1]) in CRON_SLOTS:
+        return CRON_SLOTS[int(cron[1])]  # GitHub kechiktirsa ham to'g'ri slot
     if now.hour < 11:
         return "morning"
     if now.hour < 16:
         return "noon"
     return "evening"
-
-
-def _log(text):
-    """Oxirgi ishga tushirish haqida qisqa hisobot (GitHub'ga saqlanadi)."""
-    try:
-        path = ROOT / "data" / "last_run.txt"
-        path.parent.mkdir(exist_ok=True)
-        stamp = datetime.datetime.now(config.TZ).strftime("%Y-%m-%d %H:%M")
-        path.write_text(f"{stamp} — {text}\n", encoding="utf-8")
-    except Exception:
-        pass
 
 
 def build(kind, lesson, notes, workdir):
@@ -118,16 +113,26 @@ def main():
     hour, kind = config.SLOTS[slot]
     test = os.environ.get("TEST", "").strip().lower() in ("1", "true", "yes")
 
+    today = f"{now:%Y-%m-%d}"
+    soon = now + datetime.timedelta(minutes=config.PREVIEW_MINUTES + 2)
     if os.environ.get("SLOT"):  # qo'lda ishga tushirilgan — 12 daqiqadan keyin chiqadi
-        publish_at = now + datetime.timedelta(minutes=config.PREVIEW_MINUTES + 2)
+        publish_at = soon
     else:
+        # Zaxira ishga tushirish: bu slot bugun allaqachon chiqqan bo'lsa — jim chiqib ketamiz
+        if any(h.get("date") == today and h.get("slot") == slot and not h.get("skipped")
+               for h in load_history()):
+            print(f"[{slot}] bugun allaqachon chiqqan — o'tkazib yuborildi.")
+            return
         publish_at = now.replace(hour=hour, minute=0, second=0, microsecond=0)
-        if publish_at < now - datetime.timedelta(hours=2):
-            sys.exit("Bu slot vaqti allaqachon o'tib ketgan.")
+        late = now - publish_at
+        if late > datetime.timedelta(hours=5):
+            print(f"[{slot}] juda kech ({late}) — o'tkazib yuborildi.")
+            return
+        if publish_at < soon:  # GitHub kechiktirgan: imkon qadar tez chiqaramiz
+            publish_at = soon
 
     # Kuniga bitta mavzu: ertalab yangi dars olinadi, 14:00 va 18:00 da o'sha dars
     # boshqa formatda (kartochka, video) takrorlanadi — o'rganish mustahkam bo'ladi.
-    today = f"{now:%Y-%m-%d}"
     todays = [h for h in load_history()
               if h.get("date") == today and h.get("id") and not h.get("skipped")]
     by_id = {l["id"]: l for l in load_lessons()}

@@ -2,10 +2,14 @@ name: Kanalga avtomatik post
 
 on:
   schedule:
-    # Toshkent vaqti = UTC + 5. Ish 30 daqiqa oldin boshlanadi (tayyorlash + 10 daqiqalik ogohlantirish).
-    - cron: "30 3 * * *"    # 08:30 → 09:00 matn + audio
-    - cron: "30 8 * * *"    # 13:30 → 14:00 rasmli post
-    - cron: "30 12 * * *"   # 17:30 → 18:00 video
+    # Toshkent vaqti = UTC + 5. Har post uchun ikki marta (zaxira): GitHub ba'zan kechiktiradi.
+    # Ikkinchisi post allaqachon chiqqan bo'lsa, o'zi to'xtaydi — takror chiqmaydi.
+    - cron: "7 3 * * *"     # 08:07 → 09:00 matn + audio
+    - cron: "37 3 * * *"    # 08:37 (zaxira)
+    - cron: "7 8 * * *"     # 13:07 → 14:00 kartochka
+    - cron: "37 8 * * *"    # 13:37 (zaxira)
+    - cron: "7 12 * * *"    # 17:07 → 18:00 video
+    - cron: "37 12 * * *"   # 17:37 (zaxira)
   workflow_dispatch:
     inputs:
       slot:
@@ -67,6 +71,7 @@ jobs:
           VOICE_CLAIRE: ${{ vars.VOICE_CLAIRE }}
           UNIQUE_POSES: ${{ vars.UNIQUE_POSES }}
           SLOT: ${{ github.event.inputs.slot }}
+          CRON: ${{ github.event.schedule }}
           TEST: ${{ github.event.inputs.test }}
         run: python main.py
 
