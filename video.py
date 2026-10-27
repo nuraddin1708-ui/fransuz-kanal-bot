@@ -16,8 +16,10 @@ import config
 
 W, H, FPS = 1080, 1920, 15
 INTRO_S, OUTRO_S, GAP_S, SILENT_S = 2.4, 4.0, 0.45, 4.5
-CHAR_H = 900
-CHAR_DIR = Path(__file__).resolve().parent / "assets" / "characters"
+CHAR_H = 780
+_ASSETS = Path(__file__).resolve().parent / "assets"
+CHAR_DIR = _ASSETS / "new_characters" if (_ASSETS / "new_characters").exists() else _ASSETS / "characters"
+POSES = ("talk", "laugh", "surprised", "listen", "think", "wave", "point", "thumbsup", "sad")
 
 NAVY = card.NAVY
 WHITE = (255, 255, 255)
@@ -36,7 +38,7 @@ def _load(name):
 
 
 def _dim(im):
-    rgb = ImageEnhance.Brightness(im.convert("RGB")).enhance(0.72)
+    rgb = ImageEnhance.Brightness(im.convert("RGB")).enhance(0.8)
     out = rgb.convert("RGBA")
     out.putalpha(im.getchannel("A"))
     return out
@@ -47,35 +49,53 @@ def _scaled(im, k):
 
 
 class Cast:
-    """Qahramon rasmlari: har holat uchun [a, b] juftligi (og'iz/qo'l harakati)."""
+    """Har qahramon uchun pozalar: {poza: [a, b]} — a/b almashib, og'iz va qo'l harakatlanadi."""
 
     def __init__(self):
-        sh = {}
-        for pose in ("talk", "laugh", "surprised"):
-            a, b = _load(f"shohista_{pose}"), _load(f"shohista_{pose}_b")
-            if a:
-                sh[pose] = [a, b or _scaled(a, 1.025)]
-        cl = _load("claire_talk")
-        self.ok = bool(sh) and cl is not None
+        self.poses = {}
+        for who, key in ((config.UZBEK_GIRL, "shohista"), (config.FRENCH_GIRL, "claire")):
+            d = {}
+            for pose in POSES:
+                a = _load(f"{key}_{pose}")
+                if a:
+                    d[pose] = [a, _load(f"{key}_{pose}_b") or _scaled(a, 1.02)]
+            if "talk" in d:
+                self.poses[who] = d
+        self.ok = len(self.poses) == 2
         if not self.ok:
             return
-        self.sh = sh
-        self.cl = {"talk": [cl, _scaled(cl, 1.025)]}
-        self.sh_idle = _dim(_scaled(sh["talk"][0], 0.93))
-        self.cl_idle = _dim(_scaled(cl, 0.93))
+        self.idle = {}
+        for who, d in self.poses.items():
+            base = (d.get("listen") or d["talk"])[0]
+            self.idle[who] = _dim(_scaled(base, 0.95))
 
     def frames(self, speaker, pose):
-        if speaker == config.FRENCH_GIRL:
-            return self.cl["talk"]
-        return self.sh.get(pose) or self.sh["talk"]
+        d = self.poses[speaker]
+        return d.get(pose) or d["talk"]
+
+    def still(self, who, pose):
+        return self.frames(who, pose)[0]
 
 
-def _pose(text):
+def _pose(text, first=False):
+    """Gap mazmuniga qarab poza tanlaydi (ikkala qahramon uchun)."""
     t = text.lower()
-    if re.search(r"ha-ha|barakalla|zo'r|ajoyib|qiziq|kulgi", t):
+    if first and re.search(r"bonjour|salut|bonsoir|salom|assalomu|bienvenue|allô", t):
+        return "wave"
+    if re.search(r"au revoir|à bientôt|à demain|xayr", t):
+        return "wave"
+    if re.search(r"ha-ha|kulgi|mdr|o'ldim", t):
         return "laugh"
-    if re.search(r"voy|rostdan|hayron|diqqat|ehtiyot", t) or t.strip().endswith("?"):
+    if re.search(r"bravo|barakalla|zo'r|a'lo|parfait|super|génial|félicitations|ajoyib|délicieux", t):
+        return "thumbsup"
+    if re.search(r"triste|désolé|malade|afsus|xafa|sog'indim|me manques|fatigué|charchad|kasal", t):
+        return "sad"
+    if re.search(r"voy|rostdan|vraiment|incroyable|c'est vrai|hayron|qanday omad", t):
         return "surprised"
+    if re.search(r"diqqat|qoida|ehtiyot|attention|masalan|par exemple|xato", t):
+        return "point"
+    if re.search(r"\?\s*[»\"]?\s*$", t.strip()) or re.search(r"je ne sais pas|bilmayman|hmm|peut-être|balki", t):
+        return "think"
     return "talk"
 
 
@@ -286,9 +306,9 @@ def make(lesson, workdir, clips=None, photo=None, credit=""):
                         im = pair[(k // 4) % 2]
                         bob = int(10 * abs(math.sin(t * 5.5)))
                     else:
-                        im = cast.cl_idle if who == config.FRENCH_GIRL else cast.sh_idle
-                        if not talking:  # kirish/yakun: ikkalasi ham yorqin, sekin tebranadi
-                            im = cast.frames(who, "talk")[0]
+                        im = cast.idle[who]
+                        if not talking:  # kirish/yakun: ikkalasi ham yorqin, qo'l silkitadi
+                            im = cast.still(who, "wave")
                         bob = int(4 * math.sin(t * 2 + (0 if who == config.FRENCH_GIRL else 1.5)))
                     frame.alpha_composite(im, (int(cx - im.width / 2), H - 150 - im.height - bob))
             if fade and t < fade:
@@ -299,10 +319,10 @@ def make(lesson, workdir, clips=None, photo=None, credit=""):
         scene(_intro(lesson), None, seconds=INTRO_S + 0.6, overlay=kenburns, show_cast=False)
     else:
         scene(_intro(lesson), None, seconds=INTRO_S)
-    for line, d in zip(lines, durs):
+    for idx, (line, d) in enumerate(zip(lines, durs)):
         side = "left" if line["speaker"] == config.FRENCH_GIRL else "right"
         static = _bubble(_base(lesson["title_uz"]), line, side)
-        scene(static, line["speaker"], _pose(line["text"]) if side == "right" else "talk",
+        scene(static, line["speaker"], _pose(line["text"], first=(idx == 0)),
               seconds=d + GAP_S)
     scene(_outro(lesson), None, seconds=OUTRO_S, show_cast=False)
 
