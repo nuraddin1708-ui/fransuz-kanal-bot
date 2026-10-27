@@ -97,5 +97,11 @@
   "slot": "noon",
   "id": 9,
   "topic": "Tushunmadim"
+ },
+ {
+  "date": "2026-10-27",
+  "slot": "evening",
+  "id": 9,
+  "topic": "Tushunmadim"
  }
 ]
