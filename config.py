@@ -28,6 +28,7 @@ def _voice(raw):
 
 CHANNEL_ID = _channel(os.environ.get("CHANNEL_ID"))
 CHANNEL_TAG = os.environ.get("CHANNEL_TAG") or CHANNEL_ID
+INSTAGRAM = "uzbekcha_fransuzcha"  # har postda «obuna bo'ling» bilan ko'rsatiladi
 # Ovozlar akkauntdagi ishlaydigan ovozlar: Shohista — «Gulnora» (o'zbekcha), Claire — «Sarah».
 # Boshqasini qo'yish uchun GitHub Variables'ga VOICE_SHOHISTA_ID / VOICE_CLAIRE_ID qo'shing.
 VOICE_SHOHISTA = _voice(os.environ.get("VOICE_SHOHISTA_ID")) or "6Fkh9WgMXOqBcOWxX91f"

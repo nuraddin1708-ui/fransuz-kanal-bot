@@ -194,6 +194,10 @@ def _outro(lesson):
     sw = d.textlength(sub, font=fs)
     d.rounded_rectangle([(W - sw) / 2 - 40, y + 20, (W + sw) / 2 + 40, y + 120], radius=50, fill=card.FR_RED)
     d.text(((W - sw) / 2, y + 35), sub, font=fs, fill=WHITE)
+    lines = [f"Telegram: {config.CHANNEL_TAG}", f"Instagram: @{config.INSTAGRAM}"]
+    fl = card._font(card.FONT_BOLD, 40)
+    for i, s in enumerate(lines):
+        d.text(((W - d.textlength(s, font=fl)) / 2, y + 160 + i * 64), s, font=fl, fill=WHITE)
     return img
 
 

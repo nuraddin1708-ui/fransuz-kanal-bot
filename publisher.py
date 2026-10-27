@@ -61,7 +61,9 @@ def _phrases_html(lesson):
 
 def _footer():
     tag = e(config.CHANNEL_TAG)
-    return f"\n\n{config.HASHTAG}\n📲 Manba: {tag} — obuna bo'ling!"
+    ig = config.INSTAGRAM
+    return (f"\n\n{config.HASHTAG}\n📲 Manba: {tag} — obuna bo'ling!"
+            f"\n📸 Instagram: <a href=\"https://instagram.com/{ig}\">@{ig}</a> — obuna bo'ling!")
 
 
 def full_text(lesson):
