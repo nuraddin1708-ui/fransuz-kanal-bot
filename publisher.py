@@ -10,6 +10,7 @@ import config
 
 
 def _api(method, files=None, **params):
+    params = {k: v for k, v in params.items() if v is not None}
     url = f"https://api.telegram.org/bot{config.BOT_TOKEN}/{method}"
     for attempt in range(4):
         if files:
@@ -100,22 +101,36 @@ def _with_credit(caption, pkg):
     return caption + extra if len(caption) + len(extra) <= 1024 else caption
 
 
+def _buttons():
+    """Har post ostidagi bosiladigan tugmalar."""
+    ig = config.INSTAGRAM
+    tg = config.CHANNEL_TAG.lstrip("@")
+    return {"inline_keyboard": [
+        [{"text": "📸 Instagram'ga obuna bo'ling", "url": f"https://instagram.com/{ig}"}],
+        [{"text": "📲 Do'stlarga ulashish", "url": f"https://t.me/share/url?url=https://t.me/{tg}"}],
+    ]}
+
+
 def send_package(chat_id, pkg):
     """pkg: {"kind": "text_audio"|"photo"|"video", "lesson": ..., "files": {...}}"""
     lesson, kind, files = pkg["lesson"], pkg["kind"], pkg["files"]
     if kind == "text_audio":
-        _api("sendMessage", chat_id=chat_id, text=full_text(lesson), parse_mode="HTML")
+        _api("sendMessage", chat_id=chat_id, text=full_text(lesson), parse_mode="HTML",
+             link_preview_options={"is_disabled": True},
+             reply_markup=None if files.get("audio") else _buttons())
         if files.get("audio"):
             _api("sendAudio", files={"audio": files["audio"]}, chat_id=chat_id,
                  title=f'{lesson["title_uz"]} | {config.CHANNEL_TAG}', performer=config.CHANNEL_TAG,
-                 caption=f"🎧 {e(lesson['title_uz'])}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML")
+                 caption=f"🎧 {e(lesson['title_uz'])}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML",
+                 reply_markup=_buttons())
     elif kind == "photo":
         _api("sendPhoto", files={"photo": files["photo"]}, chat_id=chat_id,
-             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML")
+             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML",
+             reply_markup=_buttons())
     elif kind == "video":
         _api("sendVideo", files={"video": files["video"]}, chat_id=chat_id,
              caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML", supports_streaming=True,
-             width=1080, height=1920)
+             width=1080, height=1920, reply_markup=_buttons())
 
 
 def _admin():
