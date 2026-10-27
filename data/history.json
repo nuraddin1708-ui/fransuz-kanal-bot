@@ -85,5 +85,11 @@
   "slot": "evening",
   "id": 8,
   "topic": "Xayrlashish"
+ },
+ {
+  "date": "2026-10-27",
+  "slot": "morning",
+  "id": 9,
+  "topic": "Tushunmadim"
  }
 ]
