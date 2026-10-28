@@ -103,5 +103,11 @@
   "slot": "evening",
   "id": 9,
   "topic": "Tushunmadim"
+ },
+ {
+  "date": "2026-10-28",
+  "slot": "morning",
+  "id": 10,
+  "topic": "Sekinroq gapiring"
  }
 ]
