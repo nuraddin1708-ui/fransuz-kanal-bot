@@ -151,5 +151,11 @@
   "slot": "noon",
   "id": 12,
   "topic": "Restoranda hisob"
+ },
+ {
+  "date": "2026-10-30",
+  "slot": "evening",
+  "id": 12,
+  "topic": "Restoranda hisob"
  }
 ]
