@@ -139,5 +139,11 @@
   "slot": "evening",
   "id": 11,
   "topic": "Kafeda buyurtma"
+ },
+ {
+  "date": "2026-10-30",
+  "slot": "morning",
+  "id": 12,
+  "topic": "Restoranda hisob"
  }
 ]
