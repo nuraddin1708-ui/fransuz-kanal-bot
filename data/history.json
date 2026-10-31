@@ -169,5 +169,11 @@
   "slot": "noon",
   "id": 13,
   "topic": "Narx so'rash"
+ },
+ {
+  "date": "2026-10-31",
+  "slot": "evening",
+  "id": 13,
+  "topic": "Narx so'rash"
  }
 ]
