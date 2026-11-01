@@ -181,5 +181,11 @@
   "slot": "morning",
   "id": 14,
   "topic": "Yo'nalish"
+ },
+ {
+  "date": "2026-11-01",
+  "slot": "noon",
+  "id": 14,
+  "topic": "Yo'nalish"
  }
 ]
