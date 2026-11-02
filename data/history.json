@@ -193,5 +193,11 @@
   "slot": "evening",
   "id": 14,
   "topic": "Yo'nalish"
+ },
+ {
+  "date": "2026-11-02",
+  "slot": "morning",
+  "id": 15,
+  "topic": "Vaqt so'rash"
  }
 ]
