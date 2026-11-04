@@ -229,5 +229,11 @@
   "slot": "evening",
   "id": 16,
   "topic": "Yosh"
+ },
+ {
+  "date": "2026-11-04",
+  "slot": "morning",
+  "id": 17,
+  "topic": "Kasb"
  }
 ]
