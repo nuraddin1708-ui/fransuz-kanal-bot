@@ -289,5 +289,11 @@
   "slot": "morning",
   "id": 20,
   "topic": "Ob-havo"
+ },
+ {
+  "date": "2026-11-07",
+  "slot": "noon",
+  "id": 20,
+  "topic": "Ob-havo"
  }
 ]
