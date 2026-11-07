@@ -283,5 +283,11 @@
   "slot": "evening",
   "id": 19,
   "topic": "Yoqtirish"
+ },
+ {
+  "date": "2026-11-07",
+  "slot": "morning",
+  "id": 20,
+  "topic": "Ob-havo"
  }
 ]
