@@ -301,5 +301,11 @@
   "slot": "evening",
   "id": 20,
   "topic": "Ob-havo"
+ },
+ {
+  "date": "2026-11-08",
+  "slot": "morning",
+  "id": 21,
+  "topic": "Ochlik va chanqoq"
  }
 ]
