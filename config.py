@@ -47,9 +47,9 @@ UZBEK_GIRL = "Shohista"
 
 # --- Jadval: slot -> (soat, post turi) ---
 SLOTS = {
-    "morning": (9, "text_audio"),   # 09:00 — matn + audio
-    "noon": (14, "photo"),          # 14:00 — kartochkali post
-    "evening": (18, "video"),       # 18:00 — video
+    "morning": (9, "phrase"),       # 09:00 — kun iborasi (ovoz bilan)
+    "noon": (14, "rubric"),         # 14:00 — hafta rubrikasi (fakt, test, farq...)
+    "evening": (18, "video"),       # 18:00 — seriya qismi (video)
 }
 PREVIEW_MINUTES = 10    # chiqishdan necha daqiqa oldin adminga ko'rsatiladi
 EDIT_WAIT_MINUTES = 15  # «Tahrirlash» bosilgach, ko'rsatma kutish vaqti

@@ -26,13 +26,13 @@ EDGE_VOICES = {"Shohista": "uz-UZ-MadinaNeural", "Claire": "fr-FR-DeniseNeural"}
 _eleven_broken = False  # bir marta xato bersa, shu ishda qayta urinmaymiz
 
 
-def speak_edge(text, speaker, out_path):
+def speak_edge(text, speaker, out_path, rate="-8%"):
     import asyncio
     import edge_tts
     voice = EDGE_VOICES.get(speaker, "fr-FR-DeniseNeural")
 
     async def run():
-        await edge_tts.Communicate(text, voice, rate="-8%").save(str(out_path))
+        await edge_tts.Communicate(text, voice, rate=rate).save(str(out_path))
 
     last = "bo'sh audio qaytdi"
     for attempt in range(3):

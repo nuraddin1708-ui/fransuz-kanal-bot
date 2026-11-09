@@ -112,8 +112,8 @@ def _buttons():
 
 
 def send_package(chat_id, pkg):
-    """pkg: {"kind": "text_audio"|"photo"|"video", "lesson": ..., "files": {...}}"""
-    lesson, kind, files = pkg["lesson"], pkg["kind"], pkg["files"]
+    """pkg turlari: text_audio | photo | video | message (matn + ixtiyoriy audio) | polls (testlar)."""
+    lesson, kind, files = pkg.get("lesson"), pkg["kind"], pkg["files"]
     if kind == "text_audio":
         _api("sendMessage", chat_id=chat_id, text=full_text(lesson), parse_mode="HTML",
              link_preview_options={"is_disabled": True},
@@ -123,13 +123,34 @@ def send_package(chat_id, pkg):
                  title=f'{lesson["title_uz"]} | {config.CHANNEL_TAG}', performer=config.CHANNEL_TAG,
                  caption=f"🎧 {e(lesson['title_uz'])}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML",
                  reply_markup=_buttons())
+    elif kind == "message":
+        _api("sendMessage", chat_id=chat_id, text=pkg["text"], parse_mode="HTML",
+             link_preview_options={"is_disabled": True},
+             reply_markup=None if files.get("audio") else _buttons())
+        if files.get("audio"):
+            title = pkg.get("audio_title") or "Audio"
+            _api("sendAudio", files={"audio": files["audio"]}, chat_id=chat_id,
+                 title=f"{title} | {config.CHANNEL_TAG}", performer=config.CHANNEL_TAG,
+                 caption=f"🎧 {e(title)}\n{e(config.CHANNEL_TAG)}", parse_mode="HTML",
+                 reply_markup=_buttons())
+    elif kind == "polls":
+        _api("sendMessage", chat_id=chat_id, text=pkg["text"], parse_mode="HTML",
+             link_preview_options={"is_disabled": True})
+        for i, poll in enumerate(pkg["polls"], 1):
+            _api("sendPoll", chat_id=chat_id, question=f"{i}. {poll['question']}"[:300],
+                 options=[{"text": o} for o in poll["options"]], type="quiz",
+                 correct_option_id=poll["correct"], explanation=poll["explanation"],
+                 is_anonymous=True,
+                 reply_markup=_buttons() if i == len(pkg["polls"]) else None)
+            time.sleep(1)
     elif kind == "photo":
+        cap = pkg.get("caption") or _with_credit(short_caption(lesson), pkg)
         _api("sendPhoto", files={"photo": files["photo"]}, chat_id=chat_id,
-             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML",
-             reply_markup=_buttons())
+             caption=cap, parse_mode="HTML", reply_markup=_buttons())
     elif kind == "video":
+        cap = pkg.get("caption") or _with_credit(short_caption(lesson), pkg)
         _api("sendVideo", files={"video": files["video"]}, chat_id=chat_id,
-             caption=_with_credit(short_caption(lesson), pkg), parse_mode="HTML", supports_streaming=True,
+             caption=cap, parse_mode="HTML", supports_streaming=True,
              width=1080, height=1920, reply_markup=_buttons())
 
 
@@ -211,7 +232,7 @@ def run(pkg, publish_at, rebuild, dry_run=False):
     if instruction:
         _notify("⏳ Tuzatyapman, tayyor bo'lishi bilan qayta so'ramasdan kanalga chiqaraman.")
         try:
-            pkg = rebuild(pkg["lesson"], instruction)
+            pkg = rebuild(pkg.get("lesson"), instruction)
         except Exception as exc:  # tuzatish ishlamasa — eski variant chiqadi
             _notify(f"⚠️ Tuzatib bo'lmadi ({e(exc)}). Asl variant chiqariladi.")
 

@@ -16,6 +16,7 @@ import card
 import config
 import photos
 import publisher
+import rubrics
 import video
 import voice
 
@@ -142,11 +143,34 @@ def main():
         if publish_at < soon:  # GitHub kechiktirgan: imkon qadar tez chiqaramiz
             publish_at = soon
 
-    # Kuniga bitta mavzu: ertalab yangi dars olinadi, 14:00 va 18:00 da o'sha dars
-    # boshqa formatda (kartochka, video) takrorlanadi — o'rganish mustahkam bo'ladi.
-    todays = [h for h in load_history()
-              if h.get("date") == today and h.get("id") and not h.get("skipped")]
-    by_id = {l["id"]: l for l in load_lessons()}
+    history = load_history()
+    lessons = load_lessons()
+    workdir = tempfile.mkdtemp(prefix=f"{slot}_")
+
+    # ---------- 14:00 — hafta rubrikasi ----------
+    if slot == "noon":
+        rubric = rubrics.WEEKDAY_RUBRIC[now.weekday()]
+        print(f"[noon] Rubrika: {rubrics.RUBRIC_NAMES.get(rubric, rubric)}")
+        pkg, entry = rubrics.build_noon(rubric, history, lessons, workdir, now)
+        state = {"entry": entry, "skip": []}
+
+        def rebuild_noon(_lesson, _instruction):
+            state["skip"].append(state["entry"].get("item"))
+            new_pkg, state["entry"] = rubrics.build_noon(
+                rubric, history, lessons, tempfile.mkdtemp(prefix="noon_edit_"), now, skip=state["skip"])
+            publisher._notify("ℹ️ Bu rubrika avtomatik tahrirlanmaydi — o'rniga keyingi material chiqadi.")
+            return new_pkg
+
+        publisher.run(pkg, publish_at, rebuild_noon, dry_run=test)
+        if not test:
+            save_history({"date": today, "slot": slot, **state["entry"]})
+        _log(f"noon: {state['entry']}")
+        print("Tayyor ✅")
+        return
+
+    # ---------- 09:00 va 18:00 — kunning seriya qismi ----------
+    todays = [h for h in history if h.get("date") == today and h.get("id") and not h.get("skipped")]
+    by_id = {l["id"]: l for l in lessons}
     pool = unused_lessons()
     if todays and todays[-1]["id"] in by_id:
         lesson = by_id[todays[-1]["id"]]
@@ -158,31 +182,49 @@ def main():
     if len(pool) <= config.LOW_STOCK_WARNING:
         notes.append(f"Faqat {len(pool)} ta dars qoldi — yangi darslar qo'shish vaqti keldi.")
 
-    print(f"[{slot}] Dars #{lesson['id']}: {lesson['topic']} ({kind})")
-    pkg = build(kind, lesson, notes, tempfile.mkdtemp(prefix=f"{slot}_"))
+    def episode_info(les):
+        seen = rubrics.seen_lessons(history, lessons)
+        ids = [l["id"] for l in seen]
+        n = ids.index(les["id"]) + 1 if les["id"] in ids else len(ids) + 1
+        prev = seen[n - 2] if n >= 2 and len(seen) >= n - 1 else None
+        nxt = next((l for l in unused_lessons(skip=[les["id"]])), None)
+        return n, prev, nxt
+
+    def make(les, wd):
+        n, prev, nxt = episode_info(les)
+        if slot == "morning":
+            pkg = rubrics.phrase_of_day(les, n, wd)
+            pkg["issues"] = notes + pkg["issues"]
+            return pkg
+        les = dict(les, _episode=n)
+        pkg = build("video", les, notes, wd)
+        pkg["caption"] = rubrics.serial_caption(les, n, prev, nxt)
+        return pkg
+
+    print(f"[{slot}] Dars #{lesson['id']}: {lesson['topic']}")
+    pkg = make(lesson, workdir)
 
     def rebuild(old_lesson, instruction):
         new_dir = tempfile.mkdtemp(prefix=f"{slot}_edit_")
         try:
-            new_lesson = revise_with_ai(old_lesson, instruction)
-            return build(kind, new_lesson, [], new_dir)
+            return make(revise_with_ai(old_lesson, instruction), new_dir)
         except Exception:
             # AI ishlamasa — shu dars o'rniga keyingi darsni chiqaramiz
             rest = unused_lessons(skip=[old_lesson["id"]])
             if not rest:
                 raise
             if not test:
-                save_history({"date": f"{now:%Y-%m-%d}", "slot": slot, "id": old_lesson["id"],
+                save_history({"date": today, "slot": slot, "id": old_lesson["id"],
                               "topic": old_lesson["topic"], "skipped": True})
             publisher._notify(
                 f"ℹ️ Tahrirni avtomatik bajarib bo'lmadi. Bu dars o'rniga keyingisi chiqadi: "
                 f"«{publisher.e(rest[0]['title_uz'])}».")
-            return build(kind, rest[0], [], new_dir)
+            return make(rest[0], new_dir)
 
     final = publisher.run(pkg, publish_at, rebuild, dry_run=test)
 
     if not test:
-        save_history({"date": f"{now:%Y-%m-%d}", "slot": slot, "id": final["lesson"]["id"],
+        save_history({"date": today, "slot": slot, "id": final["lesson"]["id"],
                       "topic": final["lesson"]["topic"]})
     print("Tayyor ✅")
 
