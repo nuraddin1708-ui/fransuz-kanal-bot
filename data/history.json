@@ -319,5 +319,11 @@
   "slot": "evening",
   "id": 21,
   "topic": "Ochlik va chanqoq"
+ },
+ {
+  "date": "2026-11-09",
+  "slot": "morning",
+  "id": 22,
+  "topic": "Kecha, bugun, ertaga"
  }
 ]
