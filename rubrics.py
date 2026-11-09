@@ -201,7 +201,9 @@ def _footer():
 
 def phrase_of_day(lesson, episode, workdir):
     p = lesson["key_phrases"][0]
+    import growth
     text = (
+        f"{growth.hook()}\n\n"
         f"☀️ <b>Kun iborasi</b>\n\n"
         f"🇫🇷 <b>{e(p['fr'])}</b>\n"
         f"🗣 [{e(p.get('pron', ''))}]\n"
@@ -230,7 +232,13 @@ def serial_caption(lesson, episode, prev_lesson, next_lesson, limit=1024):
     if next_lesson:
         parts.append("")
         parts.append(f"⏭ <b>Davomi ertaga 18:00 da:</b> «{e(next_lesson['title_uz'])}»")
+    import growth
+    goal = growth.goal_line()
+    if goal:
+        parts += ["", goal]
     text = "\n".join(parts) + _footer()
+    if len(text) > limit and goal:  # sig'masa — maqsad qatorisiz
+        text = "\n".join(parts[:-2]) + _footer()
     return text[:limit]
 
 
@@ -271,10 +279,10 @@ def build_noon(rubric, history, lessons, workdir, now, skip=()):
         n = 10 if rubric == "bigquiz" else 3
         pool = seen[-7:] if rubric == "bigquiz" else seen[-4:]
         polls = make_quiz(pool, lessons, n, seed=f"{now:%Y-%m-%d}-{len(skip)}")
-        title = "🏆 <b>Katta test!</b> Haftaning 10 ta savoli" if rubric == "bigquiz" else \
-                "🧠 <b>Test vaqti!</b> O'tgan darslardan 3 ta savol"
+        title = "🏆 <b>Katta test!</b> 10 tadan 10 tasini topa olasizmi?" if rubric == "bigquiz" else \
+                "🧠 <b>Test vaqti!</b> 3 tadan 3 tasini topa olasizmi?"
         intro = (f"{title}\n\nJavobni belgilang — to'g'ri yoki noto'g'riligini darhol ko'rasiz. "
-                 f"Necha ball to'pladingiz? 😉" + _footer())
+                 f"Natijangizni do'stingiz bilan solishtiring — testni unga ham yuboring! 😉" + _footer())
         entry["item"] = f"{now:%Y-%m-%d}"
         return {"kind": "polls", "lesson": None, "text": intro, "polls": polls, "files": {},
                 "issues": []}, entry

@@ -61,9 +61,11 @@ def _phrases_html(lesson):
 
 
 def _footer():
+    import growth
     tag = e(config.CHANNEL_TAG)
     ig = config.INSTAGRAM
-    return (f"\n\n{config.HASHTAG}\n📲 Manba: {tag} — obuna bo'ling!"
+    return (f"\n\n{growth.cta()}"
+            f"\n\n{config.HASHTAG}\n📲 Manba: {tag} — obuna bo'ling!"
             f"\n📸 Instagram: <a href=\"https://instagram.com/{ig}\">@{ig}</a> — obuna bo'ling!")
 
 

@@ -185,7 +185,10 @@ def _intro(lesson):
         d.text(((W - d.textlength(label, font=f1)) / 2, PANEL[3] + 60), label, font=f1, fill=GOLD)
         topic = lesson["topic"]
         f2 = card._fit(d, topic, card.FONT_BOLD, 92, 56, W - 160, 2)
-        card._text(d, (80, PANEL[3] + 130), topic, f2, WHITE, W - 160, 1.15, center=True)
+        y = card._text(d, (80, PANEL[3] + 130), topic, f2, WHITE, W - 160, 1.15, center=True)
+        hf = card._font(card.FONT_BOLD, 40)
+        hint = "Oxirigacha ko'ring — eng kerakli ibora oxirida!"
+        d.text(((W - d.textlength(hint, font=hf)) / 2, y + 30), hint, font=hf, fill=GOLD)
         return img
     f1 = card._font(card.FONT_BOLD, 44)
     label = f"Seriya #{lesson['_episode']}" if lesson.get("_episode") else "Bugungi dars"
