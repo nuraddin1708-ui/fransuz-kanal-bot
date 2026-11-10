@@ -337,5 +337,11 @@
   "slot": "evening",
   "id": 22,
   "topic": "Kecha, bugun, ertaga"
+ },
+ {
+  "date": "2026-11-10",
+  "slot": "morning",
+  "id": 23,
+  "topic": "Raqamlar 1–5"
  }
 ]
