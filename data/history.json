@@ -343,5 +343,11 @@
   "slot": "morning",
   "id": 23,
   "topic": "Raqamlar 1–5"
+ },
+ {
+  "date": "2026-11-10",
+  "slot": "noon",
+  "rubric": "quiz",
+  "item": "2026-11-10"
  }
 ]
