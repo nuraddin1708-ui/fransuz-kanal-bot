@@ -355,5 +355,11 @@
   "slot": "evening",
   "id": 23,
   "topic": "Raqamlar 1–5"
+ },
+ {
+  "date": "2026-11-11",
+  "slot": "morning",
+  "id": 24,
+  "topic": "Uzoqmi, yaqinmi?"
  }
 ]
