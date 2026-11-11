@@ -367,5 +367,11 @@
   "slot": "noon",
   "rubric": "farq",
   "item": 1
+ },
+ {
+  "date": "2026-11-11",
+  "slot": "evening",
+  "id": 24,
+  "topic": "Uzoqmi, yaqinmi?"
  }
 ]
