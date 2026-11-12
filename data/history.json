@@ -373,5 +373,11 @@
   "slot": "evening",
   "id": 24,
   "topic": "Uzoqmi, yaqinmi?"
+ },
+ {
+  "date": "2026-11-12",
+  "slot": "morning",
+  "id": 25,
+  "topic": "Taksida"
  }
 ]
