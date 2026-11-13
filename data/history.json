@@ -403,5 +403,11 @@
   "slot": "noon",
   "rubric": "talaffuz",
   "item": "2026-11-13"
+ },
+ {
+  "date": "2026-11-13",
+  "slot": "evening",
+  "id": 26,
+  "topic": "Do'konda"
  }
 ]
