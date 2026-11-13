@@ -397,5 +397,11 @@
   "slot": "morning",
   "id": 26,
   "topic": "Do'konda"
+ },
+ {
+  "date": "2026-11-13",
+  "slot": "noon",
+  "rubric": "talaffuz",
+  "item": "2026-11-13"
  }
 ]
