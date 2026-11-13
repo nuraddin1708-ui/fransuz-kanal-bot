@@ -391,5 +391,11 @@
   "slot": "evening",
   "id": 25,
   "topic": "Taksida"
+ },
+ {
+  "date": "2026-11-13",
+  "slot": "morning",
+  "id": 26,
+  "topic": "Do'konda"
  }
 ]
