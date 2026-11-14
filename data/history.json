@@ -409,5 +409,11 @@
   "slot": "evening",
   "id": 26,
   "topic": "Do'konda"
+ },
+ {
+  "date": "2026-11-14",
+  "slot": "morning",
+  "id": 27,
+  "topic": "Telefonda"
  }
 ]
