@@ -421,5 +421,11 @@
   "slot": "noon",
   "rubric": "bigquiz",
   "item": "2026-11-14"
+ },
+ {
+  "date": "2026-11-14",
+  "slot": "evening",
+  "id": 27,
+  "topic": "Telefonda"
  }
 ]
