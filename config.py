@@ -46,6 +46,10 @@ FRENCH_GIRL = "Claire"
 UZBEK_GIRL = "Shohista"
 
 # --- Jadval: slot -> (soat, post turi) ---
+# Kuniga bitta post (18:00). Hafta kuni bo'yicha format: video = Shohista va Claire seriyasi.
+DAILY_PLAN = {0: "video", 1: "quiz", 2: "video", 3: "fact", 4: "video", 5: "bigquiz", 6: "farq"}
+NEXT_VIDEO_DAY = {0: "chorshanba", 2: "juma", 4: "dushanba"}
+
 SLOTS = {
     "morning": (9, "phrase"),       # 09:00 — kun iborasi (ovoz bilan)
     "noon": (14, "rubric"),         # 14:00 — hafta rubrikasi (fakt, test, farq...)

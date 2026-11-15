@@ -147,9 +147,10 @@ def main():
     lessons = load_lessons()
     workdir = tempfile.mkdtemp(prefix=f"{slot}_")
 
-    # ---------- 14:00 — hafta rubrikasi ----------
-    if slot == "noon":
-        rubric = rubrics.WEEKDAY_RUBRIC[now.weekday()]
+    # ---------- Rubrika kuni (kuniga bitta post: 18:00) ----------
+    plan = config.DAILY_PLAN[now.weekday()] if slot == "evening" else None
+    if slot == "noon" or (plan and plan != "video"):
+        rubric = plan if (plan and plan != "video") else rubrics.WEEKDAY_RUBRIC[now.weekday()]
         print(f"[noon] Rubrika: {rubrics.RUBRIC_NAMES.get(rubric, rubric)}")
         pkg, entry = rubrics.build_noon(rubric, history, lessons, workdir, now)
         state = {"entry": entry, "skip": []}
@@ -198,7 +199,8 @@ def main():
             return pkg
         les = dict(les, _episode=n)
         pkg = build("video", les, notes, wd)
-        pkg["caption"] = rubrics.serial_caption(les, n, prev, nxt)
+        pkg["caption"] = rubrics.serial_caption(les, n, prev, nxt,
+                                                next_day=config.NEXT_VIDEO_DAY.get(now.weekday()))
         return pkg
 
     print(f"[{slot}] Dars #{lesson['id']}: {lesson['topic']}")

@@ -222,7 +222,7 @@ def phrase_of_day(lesson, episode, workdir):
     return pkg
 
 
-def serial_caption(lesson, episode, prev_lesson, next_lesson, limit=1024):
+def serial_caption(lesson, episode, prev_lesson, next_lesson, limit=1024, next_day=None):
     import publisher
     parts = [f"📺 <b>Seriya #{episode}</b> · {e(lesson['title_uz'])}"]
     if prev_lesson:
@@ -231,7 +231,8 @@ def serial_caption(lesson, episode, prev_lesson, next_lesson, limit=1024):
     parts.append(publisher._phrases_html(lesson))
     if next_lesson:
         parts.append("")
-        parts.append(f"⏭ <b>Davomi ertaga 18:00 da:</b> «{e(next_lesson['title_uz'])}»")
+        when = f"{next_day} kuni 18:00 da" if next_day else "ertaga 18:00 da"
+        parts.append(f"⏭ <b>Davomi {when}:</b> «{e(next_lesson['title_uz'])}»")
     import growth
     goal = growth.goal_line()
     if goal:
