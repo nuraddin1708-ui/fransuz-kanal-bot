@@ -439,5 +439,11 @@
   "slot": "noon",
   "rubric": "takror",
   "item": "2026-11-15"
+ },
+ {
+  "date": "2026-11-15",
+  "slot": "evening",
+  "id": 28,
+  "topic": "Tug'ilgan kun"
  }
 ]
