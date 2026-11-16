@@ -445,5 +445,11 @@
   "slot": "evening",
   "id": 28,
   "topic": "Tug'ilgan kun"
+ },
+ {
+  "date": "2026-11-16",
+  "slot": "evening",
+  "id": 29,
+  "topic": "Tabriklash"
  }
 ]
