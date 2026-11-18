@@ -457,5 +457,11 @@
   "slot": "evening",
   "rubric": "quiz",
   "item": "2026-11-17"
+ },
+ {
+  "date": "2026-11-18",
+  "slot": "evening",
+  "id": 30,
+  "topic": "Xivaga xush kelibsiz"
  }
 ]
